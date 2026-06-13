@@ -18,13 +18,7 @@
 
 ## 🗺️ Přímé odkazy na verze
 
-Hru je možné odkázat přímo na konkrétní verzi pomocí URL parametru `?v=`:
-
-| Verze | URL |
-|---|---|
-| Rozcestník (výběr) | `index.html` |
-| Dějepisná verze | `index.html?v=history` |
-| Přírodovědná verze | `index.html?v=biology` |
+Hru je možné si zahrát na TBA AFTER DEPLOY.
 
 ---
 
@@ -60,27 +54,6 @@ Hru je možné odkázat přímo na konkrétní verzi pomocí URL parametru `?v=`
 
 ---
 
-## 📁 Struktura projektu
-
-```
-SimiHistoHra/
-├── index.html       # Jediná HTML stránka (SPA)
-├── config.js        # Data: témata, otázky, prahy, barvy
-├── app.js           # Logika hry, routing, animace
-├── style.css        # Design systém, CSS příšerky, doplňky
-├── merge.js         # Build helper: slučuje history/*.txt do config.js
-├── README.md        # Tento soubor
-│
-└── history/         # Zdrojové otázky z dějepisných textů
-    ├── narodni_obrozeni.txt
-    ├── prvni_svetova_valka.txt
-    ├── prvni_republika.txt
-    ├── protektorat.txt
-    └── komunismusm.txt
-```
-
----
-
 ## ⚙️ Modifikovatelnost (Modding)
 
 Všechna herní data jsou oddělena od kódu v souboru **`config.js`**. Díky tomu lze:
@@ -105,25 +78,12 @@ Všechna herní data jsou oddělena od kódu v souboru **`config.js`**. Díky to
 
 ---
 
-## 🚀 Spuštění
-
-Stačí otevřít `index.html` v prohlížeči (i přes `file://` protokol — bez serveru).
-
-```bash
-# Nebo pokud preferuješ lokální server:
-npx serve .
-```
-
----
-
 ## 🙏 Inspirace a poděkování
 
-Tato hra byla inspirována projektem **[Informatická líheň](https://informaticka-lihen.lovable.app/)** — skvělou edukativní hrou pro procvičování informatiky, kde hráč krmí příšerky správnými odpověďmi. Velké díky autorům za krásný a motivující koncept! 🎉
-
-Dějepisné otázky jsou zpracovány z učebnice dějepisu pro 5. třídu ZŠ.
+Tato hra byla inspirována projektem **[Informatická líheň](https://informaticka-lihen.lovable.app/)** — skvělou edukativní hrou pro procvičování informatiky, kde hráč krmí příšerky správnými odpověďmi. Děti ji chtěly hned adaptovat na jiná témata a tak vznikla EDU Líheň. Velké díky autorům za inspiraci! 🎉
 
 ---
 
 ## 📄 Licence
 
-Volné použití pro vzdělávací účely.
+Žádná. Kopírujte, půjčujte si, hrajte - volné použití pro vzdělávací účely.

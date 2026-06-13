@@ -7,8 +7,8 @@ const CONFIG_BIOLOGY = {
   gameTitle: "Přírodovědná Líheň",
   gameSubtitle: "Vychovej si své pomocníky z biologie správnými odpověďmi!",
   thresholds: {
-    baby: 10,
-    adult: 30
+    baby: 5,
+    adult: 10
   },
   accessories: [
     { id: "glasses", name: "Chytré brýle", cssClass: "acc-glasses" },
