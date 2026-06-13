@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Edukativní kvízová hra pro ZŠ. Procvičuj dějepis a přírodovědu a vychovej roztomilé příšerky správnými odpověďmi!">
+  <title>Edukativní Líheň — Vychovej si příšerku</title>
+  
+  <!-- Google Fonts - Fredoka pro hravé nadpisy, Outfit pro čitelný text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- Hlavní styly -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Canvas Confetti pro oslavu růstu -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  
+  <!-- Hlavní herní obal -->
+  <div id="game-container">
+    
+    <!-- Společná hlavička hry -->
+    <header class="game-header">
+      <div class="header-content">
+        <h1 class="logo-text" id="main-title">Edukativní Líheň</h1>
+        <p class="logo-subtext" id="main-subtitle">Vychovej si své pomocníky správnými odpověďmi!</p>
+      </div>
+      <div class="header-actions">
+        <button id="btn-go-home" class="btn-home" title="Zpět na výběr verze hry (rozcestník)" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Domů
+        </button>
+        <button id="btn-reset-all" class="btn-reset" title="Smaže body všech příšerek a začneš znovu od vajíčka" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Začít znovu
+        </button>
+      </div>
+    </header>
+
+    <!-- OBRAZOVKA ROZCESTNÍK (Landing / Dashboard Selector) -->
+    <main id="landing-screen" class="screen active">
+      <div class="landing-intro">
+        <h2>Vítej v Edukativní Líhni! 🐣</h2>
+        <p>Vyber si verzi hry, procvičuj své znalosti a pomoz roztomilým příšerkám vyrůst z vajíčka až v dospělce s parádními doplňky.</p>
+      </div>
+
+      <div class="landing-cards">
+        <!-- Karta Dějepis -->
+        <div class="landing-card history-card" id="card-select-history">
+          <div class="landing-card-header">Dějepisná verze</div>
+          <div class="landing-card-body">
+            <h3>Dějepisná Líheň 🇨🇿</h3>
+            <p>Procvič si moderní historii České republiky pro 5. třídu ZŠ. Provázej příšerky pěti obdobími: od národního obrození, přes světové války a první republiku, až po komunismus.</p>
+            <div class="mascot-row">
+              <span class="mascot-tag tag-obrozeni">Buditeláček</span>
+              <span class="mascot-tag tag-valka">Bojovníček</span>
+              <span class="mascot-tag tag-republika">Sokolík</span>
+              <span class="mascot-tag tag-protektorat">Odbojáček</span>
+              <span class="mascot-tag tag-komunismus">Svobodníček</span>
+            </div>
+            <button class="btn-launch-version">Spustit Dějepis</button>
+          </div>
+        </div>
+
+        <!-- Karta Biologie -->
+        <div class="landing-card biology-card" id="card-select-biology">
+          <div class="landing-card-header">Přírodovědná verze</div>
+          <div class="landing-card-body">
+            <h3>Přírodovědná Líheň 🔬</h3>
+            <p>Odlaď si své znalosti o lidském těle. Krm tři příšerky správnými odpověďmi z témat: trávicí soustava, dýchací soustava a rozmnožování/buňky.</p>
+            <div class="mascot-row">
+              <span class="mascot-tag tag-digestive">Bříškoun</span>
+              <span class="mascot-tag tag-respiratory">Plícník</span>
+              <span class="mascot-tag tag-reproductive">Buněk</span>
+            </div>
+            <button class="btn-launch-version">Spustit Přírodovědu</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- OBRAZOVKA 1: LÍHEŇ (Lobby / Výběr témat) -->
+    <main id="lobby-screen" class="screen">
+      <div class="lobby-intro">
+        <h2>Vyber si téma a pomoz příšerám vyrůst!</h2>
+        <p>Správnými odpověďmi v kvízu krmíš svou příšerku. Z vajíčka se vyklube mládě a z něj vyroste dospělá příšerka, která získá parádní doplněk! Chyby tě netrestají, jen tě zpomalí. 🌷</p>
+      </div>
+      
+      <!-- Kontejner pro karty témat (bude plněn dynamicky z JS) -->
+      <div id="topics-grid" class="topics-grid">
+        <!-- Zde JS vygeneruje karty -->
+      </div>
+    </main>
+
+    <!-- OBRAZOVKA 2: KVÍZ -->
+    <main id="quiz-screen" class="screen">
+      <!-- Tlačítko zpět -->
+      <div class="quiz-nav">
+        <button id="btn-back-to-lobby" class="btn-back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Zpět do líhně
+        </button>
+        <div class="quiz-topic-title" id="quiz-title">Téma kvízu</div>
+      </div>
+      
+      <div class="quiz-layout">
+        <!-- Levý panel: Příšerka a její reakce -->
+        <section class="mascot-panel">
+          <div class="bubble-container">
+            <div class="speech-bubble" id="mascot-speech">Ahoj! Nakrmíš mě nějakou správnou odpovědí? Mám velký hlad! 😋</div>
+          </div>
+          
+          <div class="mascot-display-wrapper">
+            <!-- Tady se bude dynamicky měnit HTML příšerky podle jejího stádia -->
+            <div id="quiz-mascot-container" class="mascot-container-inner">
+              <!-- Zde JS vloží HTML pro příšerku -->
+            </div>
+          </div>
+          
+          <div class="mascot-details">
+            <h3 id="quiz-mascot-name">Příšerka</h3>
+            <span class="mascot-level-badge" id="quiz-mascot-stage">Stádium: Vajíčko</span>
+            <div class="quiz-progress-wrapper">
+              <div class="quiz-progress-text">Body: <span id="quiz-mascot-points">0</span> / <span id="quiz-mascot-next-threshold">10</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="quiz-mascot-progress-bar" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Pravý panel: Kvízové otázky -->
+        <section class="question-panel">
+          <div class="question-card" id="question-card">
+            <div class="question-header">
+              <span class="question-number" id="question-counter">Otázka 1</span>
+              <div class="score-pill">Dnešní svačinky: <span id="quiz-session-score">0</span></div>
+            </div>
+            
+            <h2 class="question-text" id="question-text">Tady bude text otázky?</h2>
+            
+            <!-- Kontejner pro možnosti (ABCD nebo Pravda/Lež) -->
+            <div class="options-container" id="options-container">
+              <!-- JS vygeneruje tlačítka s odpověďmi -->
+            </div>
+            
+            <!-- Panel se zpětnou vazbou (zobrazí se po kliknutí) -->
+            <div class="feedback-panel" id="feedback-panel">
+              <div class="feedback-icon" id="feedback-icon">✨</div>
+              <div class="feedback-content">
+                <h4 class="feedback-title" id="feedback-title">Správně!</h4>
+                <p class="feedback-explanation" id="feedback-explanation">Tady bude vysvětlení k otázce...</p>
+              </div>
+            </div>
+            
+            <!-- Tlačítko pokračovat -->
+            <div class="question-actions">
+              <button id="btn-next-question" class="btn-next" disabled>
+                Pokračovat
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+  </div>
+
+  <!-- Načtení herní logiky -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

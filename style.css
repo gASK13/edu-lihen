@@ -1,0 +1,1541 @@
+/* ==========================================================================
+   HLAVNÍ STYLY - EDUKATIVNÍ LÍHEŇ
+   ========================================================================== */
+
+/* Globální nastavení & Design System tokens */
+:root {
+  --font-title: 'Fredoka', system-ui, -apple-system, sans-serif;
+  --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  /* Výchozí barevné téma (změní se přes JS podle aktivního tématu) */
+  --primary-color: #6366f1;
+  --accent-color: #e0e7ff;
+  --gradient-start: #4f46e5;
+  --gradient-end: #6366f1;
+  
+  /* Neutrální barvy */
+  --bg-app: linear-gradient(135deg, #f0f7ff 0%, #e0e7ff 100%);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --white-glass: rgba(255, 255, 255, 0.75);
+  --white-solid: #ffffff;
+  --border-glass: rgba(255, 255, 255, 0.4);
+  
+  /* Stavy odpovědí */
+  --color-success: #10b981;
+  --color-success-bg: #ecfdf5;
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  
+  /* Stíny a zaoblení */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px rgba(99, 102, 241, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  
+  /* Časování přechodů */
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reset a základní stylování */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: var(--bg-app);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+/* Globální kontejner hry */
+#game-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   HLAVIČKA HRY
+   ========================================================================== */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  background: var(--white-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-text {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.logo-subtext {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Tlačítka */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition-bounce);
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--color-error);
+  border: 1.5px dashed rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-reset:hover {
+  background: var(--color-error);
+  color: white;
+  border-color: var(--color-error);
+  transform: translateY(-2px);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   SPRÁVA OBRAZOVEK (Screen Manager)
+   ========================================================================== */
+.screen {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  flex: 1;
+}
+
+.screen.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   OBRAZOVKA 1: LÍHEŇ (Lobby)
+   ========================================================================== */
+.lobby-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 30px auto;
+}
+
+.lobby-intro h2 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.lobby-intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+/* Karta tématu */
+.topic-card {
+  background: var(--white-glass);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-bounce);
+}
+
+.topic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Dynamické barevné proužky navrchu karty */
+.topic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--card-grad-start), var(--card-grad-end));
+}
+
+.card-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-top: 16px;
+  color: var(--text-main);
+}
+
+.card-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 8px 0 20px 0;
+  line-height: 1.4;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Náhled příšerky na kartě */
+.card-mascot-preview {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Progress bar na kartě */
+.card-progress-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.card-stage-name {
+  color: var(--card-color);
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--card-grad-start), var(--card-grad-end));
+  border-radius: 5px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.btn-play-topic {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--card-grad-start), var(--card-grad-end));
+  color: white;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-play-topic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+/* ==========================================================================
+   OBRAZOVKA 2: KVÍZ (Quiz Screen)
+   ========================================================================== */
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: var(--white-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.btn-back:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateX(-3px);
+}
+
+.quiz-topic-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Rozvržení kvízu (Mascot vlevo, Otázky vpravo) */
+.quiz-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .quiz-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Levý panel příšerky */
+.mascot-panel {
+  background: var(--white-glass);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.bubble-container {
+  width: 100%;
+  margin-bottom: 16px;
+  min-height: 70px;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Bublina pro řeč */
+.speech-bubble {
+  background: var(--white-solid);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+  width: 100%;
+  transform-origin: bottom center;
+  animation: popBubble 0.3s ease;
+}
+
+/* Šipka bubliny */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: var(--white-solid) transparent;
+  display: block;
+  width: 0;
+}
+
+@keyframes popBubble {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mascot-display-wrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.mascot-container-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mascot-details {
+  width: 100%;
+  text-align: center;
+}
+
+.mascot-details h3 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.mascot-level-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quiz-progress-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.quiz-progress-text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Pravý panel s otázkou */
+.question-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-card {
+  background: var(--white-glass);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.question-number {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score-pill {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.question-text {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+
+/* Kontejner tlačítek odpovědí */
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.option-btn {
+  background: var(--white-solid);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+}
+
+.option-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.option-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Označení písmenek A, B, C, D */
+.option-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(0,0,0,0.04);
+  color: var(--text-muted);
+  border-radius: 8px;
+  margin-right: 14px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.option-btn:hover:not(:disabled) .option-badge {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Stavy po kliknutí na možnost */
+.option-btn.selected-correct {
+  background: var(--color-success-bg);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+.option-btn.selected-correct .option-badge {
+  background: var(--color-success);
+  color: white;
+}
+
+.option-btn.selected-incorrect {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+.option-btn.selected-incorrect .option-badge {
+  background: var(--color-error);
+  color: white;
+}
+
+.option-btn.show-correct {
+  background: var(--color-success-bg);
+  border-color: var(--color-success);
+  opacity: 0.9;
+}
+.option-btn.show-correct .option-badge {
+  background: var(--color-success);
+  color: white;
+}
+
+.option-btn.fade-out {
+  opacity: 0.45;
+}
+
+/* Panel zpětné vazby */
+.feedback-panel {
+  display: none; /* Zobrazí se přes JS */
+  background: var(--white-solid);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  align-items: flex-start;
+  gap: 16px;
+  animation: slideInFeedback 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feedback-panel.success {
+  display: flex;
+  border-left: 5px solid var(--color-success);
+}
+
+.feedback-panel.error {
+  display: flex;
+  border-left: 5px solid var(--color-error);
+}
+
+@keyframes slideInFeedback {
+  0% { transform: translateY(15px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.feedback-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.feedback-content h4 {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.feedback-panel.success h4 { color: var(--color-success); }
+.feedback-panel.error h4 { color: var(--color-error); }
+
+.feedback-explanation {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.question-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-next:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-next:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-next:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   CSS OBRÁZKY PŘÍŠEREK (CSS-based Mascot Drawing)
+   ========================================================================== */
+
+/* Společný kontejner příšerky */
+.mascot-sprite-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+}
+
+/* --- 1. VAJÍČKO (Stage: EGG) --- */
+.mascot-egg {
+  width: 100px;
+  height: 130px;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, var(--primary-color) 60%, rgba(0,0,0,0.2) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), inset 0 -4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  animation: eggWobble 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Skvrny na vajíčku */
+.egg-spots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  opacity: 0.4;
+}
+
+.egg-spots::before,
+.egg-spots::after {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.egg-spots::before {
+  width: 16px;
+  height: 20px;
+  top: 25px;
+  left: 30px;
+  transform: rotate(-30deg);
+  box-shadow: 30px 45px 0 var(--accent-color), 15px 70px 0 var(--accent-color);
+}
+
+.egg-spots::after {
+  width: 10px;
+  height: 12px;
+  top: 45px;
+  left: 70px;
+  box-shadow: -45px 30px 0 var(--accent-color), -25px -15px 0 var(--accent-color);
+}
+
+@keyframes eggWobble {
+  0%, 90%, 100% { transform: rotate(0); }
+  92% { transform: rotate(-8deg); }
+  94% { transform: rotate(6deg); }
+  96% { transform: rotate(-5deg); }
+  98% { transform: rotate(3deg); }
+}
+
+/* Stín pod příšerkou */
+.mascot-shadow {
+  position: absolute;
+  bottom: 5px;
+  width: 110px;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 0;
+  animation: shadowScale 3s ease-in-out infinite;
+}
+
+@keyframes shadowScale {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(0.9); opacity: 0.6; }
+}
+
+
+/* --- 2. MLÁDĚ (Stage: BABY) --- */
+.mascot-baby {
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--primary-color) 45%, rgba(0,0,0,0.15) 100%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  animation: babyFloat 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.baby-spots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  opacity: 0.25;
+}
+.baby-spots::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  top: 15px;
+  left: 30px;
+  box-shadow: 45px 10px 0 var(--accent-color);
+}
+
+@keyframes babyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+/* --- 3. DOSPĚLEC (Stage: ADULT) --- */
+.mascot-adult {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--primary-color) 50%, rgba(0,0,0,0.15) 100%);
+  border-radius: 55% 55% 45% 45% / 60% 60% 40% 40%;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+  animation: adultFloat 4s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+@keyframes adultFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+/* --- DYNAMICKÉ OBLIČEJOVÉ PRVKY (Společné pro baby i adult) --- */
+.mascot-face {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.mascot-baby .mascot-face {
+  top: 45%;
+  width: 70px;
+}
+
+/* Oči s mrkáním */
+.mascot-eyes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.eye {
+  width: 16px;
+  height: 16px;
+  background: #1e293b;
+  border-radius: 50%;
+  position: relative;
+  animation: blink 4s infinite;
+}
+.mascot-baby .eye {
+  width: 13px;
+  height: 13px;
+}
+
+/* Odlesk v oku */
+.eye::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+}
+
+@keyframes blink {
+  0%, 96%, 100% { transform: scaleY(1); }
+  98% { transform: scaleY(0.1); }
+}
+
+/* Rosy tváře */
+.mascot-cheeks {
+  display: flex;
+  justify-content: space-between;
+  width: 108%;
+  position: absolute;
+  top: 10px;
+  left: -4%;
+}
+.cheek {
+  width: 12px;
+  height: 8px;
+  background: rgba(244, 63, 94, 0.5);
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+.mascot-baby .cheek {
+  width: 9px;
+  height: 6px;
+}
+
+/* Pusinka */
+.mascot-mouth {
+  width: 12px;
+  height: 6px;
+  border: 2px solid #1e293b;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background: transparent;
+  transition: var(--transition-bounce);
+}
+/* Reakce v kvízu: Mňam/Úsměv */
+.mascot-sprite-wrapper.happy .mascot-mouth {
+  width: 16px;
+  height: 10px;
+  border: none;
+  background: #ef4444;
+  border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+}
+.mascot-sprite-wrapper.sad .mascot-mouth {
+  width: 12px;
+  height: 6px;
+  border: 2px solid #1e293b;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+
+/* --- RUKY A NOHY --- */
+.mascot-feet {
+  position: absolute;
+  bottom: -4px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  left: 10%;
+}
+.foot {
+  width: 22px;
+  height: 12px;
+  background: var(--primary-color);
+  filter: brightness(0.85);
+  border-radius: 10px 10px 6px 6px;
+}
+.mascot-baby .foot {
+  width: 16px;
+  height: 8px;
+}
+
+.mascot-arms {
+  position: absolute;
+  width: 116%;
+  display: flex;
+  justify-content: space-between;
+  left: -8%;
+  top: 50%;
+}
+.arm {
+  width: 18px;
+  height: 22px;
+  background: var(--primary-color);
+  filter: brightness(0.9);
+  border-radius: 10px;
+  transform-origin: top center;
+}
+.arm.left {
+  transform: rotate(30deg);
+}
+.arm.right {
+  transform: rotate(-30deg);
+}
+
+/* Animace mávání při správné odpovědi */
+.mascot-sprite-wrapper.happy .arm.left {
+  animation: waveArmLeft 0.5s ease infinite alternate;
+}
+.mascot-sprite-wrapper.happy .arm.right {
+  animation: waveArmRight 0.5s ease-in infinite alternate;
+}
+
+@keyframes waveArmLeft {
+  0% { transform: rotate(30deg); }
+  100% { transform: rotate(140deg); }
+}
+@keyframes waveArmRight {
+  0% { transform: rotate(-30deg); }
+  100% { transform: rotate(-140deg); }
+}
+
+
+/* ==========================================================================
+   SPECIFICKÉ PRVKY PODLE BIOLOGICKÉHO TÉMATU
+   ========================================================================== */
+
+/* 1. Trávicí příšerka - Bříškoun (oranžový, velké bříško) */
+.feature-belly {
+  position: absolute;
+  width: 70px;
+  height: 65px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px dashed rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feature-belly::after {
+  content: "🌀";
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+/* 2. Dýchací příšerka - Plícník (modrý, křídla/plíce na bocích) */
+.feature-lungs {
+  position: absolute;
+  width: 120%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  top: 25%;
+  left: -10%;
+  pointer-events: none;
+}
+.lung-flap {
+  width: 32px;
+  height: 55px;
+  background: var(--accent-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 50% 50% 10px 10px;
+  animation: breathe 3s ease-in-out infinite alternate;
+}
+.lung-flap.left {
+  transform-origin: right center;
+  border-radius: 30px 10px 10px 30px;
+}
+.lung-flap.right {
+  transform-origin: left center;
+  border-radius: 10px 30px 30px 10px;
+}
+
+@keyframes breathe {
+  0% { transform: scaleX(0.85) rotate(0); opacity: 0.8; }
+  100% { transform: scaleX(1.15) rotate(5deg); opacity: 1; }
+}
+
+/* 3. Rozmnožovací příšerka - Buněk (růžový, satelitní buňky) */
+.feature-satellites {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.satellite-cell {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ffffff 0%, var(--primary-color) 70%);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: orbit 6s linear infinite;
+}
+.satellite-cell:nth-child(1) {
+  top: -10px;
+  left: 10px;
+  animation-duration: 5s;
+}
+.satellite-cell:nth-child(2) {
+  bottom: 10px;
+  right: -10px;
+  animation-duration: 7s;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translate(8px) rotate(0deg); }
+  100% { transform: rotate(360deg) translate(8px) rotate(-360deg); }
+}
+
+
+/* ==========================================================================
+   CSS DOPLŇKY (Accessories for Adults)
+   ========================================================================== */
+
+.accessory-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 1. Cylindr (Elegantní klobouk) */
+.acc-hat::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 4px;
+  top: -4px;
+  left: 30px;
+}
+.acc-hat::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 42px;
+  background: #1e293b;
+  border-radius: 4px 4px 0 0;
+  top: -42px;
+  left: 45px;
+  box-shadow: inset 0 -8px 0 #ef4444; /* Červená stuha */
+}
+
+/* 2. Chytré brýle */
+.acc-glasses {
+  background: linear-gradient(to right, #f59e0b, #f59e0b) no-repeat;
+  background-size: 8px 4px;
+  background-position: 63px 54px;
+}
+.acc-glasses::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #f59e0b; /* Zlaté rámečky */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  top: 40px;
+  left: 33px;
+}
+.acc-glasses::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #f59e0b; /* Zlaté rámečky */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  top: 40px;
+  left: 69px;
+}
+
+/* 3. Červený motýlek */
+.acc-bowtie::before {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 24px;
+  background: #ef4444;
+  top: 112px;
+  left: 42px;
+  clip-path: polygon(0% 0%, 50% 40%, 100% 0%, 100% 100%, 50% 60%, 0% 100%);
+}
+.acc-bowtie::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #b91c1c; /* Středový uzlík */
+  border-radius: 50%;
+  top: 118px;
+  left: 64px;
+}
+
+/* 4. Zlatá korunka */
+.acc-crown::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: #facc15;
+  top: -24px;
+  left: 40px;
+  clip-path: polygon(0% 100%, 0% 20%, 25% 60%, 50% 0%, 75% 60%, 100% 20%, 100% 100%);
+  border-radius: 0 0 4px 4px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+
+/* ==========================================================================
+   EFEKT KRMENÍ (Food particle animation)
+   ========================================================================== */
+.food-particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fbbf24;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fbbf24;
+  z-index: 999;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ROZCESTNÍK (Landing Screen)
+   ========================================================================== */
+
+#landing-screen {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#landing-screen.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 36px auto;
+}
+
+.landing-intro h2 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.landing-intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.landing-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-bottom: 48px;
+}
+
+@media (max-width: 700px) {
+  .landing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.landing-card {
+  background: var(--white-glass);
+  backdrop-filter: blur(16px);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-bounce);
+}
+
+.landing-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.landing-card-header {
+  padding: 12px 24px;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.history-card .landing-card-header {
+  background: linear-gradient(135deg, #b45309, #92400e);
+}
+
+.biology-card .landing-card-header {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+}
+
+.landing-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.landing-card-body h3 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.landing-card-body p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mascot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.mascot-tag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* History mascot tags */
+.tag-obrozeni   { background: #fef3c7; color: #92400e; }
+.tag-valka      { background: #f1f5f9; color: #334155; }
+.tag-republika  { background: #d1fae5; color: #065f46; }
+.tag-protektorat { background: #fee2e2; color: #991b1b; }
+.tag-komunismus { background: #ffe4e6; color: #881337; }
+
+/* Biology mascot tags */
+.tag-digestive   { background: #ffedd5; color: #9a3412; }
+.tag-respiratory { background: #e0f2fe; color: #0c4a6e; }
+.tag-reproductive { background: #fce7f3; color: #831843; }
+
+.btn-launch-version {
+  margin-top: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.history-card .btn-launch-version {
+  background: linear-gradient(135deg, #d97706, #92400e);
+}
+
+.biology-card .btn-launch-version {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+}
+
+.btn-launch-version:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  filter: brightness(1.06);
+}
+
+/* Tlačítko Domů v hlavičce */
+.btn-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(99, 102, 241, 0.08);
+  color: #6366f1;
+  border: 1.5px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-home:hover {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CSS PŘÍŠERKY PRO HISTORICKÁ TÉMATA
+   ========================================================================== */
+
+/* Vajíčko s historickým vzorem (švy jako pergamen) */
+.mascot-egg.egg-history {
+  background: radial-gradient(circle at 35% 30%, #fff8e7 0%, var(--primary-color) 60%, rgba(0,0,0,0.2) 100%);
+}
+
+/* 1. BUDITELÁČEK (Národní obrození) - má husí brk / pero na hlavě */
+.feature-pen {
+  position: absolute;
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(to bottom, #fbbf24 0%, #d97706 50%, #92400e 100%);
+  border-radius: 4px 4px 0 0;
+  top: -44px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-20deg);
+  transform-origin: bottom center;
+}
+.feature-pen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 18px solid #fbbf24;
+}
+
+/* 2. BOJOVNÍČEK (1. světová válka) - má plechovou přilbu */
+.feature-helmet {
+  position: absolute;
+  width: 70px;
+  height: 28px;
+  background: linear-gradient(to bottom, #94a3b8 0%, #64748b 100%);
+  border-radius: 50% 50% 8px 8px;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.feature-helmet::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 10px;
+  background: #475569;
+  border-radius: 5px;
+  bottom: -4px;
+  left: -5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* 3. SOKOLÍK (První republika) - sokolský klobouk / čapka */
+.feature-sokol-hat {
+  position: absolute;
+  width: 72px;
+  height: 12px;
+  background: #1e293b;
+  border-radius: 6px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.feature-sokol-hat::after {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 28px;
+  background: #dc2626;
+  border-radius: 4px 4px 0 0;
+  bottom: 8px;
+  left: 13px;
+}
+.feature-sokol-hat::before {
+  content: "🦅";
+  position: absolute;
+  font-size: 1rem;
+  top: -28px;
+  left: 22px;
+}
+
+/* 4. ODBOJÁČEK (Protektorát) - má baret */
+.feature-beret {
+  position: absolute;
+  width: 80px;
+  height: 24px;
+  background: radial-gradient(ellipse at 40% 40%, #374151 0%, #1e293b 100%);
+  border-radius: 50% 50% 10px 10px / 60% 60% 40% 40%;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-12deg);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.feature-beret::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fbbf24;
+  border-radius: 50%;
+  top: -4px;
+  right: 8px;
+  box-shadow: 0 0 0 2px #92400e;
+}
+
+/* 5. SVOBODNÍČEK (Komunismus) - má phrygijský čepec (čepice svobody) */
+.feature-freedom-cap {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  border-radius: 50% 50% 10px 10px / 70% 70% 30% 30%;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(10% 100%, 0% 30%, 50% 0%, 100% 30%, 90% 100%);
+}
+.feature-freedom-cap::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 12px;
+  background: #991b1b;
+  border-radius: 6px;
+  bottom: 0;
+  left: -5px;
+}
