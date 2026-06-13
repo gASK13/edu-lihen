@@ -18,7 +18,7 @@
 
 ## 🗺️ Přímé odkazy na verze
 
-Hru je možné si zahrát na TBA AFTER DEPLOY.
+Hru je možné si zahrát na [https://gask13.github.io/edu-lihen/](https://gask13.github.io/edu-lihen/).
 
 ---
 
