@@ -2204,5 +2204,60 @@ const CONFIG_HISTORY = {
 ]
 };
 
+const CONFIG_PHYSICS = {
+  gameTitle: "Fyzikální Líheň",
+  gameSubtitle: "Objevuj síly, látky a tajemství částic správnými odpověďmi!",
+  thresholds: { baby: 5, adult: 10 },
+  accessories: [
+    { id: "glasses", name: "Chytré brýle", cssClass: "acc-glasses" },
+    { id: "hat", name: "Elegantní cylindr", cssClass: "acc-hat" },
+    { id: "bowtie", name: "Červený motýlek", cssClass: "acc-bowtie" },
+    { id: "crown", name: "Zlatá korunka", cssClass: "acc-crown" }
+  ],
+  topics: [{
+    id: "physics_basics",
+    title: "Základy fyziky",
+    description: "Poznej tělesa, látky, síly, gravitaci a pohyb částic.",
+    mascotName: "Silák",
+    mascotType: "physics",
+    theme: { primaryColor: "#7c3aed", accentColor: "#ede9fe", gradientStart: "#8b5cf6", gradientEnd: "#4338ca" },
+    questions: [
+      { type: "abcd", question: "Co zkoumá přírodní věda zvaná fyzika?", options: ["Složení lidského těla", "Vlastnosti těles a jak na sebe tělesa vzájemně působí", "Výhradně děje ve vesmíru a vznik planet", "Historii vzniku lidstva"], answer: 1, explanation: "Fyzika je přírodní věda, která zkoumá vlastnosti těles a jejich vzájemné působení." },
+      { type: "boolean", question: "Z hlediska fyziky je tělesem pouze neživý předmět, nikoliv zvíře nebo rostlina.", options: ["Pravda", "Lež"], answer: 1, explanation: "Ve fyzice je tělesem každá věc, rostlina i živočich – například smrk nebo člověk." },
+      { type: "abcd", question: "Co z následujícího NEPATŘÍ mezi fyzikální vlastnosti těles?", options: ["Délka", "Hmotnost", "Teplota", "Tvrdost"], answer: 3, explanation: "Mezi fyzikální vlastnosti těles patří například teplota, hmotnost, délka nebo tvar. Tvrdost patří mezi vlastnosti látek." },
+      { type: "abcd", question: "Z čeho jsou vyrobena nebo vytvořena tělesa?", options: ["Z buněk", "Z různých látek", "Pouze ze vzduchu", "Z krystalů"], answer: 1, explanation: "Tělesa jsou vyrobena nebo vytvořena z různých látek." },
+      { type: "abcd", question: "Do kterých tří hlavních skupin rozdělujeme látky?", options: ["Pevné, kapalné a plynné", "Tvrdé, měkké a tekuté", "Přírodní, umělé a vesmírné", "Těžké, lehké a neviditelné"], answer: 0, explanation: "Látky dělíme na pevné, kapalné a plynné." },
+      { type: "abcd", question: "Co je to dřevo z pohledu fyziky?", options: ["Těleso", "Látka", "Plyn", "Krystal"], answer: 1, explanation: "Dřevo je pevná látka. Tělesem z něj vyrobeným je například židle, stůl nebo postel." },
+      { type: "abcd", question: "Která z těchto položek je příkladem kapalného tělesa?", options: ["Olej", "Kus ledu", "Voda v bazénu", "Vzduch v míči"], answer: 2, explanation: "Voda v bazénu je kapalné těleso. Olej je zde uveden jako látka, led je pevné těleso a vzduch v míči těleso plynné." },
+      { type: "boolean", question: "Obyčejná propiska se může skládat z pevných, kapalných i plynných látek.", options: ["Pravda", "Lež"], answer: 0, explanation: "Propiska obsahuje kovy a plasty, inkoust i vzduch." },
+      { type: "abcd", question: "Jak ve fyzice nazýváme vzájemné působení těles na sebe?", options: ["Tlak", "Síla", "Energie", "Rychlost"], answer: 1, explanation: "Vzájemné působení těles nazýváme síla." },
+      { type: "boolean", question: "Působení síly může vést k deformaci, tedy změně tvaru tělesa.", options: ["Pravda", "Lež"], answer: 0, explanation: "Síla může změnit tvar tělesa; takovou změnu označujeme jako deformaci." },
+      { type: "abcd", question: "Kromě změny tvaru může síla na těleso působit tak, že změní jeho:", options: ["Složení a látku", "Hmotnost a velikost", "Pohyb (rychlost nebo směr)", "Barvu a průhlednost"], answer: 2, explanation: "Síla může změnit pohyb tělesa, tedy jeho rychlost nebo směr." },
+      { type: "abcd", question: "Každá dvě tělesa se navzájem přitahují:", options: ["Magnetickou silou", "Gravitační silou", "Elektrickou silou", "Žádná tělesa se nepřitahují"], answer: 1, explanation: "Každá dvě tělesa se navzájem přitahují gravitační silou." },
+      { type: "abcd", question: "Co platí o závislosti gravitační síly na vzdálenosti těles?", options: ["Menší vzdálenost těles znamená větší gravitační sílu", "Menší vzdálenost těles znamená menší gravitační sílu", "Vzdálenost nemá na gravitační sílu vliv", "Tělesa se musí dotýkat, aby síla působila"], answer: 0, explanation: "Čím menší je vzdálenost těles, tím větší gravitační silou na sebe působí." },
+      { type: "boolean", question: "Země na nás působí obrovskou gravitační silou proto, že má velkou hmotnost a my jsme v její těsné blízkosti.", options: ["Pravda", "Lež"], answer: 0, explanation: "Země má velkou hmotnost a tělesa na jejím povrchu jsou jí velmi blízko." },
+      { type: "abcd", question: "Jaký směr má gravitační síla Země?", options: ["Vodorovný směr", "Směr ke Slunci", "Do středu Země (svislý směr)", "Chaotický směr všemi stranami"], answer: 2, explanation: "Gravitační síla Země míří vždy do středu Země; tento směr označujeme jako svislý." },
+      { type: "abcd", question: "Jak se jmenuje jednoduchá pomůcka, která slouží k určování svislého směru?", options: ["Kružítko", "Úhloměr", "Vodováha", "Olovnice"], answer: 3, explanation: "Pomůcka k určování svislého směru se nazývá olovnice." },
+      { type: "boolean", question: "Země působí gravitační silou pouze na tělesa na svém povrchu, ve vesmíru kolem ní se už žádná síla neprojevuje.", options: ["Pravda", "Lež"], answer: 1, explanation: "Země působí gravitační silou i na tělesa ve svém okolí. Kolem Země je gravitační pole." },
+      { type: "abcd", question: "Z čeho jsou složeny všechny látky?", options: ["Z vody, ohně, země a vzduchu", "Z částic nepatrných rozměrů", "Ze světelných paprsků", "Z ničeho, hmota je celistvá"], answer: 1, explanation: "Všechny látky jsou složeny z částic nepatrných rozměrů." },
+      { type: "boolean", question: "Částice všech látek jsou uvnitř těles zcela nehybné.", options: ["Pravda", "Lež"], answer: 1, explanation: "Částice všech látek se neustále a neuspořádaně pohybují." },
+      { type: "abcd", question: "Co je to difuze?", options: ["Zamrznutí vody a vznik ledu", "Samovolné pronikání částic jedné látky mezi částice druhé látky", "Vypařování tekutiny do vzduchu", "Změna tvaru tělesa působením síly"], answer: 1, explanation: "Difuze je samovolné pronikání částic jedné látky mezi částice druhé látky." },
+      { type: "abcd", question: "Co způsobuje Brownův pohyb, například trhavý pohyb pylových zrnek ve vodě?", options: ["Zrnka pylu jsou živá a sama plavou", "Nárazy neustále se pohybujících částic vody do zrnek pylu", "Zemětřesení v okolí", "Světlo z mikroskopu, které vodu zahřívá"], answer: 1, explanation: "Zrnka pylu se pohybují trhavě, protože do nich narážejí pohybující se částice vody." },
+      { type: "abcd", question: "Jak se liší uspořádání částic u pevných krystalických látek, například soli nebo diamantu?", options: ["Částice volně poletují prostorem", "Částice jsou uspořádány do pravidelné krystalické mřížky", "Částice jsou naskládány nepravidelně v chumlu", "Mají všechny částice spojené v jednu jedinou"], answer: 1, explanation: "Pevné krystalické látky mají částice pravidelně uspořádány do krystalické mřížky." },
+      { type: "abcd", question: "Proč si pevná tělesa udržují svůj stálý tvar?", options: ["Protože na sebe částice působí velkými přitažlivými silami", "Protože částice už nemají energii na pohyb", "Protože jsou zamrzlá", "Protože na ně nepůsobí gravitace"], answer: 0, explanation: "Částice pevných krystalických látek na sebe působí velkými přitažlivými silami." },
+      { type: "boolean", question: "Pevná tělesa lze díky vnitřním vlastnostem látek velmi snadno stlačit na menší velikost.", options: ["Pravda", "Lež"], answer: 1, explanation: "Pevná tělesa nelze snadno stlačit, protože na sebe částice působí i odpudivými silami." },
+      { type: "abcd", question: "Jak se pohybují částice uvnitř krystalu pevné látky?", options: ["Volně se pohybují po celém tělese", "Rotují kolem dokola", "Pouze kmitají okolo své pevné polohy", "Nepohybují se vůbec"], answer: 2, explanation: "Částice pevných krystalických látek kmitají okolo své polohy v krystalu." },
+      { type: "abcd", question: "Která z těchto látek se řadí mezi pevné amorfní neboli beztvaré látky?", options: ["Led", "Diamant", "Sůl", "Sklo"], answer: 3, explanation: "Sklo, vosk a asfalt patří mezi pevné amorfní látky bez pravidelného uspořádání částic." },
+      { type: "boolean", question: "Kapalné látky nemají pravidelné uspořádání částic a ty se neustále neuspořádaně pohybují uvnitř celého tělesa.", options: ["Pravda", "Lež"], answer: 0, explanation: "Částice kapalin nemají pravidelné uspořádání a neustále se pohybují uvnitř celého kapalného tělesa." },
+      { type: "abcd", question: "Proč jsou kapalná tělesa tekutá a snadno mění tvar podle nádoby?", options: ["Působí na sebe většími přitažlivými silami než v pevných látkách", "Částice na sebe vůbec nepůsobí žádnými silami", "Částice na sebe působí menšími přitažlivými silami než v pevných látkách", "Rozpouští se v nich okolní vzduch"], answer: 2, explanation: "Částice v kapalinách na sebe působí menšími přitažlivými silami než v pevných látkách." },
+      { type: "abcd", question: "Lze kapalná tělesa snadno stlačit do menšího objemu?", options: ["Ano, zmenší se tím na polovinu", "Ne, nelze je stlačit, zachovají si svůj objem", "Ano, ale pouze ve vesmíru", "Záleží na barvě kapaliny"], answer: 1, explanation: "Kapalná tělesa nelze snadno stlačit a zachovávají si svůj objem." },
+      { type: "abcd", question: "Jaký tvar má volný povrch hladiny kapalného tělesa v klidové nádobě?", options: ["Vždy šikmý", "Vypouklý nahoru", "Vodorovný (kolmý ke svislému směru)", "Prohnutý dolů a plný vln"], answer: 2, explanation: "Působením gravitační síly Země mají kapalná tělesa volný vodorovný povrch." },
+      { type: "abcd", question: "Co platí o pohybu částic v plynných látkách ve srovnání s kapalinami?", options: ["Pohybují se větší rychlostí než v kapalinách", "Pohybují se pomaleji než v kapalinách", "Nepohybují se vůbec", "Kmitají pouze na pevném místě"], answer: 0, explanation: "Částice plynných látek se neustále pohybují větší rychlostí než částice kapalin." },
+      { type: "boolean", question: "Plynné látky jsou rozpínavé, což znamená, že plynné těleso získá tvar a vyplní celý objem nádoby.", options: ["Pravda", "Lež"], answer: 0, explanation: "Plynné látky jsou rozpínavé a zaujmou tvar i objem nádoby." },
+      { type: "abcd", question: "Jak je to u plynných látek se stlačitelností v porovnání s pevnými látkami a kapalinami?", options: ["Plynná tělesa nelze vůbec stlačit", "Plynná tělesa lze stlačit, protože na sebe částice nepůsobí odpudivými silami", "Stlačit lze pouze plyny smíchané s vodou", "Plyny lze stlačit pouze tehdy, když klesne teplota pod nulu"], answer: 1, explanation: "Plynná tělesa lze stlačit, protože jejich částice na sebe nepůsobí odpudivými silami na dálku." }
+    ]
+  }]
+};
+
 // Určení, která konfigurace se načte (podle globální proměnné nastavené v app.js)
 let CONFIG = CONFIG_BIOLOGY; // Výchozí

@@ -4,7 +4,7 @@
  *
  * Verze podporuje:
  *  - Rozcestník (Landing screen) pro výběr verze (Dějepis / Přírodověda)
- *  - URL parametr ?v=history nebo ?v=biology pro přímé odkázání
+ *  - URL parametr ?v=history, ?v=biology nebo ?v=physics pro přímé odkázání
  *  - Persistenci stavu v localStorage odděleně pro každou verzi
  *  - Nekonečné točení otázek a bodovací prahy z config.js
  */
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // GLOBÁLNÍ KONFIGURACE (načte se po výběru verze)
   // ============================================================
   let CONFIG = null;
-  let currentVersion = null; // "history" nebo "biology"
+  let currentVersion = null; // "history", "biology" nebo "physics"
 
   // ============================================================
   // HERNÍ STAV
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // INIT a ROUTING
   // ============================================================
   function init() {
-    // Zkontroluj URL parametr ?v=history nebo ?v=biology
+    // Zkontroluj URL parametr ?v=history, ?v=biology nebo ?v=physics
     const urlParams = new URLSearchParams(window.location.search);
     const versionParam = urlParams.get("v");
 
@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
       launchVersion("history");
     } else if (versionParam === "biology") {
       launchVersion("biology");
+    } else if (versionParam === "physics") {
+      launchVersion("physics");
     } else {
       // Zobraz rozcestník
       showScreen(elLandingScreen);
@@ -127,10 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setupEventListeners();
   }
 
-  // Aktivuje verzi hry (history / biology)
+  // Aktivuje verzi hry (history / biology / physics)
   function launchVersion(version) {
     currentVersion = version;
-    CONFIG = (version === "history") ? CONFIG_HISTORY : CONFIG_BIOLOGY;
+    CONFIG = version === "history"
+      ? CONFIG_HISTORY
+      : version === "physics"
+        ? CONFIG_PHYSICS
+        : CONFIG_BIOLOGY;
 
     // Nastav titulky
     elMainTitle.textContent = CONFIG.gameTitle;
@@ -229,6 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "digestive":       `<div class="feature-belly"></div>`,
       "respiratory":     `<div class="feature-lungs"><div class="lung-flap left"></div><div class="lung-flap right"></div></div>`,
       "reproductive":    `<div class="feature-satellites"><div class="satellite-cell"></div><div class="satellite-cell"></div></div>`,
+      // Fyzika
+      "physics_basics":  `<div class="feature-atom"><span></span><span></span><span></span><i></i></div>`,
       // Dějepis
       "obrozeni":        `<div class="feature-pen"></div>`,
       "prvni_valka":     `<div class="feature-helmet"></div>`,
@@ -320,10 +328,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Nastav popis lobbys z konfigurace
     const lobbyIntro = elLobbyScreen.querySelector(".lobby-intro");
     if (lobbyIntro) {
-      lobbyIntro.querySelector("h2").textContent =
-        currentVersion === "history"
-          ? "Vyber historické období a pomoz příšerkám vyrůst! 🇨🇿"
-          : "Vyber část lidského těla a pomoz příšerkám vyrůst! 🔬";
+      const lobbyTitles = {
+        history: "Vyber historické období a pomoz příšerkám vyrůst! 🇨🇿",
+        biology: "Vyber část lidského těla a pomoz příšerkám vyrůst! 🔬",
+        physics: "Objevuj fyziku a pomoz příšerce vyrůst! ⚛️"
+      };
+      lobbyIntro.querySelector("h2").textContent = lobbyTitles[currentVersion];
     }
 
     CONFIG.topics.forEach(topic => {
@@ -677,6 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Výběr verze na rozcestníku ---
     const cardHistory  = document.getElementById("card-select-history");
     const cardBiology  = document.getElementById("card-select-biology");
+    const cardPhysics  = document.getElementById("card-select-physics");
 
     if (cardHistory) {
       cardHistory.querySelector(".btn-launch-version").addEventListener("click", () => {
@@ -686,6 +697,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cardBiology) {
       cardBiology.querySelector(".btn-launch-version").addEventListener("click", () => {
         launchVersion("biology");
+      });
+    }
+    if (cardPhysics) {
+      cardPhysics.querySelector(".btn-launch-version").addEventListener("click", () => {
+        launchVersion("physics");
       });
     }
 

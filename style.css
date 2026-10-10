@@ -4,8 +4,8 @@
 
 /* Globální nastavení & Design System tokens */
 :root {
-  --font-title: 'Fredoka', system-ui, -apple-system, sans-serif;
-  --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-title: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
   
   /* Výchozí barevné téma (změní se přes JS podle aktivního tématu) */
   --primary-color: #6366f1;
@@ -1306,6 +1306,10 @@ button {
   background: linear-gradient(135deg, #0ea5e9, #0369a1);
 }
 
+.physics-card .landing-card-header {
+  background: linear-gradient(135deg, #7c3aed, #4338ca);
+}
+
 .landing-card-body {
   padding: 28px;
   display: flex;
@@ -1354,6 +1358,9 @@ button {
 .tag-respiratory { background: #e0f2fe; color: #0c4a6e; }
 .tag-reproductive { background: #fce7f3; color: #831843; }
 
+/* Physics mascot tags */
+.tag-physics { background: #ede9fe; color: #5b21b6; }
+
 .btn-launch-version {
   margin-top: 8px;
   padding: 14px 24px;
@@ -1374,6 +1381,10 @@ button {
 
 .biology-card .btn-launch-version {
   background: linear-gradient(135deg, #0ea5e9, #0369a1);
+}
+
+.physics-card .btn-launch-version {
+  background: linear-gradient(135deg, #7c3aed, #4338ca);
 }
 
 .btn-launch-version:hover {
@@ -1409,6 +1420,37 @@ button {
 /* ==========================================================================
    CSS PŘÍŠERKY PRO HISTORICKÁ TÉMATA
    ========================================================================== */
+
+/* ZÁKLADY FYZIKY – malý atom nad hlavou dospělé příšerky */
+.feature-atom {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  top: -46px;
+  left: 51px;
+}
+
+.feature-atom span {
+  position: absolute;
+  inset: 16px 1px;
+  border: 3px solid #c4b5fd;
+  border-radius: 50%;
+  transform: rotate(60deg);
+}
+
+.feature-atom span:nth-child(2) { transform: rotate(120deg); }
+.feature-atom span:nth-child(3) { transform: rotate(180deg); }
+
+.feature-atom i {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 23px;
+  left: 23px;
+  border-radius: 50%;
+  background: #facc15;
+  box-shadow: 0 0 8px #facc15;
+}
 
 /* Vajíčko s historickým vzorem (švy jako pergamen) */
 .mascot-egg.egg-history {
