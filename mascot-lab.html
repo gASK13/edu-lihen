@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratoř příšerek | Edukativní Líheň</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:opsz,wght@6..12,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .lab-shell { width: min(1120px, 100%); margin: 0 auto; padding-bottom: 48px; }
+    .lab-intro, .lab-controls, .lab-preview, .lab-guide { background: var(--white-glass); border: 1px solid var(--border-glass); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+    .lab-intro, .lab-guide { padding: 24px; margin-bottom: 20px; }
+    .lab-intro h1, .lab-guide h2 { font-family: var(--font-title); margin-bottom: 8px; }
+    .lab-intro p, .lab-guide li { line-height: 1.5; color: var(--text-muted); }
+    .lab-layout { display: grid; grid-template-columns: minmax(240px, 330px) 1fr; gap: 20px; }
+    .lab-controls { padding: 20px; }
+    .lab-controls label { display: grid; gap: 6px; font-weight: 800; margin-bottom: 14px; }
+    .lab-controls select, .lab-controls input { font: inherit; border: 1px solid #cbd5e1; border-radius: 10px; min-height: 42px; padding: 6px 10px; background: white; }
+    .color-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .lab-preview { padding: 24px; display: grid; place-items: center; min-height: 420px; }
+    .lab-stage { width: min(100%, 390px); min-height: 350px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #ede9fe, #f5f3ff); display: grid; place-items: center; position: relative; overflow: hidden; }
+    .lab-stage .mascot-sprite-wrapper { transform: scale(1.55); }
+    .lab-stage.variant-tall .mascot-sprite-wrapper { transform: scale(1.35, 1.75); }
+    .lab-stage.variant-tiny .mascot-sprite-wrapper { transform: scale(1.15); }
+    .lab-caption { position: absolute; bottom: 16px; left: 16px; right: 16px; text-align: center; font-weight: 800; color: #4338ca; }
+    .lab-guide code { color: #5b21b6; font-weight: 800; }
+    .lab-guide pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; background: #f8fafc; border-radius: 12px; margin-top: 12px; }
+    @media (max-width: 760px) { .lab-layout { grid-template-columns: 1fr; } .lab-stage { min-height: 300px; } }
+  </style>
+</head>
+<body>
+  <main class="lab-shell">
+    <section class="lab-intro">
+      <h1>Laboratoř příšerek 🧪</h1>
+      <p>Pomůcka pro návrh nového tématu. Vyber podobu, barvy a doplněk; pro schválený návrh pak přenes hodnoty do JSONu předmětu.</p>
+    </section>
+
+    <div class="lab-layout">
+      <section class="lab-controls" aria-label="Nastavení příšerky">
+        <label>Vývojové stádium
+          <select id="stage"><option value="egg">Vajíčko</option><option value="baby">Mládě</option><option value="adult" selected>Dospělec</option></select>
+        </label>
+        <label>Variace siluety
+          <select id="variant"><option value="standard">Kulatá</option><option value="tall">Vysoká</option><option value="tiny">Malá</option></select>
+        </label>
+        <label>Tematický prvek
+          <select id="feature"><option value="none">Žádný</option><option value="atom" selected>Atom</option><option value="belly">Bříško</option><option value="lungs">Plíce</option><option value="satellites">Buňky</option><option value="pen">Pero</option><option value="helmet">Helma</option><option value="beret">Baret</option></select>
+        </label>
+        <label>Doplněk
+          <select id="accessory"><option value="none">Žádný</option><option value="acc-glasses" selected>Chytré brýle</option><option value="acc-hat">Cylindr</option><option value="acc-bowtie">Motýlek</option><option value="acc-crown">Korunka</option></select>
+        </label>
+        <div class="color-pair">
+          <label>Hlavní barva <input id="primary" type="color" value="#7c3aed"></label>
+          <label>Doplňková <input id="accent" type="color" value="#ede9fe"></label>
+        </div>
+      </section>
+
+      <section class="lab-preview">
+        <div class="lab-stage" id="preview" style="--primary-color: #7c3aed; --accent-color: #ede9fe">
+          <div id="mascot-preview"></div>
+          <p class="lab-caption" id="caption"></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="lab-guide">
+      <h2>Jak vytvořit nový předmět</h2>
+      <ol>
+        <li>V laboratoři vyber barvy a kombinaci, která má zřetelnou siluetu a nepřekrývá oči ani tematický rys.</li>
+        <li>Do budoucího souboru v <code>subjects/</code> vlož metadata předmětu a témata s otázkami podle schváleného JSON schématu.</li>
+        <li>Než bude přidávání automatizované, pošli LLM tento návrh spolu s názvem tématu, otázkami a zvolenými hodnotami z laboratoře.</li>
+      </ol>
+      <pre>Vytvoř nový předmět pro Edukativní líheň.
+Dodrž JSON schéma projektu. Název: [NÁZEV].
+Barvy: primary [BARVA], accent [BARVA].
+Maskot: variace [VARIACE], tematický prvek [PRVEK], doplněk [DOPLNĚK].
+Zkontroluj, že doplněk nepřekrývá oči ani tematický prvek.
+Vytvoř témata a validní otázky typu abcd/boolean.</pre>
+    </section>
+  </main>
+
+  <script>
+    const controls = ["stage", "variant", "feature", "accessory", "primary", "accent"].map(id => document.getElementById(id));
+    const featureHtml = {
+      none: "", atom: '<div class="feature-atom"><span></span><span></span><span></span><i></i></div>',
+      belly: '<div class="feature-belly"></div>', lungs: '<div class="feature-lungs"><div class="lung-flap left"></div><div class="lung-flap right"></div></div>',
+      satellites: '<div class="feature-satellites"><div class="satellite-cell"></div><div class="satellite-cell"></div></div>',
+      pen: '<div class="feature-pen"></div>', helmet: '<div class="feature-helmet"></div>', beret: '<div class="feature-beret"></div>'
+    };
+    const face = '<div class="mascot-face"><div class="mascot-eyes"><div class="eye left"></div><div class="eye right"></div></div><div class="mascot-cheeks"><div class="cheek left"></div><div class="cheek right"></div></div><div class="mascot-mouth"></div></div>';
+
+    function render() {
+      const [stage, variant, feature, accessory, primary, accent] = controls.map(control => control.value);
+      const preview = document.getElementById("preview");
+      preview.className = `lab-stage variant-${variant}`;
+      preview.style.setProperty("--primary-color", primary);
+      preview.style.setProperty("--accent-color", accent);
+      let mascot = '';
+      if (stage === "egg") mascot = '<div class="mascot-egg"><div class="egg-spots"></div></div><div class="mascot-shadow"></div>';
+      if (stage === "baby") mascot = `<div class="mascot-baby"><div class="baby-spots"></div>${face}<div class="mascot-feet"><div class="foot left"></div><div class="foot right"></div></div></div><div class="mascot-shadow"></div>`;
+      if (stage === "adult") mascot = `<div class="mascot-adult">${featureHtml[feature]}<div class="mascot-arms"><div class="arm left"></div><div class="arm right"></div></div>${face}<div class="mascot-feet"><div class="foot left"></div><div class="foot right"></div></div>${accessory === "none" ? "" : `<div class="accessory-overlay ${accessory}"></div>`}</div><div class="mascot-shadow"></div>`;
+      document.getElementById("mascot-preview").innerHTML = `<div class="mascot-sprite-wrapper">${mascot}</div>`;
+      document.getElementById("caption").textContent = `${stage} · ${variant} · ${feature} · ${accessory}`;
+    }
+    controls.forEach(control => control.addEventListener("input", render));
+    render();
+  </script>
+</body>
+</html>

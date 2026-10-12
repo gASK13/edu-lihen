@@ -109,28 +109,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // INIT a ROUTING
   // ============================================================
   function init() {
+    setupEventListeners();
+
+    // Při návratu prohlížečem obnovíme konkrétní obrazovku hry.
+    if (history.state?.app === "edu-lihen") {
+      restoreHistoryState(history.state);
+      return;
+    }
+
     // Zkontroluj URL parametr ?v=history, ?v=biology nebo ?v=physics
     const urlParams = new URLSearchParams(window.location.search);
     const versionParam = urlParams.get("v");
 
     if (versionParam === "history") {
-      launchVersion("history");
+      launchVersion("history", { historyMode: "replace" });
     } else if (versionParam === "biology") {
-      launchVersion("biology");
+      launchVersion("biology", { historyMode: "replace" });
     } else if (versionParam === "physics") {
-      launchVersion("physics");
+      launchVersion("physics", { historyMode: "replace" });
     } else {
-      // Zobraz rozcestník
-      showScreen(elLandingScreen);
-      elBtnGoHome.style.display = "none";
-      elBtnResetAll.style.display = "none";
+      showLanding({ historyMode: "replace" });
     }
-
-    setupEventListeners();
   }
 
   // Aktivuje verzi hry (history / biology / physics)
-  function launchVersion(version) {
+  function launchVersion(version, { historyMode = "push" } = {}) {
+    activateVersion(version);
+    renderLobby();
+    showScreen(elLobbyScreen);
+    updateHistory(historyMode, { screen: "lobby", version }, version);
+  }
+
+  function activateVersion(version) {
     currentVersion = version;
     CONFIG = version === "history"
       ? CONFIG_HISTORY
@@ -149,10 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializuj progress pro danou verzi
     loadProgress();
 
-    // Nastav téma lobbys
+    // Nastav téma lobby
     resetThemeToDefault();
-    renderLobby();
-    showScreen(elLobbyScreen);
   }
 
   // ============================================================
@@ -163,6 +171,42 @@ document.addEventListener("DOMContentLoaded", () => {
       s.classList.remove("active");
     });
     screenEl.classList.add("active");
+  }
+
+  function showLanding({ historyMode = "push" } = {}) {
+    showScreen(elLandingScreen);
+    elBtnGoHome.style.display = "none";
+    elBtnResetAll.style.display = "none";
+    resetThemeToDefault();
+    elMainTitle.textContent = "Edukativní Líheň";
+    elMainSubtitle.textContent = "Vychovej si své pomocníky správnými odpověďmi!";
+    updateHistory(historyMode, { screen: "landing" });
+  }
+
+  function updateHistory(mode, state, version = null) {
+    if (mode === "none") return;
+    const url = new URL(window.location.href);
+    if (version) url.searchParams.set("v", version);
+    else url.searchParams.delete("v");
+    const method = mode === "replace" ? "replaceState" : "pushState";
+    history[method]({ app: "edu-lihen", ...state }, "", url);
+  }
+
+  function restoreHistoryState(state) {
+    if (!state || state.screen === "landing") {
+      showLanding({ historyMode: "none" });
+      return;
+    }
+
+    activateVersion(state.version);
+    renderLobby();
+
+    if (state.screen === "quiz" && state.topicId) {
+      startQuiz(state.topicId, { historyMode: "none" });
+      return;
+    }
+
+    showScreen(elLobbyScreen);
   }
 
   // ============================================================
@@ -403,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   // KVÍZ — SPUŠTĚNÍ
   // ============================================================
-  function startQuiz(topicId) {
+  function startQuiz(topicId, { historyMode = "push" } = {}) {
     const topic = CONFIG.topics.find(t => t.id === topicId);
     if (!topic) return;
 
@@ -421,6 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
     elFeedbackPanel.className = "feedback-panel";
 
     showScreen(elQuizScreen);
+    updateHistory(historyMode, { screen: "quiz", version: currentVersion, topicId }, currentVersion);
     updateMascotUI();
     renderQuestion();
 
@@ -512,6 +557,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elOptionsContainer.innerHTML = "";
     elBtnNextQuestion.disabled = true;
+    elBtnNextQuestion.closest(".question-actions").hidden = true;
     elFeedbackPanel.style.display = "none";
     elFeedbackPanel.className = "feedback-panel";
 
@@ -595,6 +641,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elFeedbackPanel.style.display = "flex";
     elBtnNextQuestion.disabled = false;
+    elBtnNextQuestion.closest(".question-actions").hidden = false;
+
+    // Po sbalení nepodstatných možností ukážeme výsledek i akci bez ručního hledání.
+    requestAnimationFrame(() => {
+      elBtnNextQuestion.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
   }
 
   // ============================================================
@@ -707,22 +759,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Tlačítko Domů ---
     elBtnGoHome.addEventListener("click", () => {
-      showScreen(elLandingScreen);
-      elBtnGoHome.style.display    = "none";
-      elBtnResetAll.style.display  = "none";
-      resetThemeToDefault();
-      // Obnov výchozí titulky
-      elMainTitle.textContent    = "Edukativní Líheň";
-      elMainSubtitle.textContent = "Vychovej si své pomocníky správnými odpověďmi!";
+      showLanding();
     });
 
     // --- Zpět do lobby ---
     elBtnBackToLobby.addEventListener("click", () => {
+      if (history.state?.app === "edu-lihen" && history.state.screen === "quiz") {
+        history.back();
+        return;
+      }
       resetThemeToDefault();
       applyTopicTheme({ theme: { primaryColor: "#6366f1", accentColor: "#e0e7ff", gradientStart: "#4f46e5", gradientEnd: "#6366f1" }});
       // Aplikuj téma lobbys podle verze
       renderLobby();
       showScreen(elLobbyScreen);
+      updateHistory("push", { screen: "lobby", version: currentVersion }, currentVersion);
     });
 
     // --- Pokračovat na další otázku ---
@@ -754,6 +805,11 @@ document.addEventListener("DOMContentLoaded", () => {
           confetti({ particleCount: 40, angle: 270, spread: 40, origin: { y: 0.1 } });
         }
       }
+    });
+
+    // Systémové tlačítko Zpět (Android i desktopový prohlížeč).
+    window.addEventListener("popstate", event => {
+      restoreHistoryState(event.state);
     });
   }
 
