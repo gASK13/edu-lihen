@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   let CONFIG = null;
   let currentVersion = null; // "history", "biology" nebo "physics"
+  let mascotCollapseTimer = null;
 
   // ============================================================
   // HERNÍ STAV
@@ -594,6 +595,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // KVÍZ — ZPRACOVÁNÍ ODPOVĚDI
   // ============================================================
   function handleAnswerSelect(selectedIdx) {
+    // Chrome na Androidu při zmenšení seznamu odpovědí automaticky mění scroll.
+    // Pozici si proto uložíme a po překreslení ji vrátíme zpět.
+    const scrollBeforeAnswer = window.scrollY;
     const session = gameState.quizSession;
     const question = session.questions[session.currentIndex];
     const optionButtons = elOptionsContainer.querySelectorAll(".option-btn");
@@ -653,13 +657,23 @@ document.addEventListener("DOMContentLoaded", () => {
     elBtnNextQuestion.disabled = false;
     elBtnNextQuestion.closest(".question-actions").hidden = false;
 
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => window.scrollTo({ top: scrollBeforeAnswer, behavior: "auto" }));
+    });
+
   }
 
   function setMascotCardExpanded(expanded) {
     if (!elMascotPanel || !elBtnToggleMascot) return;
+    clearTimeout(mascotCollapseTimer);
     elMascotPanel.classList.toggle("is-expanded", expanded);
     elBtnToggleMascot.setAttribute("aria-expanded", String(expanded));
     elBtnToggleMascot.textContent = expanded ? "Skrýt příšerku" : "Ukázat příšerku";
+  }
+
+  function celebrateMascotGrowth() {
+    setMascotCardExpanded(true);
+    mascotCollapseTimer = setTimeout(() => setMascotCardExpanded(false), 5000);
   }
 
   // ============================================================
@@ -680,7 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setTimeout(() => triggerConfettiCelebration(newStage.id), 500);
-      setMascotCardExpanded(true);
+      celebrateMascotGrowth();
 
       setTimeout(() => {
         if (newStage.id === "baby") {
@@ -792,6 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Pokračovat na další otázku ---
     elBtnNextQuestion.addEventListener("click", () => {
+      setMascotCardExpanded(false);
       const session = gameState.quizSession;
       session.currentIndex += 1;
 
