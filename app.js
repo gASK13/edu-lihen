@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const elBtnGoHome       = document.getElementById("btn-go-home");
   const elBtnBackToLobby  = document.getElementById("btn-back-to-lobby");
   const elBtnNextQuestion = document.getElementById("btn-next-question");
+  const elBtnToggleMascot = document.getElementById("btn-toggle-mascot");
+  const elMascotPanel     = document.querySelector(".mascot-panel");
 
   const elQuizTitle           = document.getElementById("quiz-title");
   const elMascotSpeech        = document.getElementById("mascot-speech");
@@ -643,10 +645,13 @@ document.addEventListener("DOMContentLoaded", () => {
     elBtnNextQuestion.disabled = false;
     elBtnNextQuestion.closest(".question-actions").hidden = false;
 
-    // Po sbalení nepodstatných možností ukážeme výsledek i akci bez ručního hledání.
-    requestAnimationFrame(() => {
-      elBtnNextQuestion.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
+  }
+
+  function setMascotCardExpanded(expanded) {
+    if (!elMascotPanel || !elBtnToggleMascot) return;
+    elMascotPanel.classList.toggle("is-expanded", expanded);
+    elBtnToggleMascot.setAttribute("aria-expanded", String(expanded));
+    elBtnToggleMascot.textContent = expanded ? "Skrýt příšerku" : "Ukázat příšerku";
   }
 
   // ============================================================
@@ -667,6 +672,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setTimeout(() => triggerConfettiCelebration(newStage.id), 500);
+      setMascotCardExpanded(true);
 
       setTimeout(() => {
         if (newStage.id === "baby") {
@@ -794,6 +800,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const points = gameState.scores[gameState.currentTopic.id] || 0;
       sayRandomSpeech(getMascotStage(points).id);
+    });
+
+    elBtnToggleMascot.addEventListener("click", () => {
+      setMascotCardExpanded(!elMascotPanel.classList.contains("is-expanded"));
     });
 
     // --- Reset ---

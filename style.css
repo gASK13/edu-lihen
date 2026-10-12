@@ -443,6 +443,16 @@ button {
   margin-bottom: 4px;
 }
 
+.btn-toggle-mascot {
+  display: none;
+  padding: 8px 12px;
+  color: var(--primary-color);
+  background: var(--accent-color);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
 .mascot-level-badge {
   display: inline-block;
   padding: 4px 12px;
@@ -1467,6 +1477,32 @@ button {
   .mascot-panel .mascot-details h3,
   .mascot-panel .mascot-level-badge {
     display: none;
+  }
+
+  .mascot-panel .btn-toggle-mascot {
+    display: inline-flex;
+    margin: 8px auto 0;
+  }
+
+  .mascot-panel.is-expanded {
+    position: relative;
+    top: auto;
+    padding: 18px;
+  }
+
+  .mascot-panel.is-expanded .bubble-container,
+  .mascot-panel.is-expanded .mascot-display-wrapper,
+  .mascot-panel.is-expanded .mascot-details h3,
+  .mascot-panel.is-expanded .mascot-level-badge {
+    display: flex;
+  }
+
+  .mascot-panel.is-expanded .mascot-details h3 {
+    display: block;
+  }
+
+  .mascot-panel.is-expanded .mascot-display-wrapper {
+    margin: 8px 0;
   }
 
   .mascot-panel .mascot-details {
