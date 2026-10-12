@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "biology",
+  "card": {
+    "order": 3,
+    "label": "Přírodovědná verze",
+    "title": "Přírodovědná líheň 🔬",
+    "description": "Odlaď si své znalosti o lidském těle. Krm tři příšerky správnými odpověmi z témat: trávicí soustava, dýchací soustava a rozmnožování/buňky.",
+    "tags": [
+      {
+        "label": "Bříškoun",
+        "color": "#9a3412",
+        "background": "#ffedd5"
+      },
+      {
+        "label": "Plícník",
+        "color": "#0c4a6e",
+        "background": "#e0f2fe"
+      },
+      {
+        "label": "Buněk",
+        "color": "#831843",
+        "background": "#fce7f3"
+      }
+    ],
+    "buttonLabel": "Spustit přírodovědu",
+    "colors": {
+      "start": "#0ea5e9",
+      "end": "#0369a1"
+    }
+  },
+  "gameTitle": "Přírodovědná Líheň",
+  "gameSubtitle": "Vychovej si své pomocníky z biologie správnými odpověďmi!",
+  "thresholds": {
+    "baby": 5,
+    "adult": 10
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ]
+}

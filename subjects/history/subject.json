@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "history",
+  "card": {
+    "order": 2,
+    "label": "Dějepisná verze",
+    "title": "Dějepisná líheň 🇨🇿",
+    "description": "Procvič si moderní historii České republiky pro 5. třídu ZŠ. Provázej příšerky pěti obdobími od národního obrození až po komunismus.",
+    "tags": [
+      {
+        "label": "Buditeláček",
+        "color": "#92400e",
+        "background": "#fef3c7"
+      },
+      {
+        "label": "Bojovníček",
+        "color": "#334155",
+        "background": "#f1f5f9"
+      },
+      {
+        "label": "Sokolík",
+        "color": "#065f46",
+        "background": "#d1fae5"
+      },
+      {
+        "label": "Odbojáček",
+        "color": "#991b1b",
+        "background": "#fee2e2"
+      },
+      {
+        "label": "Svobodníček",
+        "color": "#881337",
+        "background": "#ffe4e6"
+      }
+    ],
+    "buttonLabel": "Spustit dějepis",
+    "colors": {
+      "start": "#b45309",
+      "end": "#92400e"
+    }
+  },
+  "gameTitle": "Dějepisná Líheň",
+  "gameSubtitle": "Provázej příšerky moderní historií ČR od národního obrození po komunismus!",
+  "thresholds": {
+    "baby": 10,
+    "adult": 30
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ]
+}

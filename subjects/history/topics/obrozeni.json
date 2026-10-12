@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "history",
+  "id": "obrozeni",
+  "title": "Národní obrození",
+  "description": "Jak čeština chytila druhý dech a zrodil se moderní český národ!",
+  "mascotName": "Buditeláček",
+  "mascotType": "obrozeni",
+  "theme": {
+    "primaryColor": "#d97706",
+    "accentColor": "#fef3c7",
+    "gradientStart": "#f59e0b",
+    "gradientEnd": "#d97706"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Kdo mluvil v českých zemích česky na počátku národního obrození?",
+      "options": [
+        "Šlechta a bohatí měšťané",
+        "Pouze učitelé a vědci",
+        "Prostí lidé, především na venkově",
+        "Císař a jeho dvůr"
+      ],
+      "answer": 2,
+      "explanation": "Vzdělaní lidé, měšťané a šlechta mluvili převážně německy. Čeština se zachovala hlavně díky prostým lidem na venkově."
+    },
+    {
+      "type": "abcd",
+      "question": "Která událost z roku 1789 přinesla do Evropy myšlenky volnosti, rovnosti a bratrství?",
+      "options": [
+        "Průmyslová revoluce",
+        "Třicetiletá válka",
+        "Husitské války",
+        "Velká francouzská revoluce"
+      ],
+      "answer": 3,
+      "explanation": "Velká francouzská revoluce šířila přesvědčení, že lidé se rodí svobodní a rovní, což ovlivnilo celou Evropu."
+    },
+    {
+      "type": "abcd",
+      "question": "Co byla tzv. Česká expedice, kterou založil Václav Matěj Kramerius?",
+      "options": [
+        "Tajná vojenská organizace",
+        "Vydavatelství a knihkupectví českých novin a knih",
+        "Spolek cestovatelů do Ameriky",
+        "První česká univerzita"
+      ],
+      "answer": 1,
+      "explanation": "Česká expedice pomáhala šířit češtinu vydáváním prvních českých novin a knih pro širší veřejnost."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo se nejvíce zasloužil o zdokonalení češtiny a tvorbu nových českých odborných slov?",
+      "options": [
+        "Josef Jungmann",
+        "Karel IV.",
+        "Jan Hus",
+        "František Josef I."
+      ],
+      "answer": 0,
+      "explanation": "Josef Jungmann vytvořil rozsáhlý slovník, vymýšlel nová slova a ukázal, že čeština může sloužit i pro vědu a moderní literaturu."
+    },
+    {
+      "type": "abcd",
+      "question": "Ve které divadelní hře poprvé zazněla píseň Kde domov můj?",
+      "options": [
+        "Libuše",
+        "Prodaná nevěsta",
+        "Fidlovačka aneb Žádný hněv a žádná rvačka",
+        "Rusalka"
+      ],
+      "answer": 2,
+      "explanation": "Píseň zazněla ve hře Josefa Kajetána Tyla s názvem Fidlovačka a rychle zlidověla."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo složil hudbu k dnešní státní hymně Kde domov můj?",
+      "options": [
+        "Antonín Dvořák",
+        "Bedřich Smetana",
+        "František Škroup",
+        "Leoš Janáček"
+      ],
+      "answer": 2,
+      "explanation": "Autorem hudby k písni Kde domov můj je skladatel František Škroup."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenovala oblíbená loutková postava, kterou u nás proslavil Matěj Kopecký?",
+      "options": [
+        "Spejbl",
+        "Kašpárek",
+        "Hurvínek",
+        "Mánička"
+      ],
+      "answer": 1,
+      "explanation": "Matěj Kopecký jezdil s loutkovým divadlem po venkově a jeho nejznámější postavou byl Kašpárek."
+    },
+    {
+      "type": "abcd",
+      "question": "Který historik a politik napsal dílo Dějiny národu českého v Čechách a v Moravě?",
+      "options": [
+        "František Palacký",
+        "Alois Jirásek",
+        "Karel Havlíček Borovský",
+        "Karel Jaromír Erben"
+      ],
+      "answer": 0,
+      "explanation": "František Palacký tímto dílem podpořil národní hrdost a sebevědomí Čechů."
+    },
+    {
+      "type": "abcd",
+      "question": "Čemu se věnovali spisovatelé Božena Němcová a Karel Jaromír Erben?",
+      "options": [
+        "Sbírali lidové pohádky a pověsti",
+        "Psali učebnice matematiky",
+        "Vymýšleli nová technická slova",
+        "Překládali z němčiny do latiny"
+      ],
+      "answer": 0,
+      "explanation": "Cestovali mezi prostými lidmi a zapisovali ústně tradované pohádky a lidové příběhy."
+    },
+    {
+      "type": "boolean",
+      "question": "Po porážce revoluce v roce 1848 bylo konečně zrušeno poddanství a s ním spojená robota.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Ačkoliv revoluce nedosáhla všech cílů, z poddaných se stali svobodní občané a nemuseli již robotovat pro šlechtu."
+    },
+    {
+      "type": "boolean",
+      "question": "Během průmyslové revoluce měli dělníci výborné pracovní podmínky a vysoké platy.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Dělníci pracovali až 16 hodin denně, měli nízké mzdy, a dokonce i děti musely pracovat v továrnách."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký vynález z Británie nastartoval průmyslovou revoluci a nahradil lidskou práci v továrnách?",
+      "options": [
+        "Elektromotor",
+        "Parní stroj",
+        "Spalovací motor",
+        "Knihtisk"
+      ],
+      "answer": 1,
+      "explanation": "Parní stroj, který zdokonalil James Watt, umožnil masivní rozvoj továren a železnice."
+    },
+    {
+      "type": "abcd",
+      "question": "Který český vynález bratrance Veverkových usnadnil zemědělcům práci na poli?",
+      "options": [
+        "Traktor",
+        "Secí stroj",
+        "Ruchadlo",
+        "Kombajn"
+      ],
+      "answer": 2,
+      "explanation": "Ruchadlo byl speciální typ pluhu, který půdu nejen kypřil, ale rovnou ji i obracel."
+    },
+    {
+      "type": "abcd",
+      "question": "Pro jaký architektonický sloh z přelomu 18. a 19. století jsou typické antické sloupy a trojúhelníkové štíty?",
+      "options": [
+        "Gotika",
+        "Baroko",
+        "Secese",
+        "Klasicismus (empír)"
+      ],
+      "answer": 3,
+      "explanation": "Klasicismus se inspiroval starověkým Řeckem a Římem, empírový sloh prosazoval např. Napoleon."
+    },
+    {
+      "type": "abcd",
+      "question": "Který český novinář ostře kritizoval vládu po roce 1848 a byl za to poslán do vyhnanství v Brixenu?",
+      "options": [
+        "František Palacký",
+        "Karel Havlíček Borovský",
+        "Josef Kajetán Tyl",
+        "Karel Hynek Mácha"
+      ],
+      "answer": 1,
+      "explanation": "Karel Havlíček Borovský se nevzdal svých názorů ani v době přísné cenzury, proto ho úřady násilně přestěhovaly do Alp."
+    },
+    {
+      "type": "abcd",
+      "question": "V roce 1867 se habsburská říše rozdělila na dva rovnoprávné celky. Jaké?",
+      "options": [
+        "Česko a Slovensko",
+        "Rakousko a Uhersko",
+        "Německo a Itálie",
+        "Rakousko a Česko"
+      ],
+      "answer": 1,
+      "explanation": "Vzniklo Rakousko-Uhersko. Češi bohužel svou samosprávu nezískali, což vedlo k nespokojenosti."
+    },
+    {
+      "type": "abcd",
+      "question": "Z jakých prostředků byla převážně financována stavba Národního divadla v Praze?",
+      "options": [
+        "Z darů od císaře",
+        "Ze státních daní",
+        "Z celonárodních veřejných sbírek",
+        "Z prodeje vstupenek z jiných divadel"
+      ],
+      "answer": 2,
+      "explanation": "Lidé pořádali sbírky (Heslo: Národ sobě), na divadlo přispívali jak bohatí měšťané, tak chudí lidé."
+    },
+    {
+      "type": "abcd",
+      "question": "Jakou slavnostní operou od Bedřicha Smetany se poprvé otevíralo Národní divadlo?",
+      "options": [
+        "Prodaná nevěsta",
+        "Rusalka",
+        "Čert a Káča",
+        "Libuše"
+      ],
+      "answer": 3,
+      "explanation": "Opera Libuše byla napsána přímo pro slavnostní příležitosti národa a dodnes se hraje jen při výjimečných událostech."
+    },
+    {
+      "type": "boolean",
+      "question": "Krátce po otevření v roce 1881 Národní divadlo vyhořelo.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Divadlo bylo ale díky obrovské vlně vlastenectví velmi rychle znovu postaveno a otevřeno roku 1883."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenoval vlastenecký tělocvičný spolek založený roku 1862?",
+      "options": [
+        "Skaut",
+        "Sokol",
+        "Orel",
+        "Junák"
+      ],
+      "answer": 1,
+      "explanation": "Sokol pořádal nejen pravidelná cvičení, ale i slavnostní slety a výlety. Velmi tím posiloval národní sebevědomí."
+    },
+    {
+      "type": "abcd",
+      "question": "Co bylo hlavní atrakcí Zemské jubilejní výstavy v Praze (1891), kterou zkonstruoval F. Křižík?",
+      "options": [
+        "První parní vlak",
+        "Světelná fontána",
+        "Národní divadlo",
+        "První letadlo"
+      ],
+      "answer": 1,
+      "explanation": "Křižíkova světelná fontána stříkala vodu desítky metrů vysoko a byla barevně osvětlena elektrickými lampami."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenoval první u nás továrně vyrobený automobil z roku 1895?",
+      "options": [
+        "Škoda Fabia",
+        "Laurin a Klement",
+        "Tatra 603",
+        "Präsident"
+      ],
+      "answer": 3,
+      "explanation": "Automobil Präsident byl vyroben v Kopřivnici na Moravě."
+    },
+    {
+      "type": "boolean",
+      "question": "Koncem 19. století začaly být parní stroje v továrnách pomalu nahrazovány elektromotory.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Elektřina přinesla technicko-vědeckou revoluci. Byla levnější, účinnější a začala pohánět i tramvaje a osvětlovat města."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký architektonický sloh, inspirovaný přírodou a rostlinnými motivy, převládal na přelomu 19. a 20. století?",
+      "options": [
+        "Baroko",
+        "Gotika",
+        "Secese",
+        "Románský sloh"
+      ],
+      "answer": 2,
+      "explanation": "Secese je charakteristická obrovskou zdobností, rostlinnými ornamenty a použitím materiálů jako ocel a sklo."
+    },
+    {
+      "type": "abcd",
+      "question": "Který český malíř se na konci 19. století celosvětově proslavil v secesním stylu?",
+      "options": [
+        "Josef Mánes",
+        "Alfons Mucha",
+        "Josef Václav Myslbek",
+        "Mikoláš Aleš"
+      ],
+      "answer": 1,
+      "explanation": "Alfons Mucha proslul svými secesními plakáty a obrazy nejen u nás, ale i v Paříži a USA."
+    },
+    {
+      "type": "abcd",
+      "question": "Které významné dílo vytvořil malíř Josef Mánes pro Staroměstský orloj?",
+      "options": [
+        "Sochu svatého Václava",
+        "Zlatý kalich",
+        "Kalendárium",
+        "Obraz Libuše"
+      ],
+      "answer": 2,
+      "explanation": "Mánes namaloval slavnou desku s 12 medailony představujícími měsíce v roce. Dnes je na orloji kopie."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo je autorem slavné sochy svatého Václava na koni, která stojí na Václavském náměstí v Praze?",
+      "options": [
+        "František Palacký",
+        "Josef Václav Myslbek",
+        "Alfons Mucha",
+        "Josef Jungmann"
+      ],
+      "answer": 1,
+      "explanation": "J. V. Myslbek byl jedním z nejvýznamnějších sochařů konce 19. století."
+    },
+    {
+      "type": "abcd",
+      "question": "Který světově proslulý český skladatel napsal hudební díla jako Rusalka či Symfonie Z Nového světa?",
+      "options": [
+        "Antonín Dvořák",
+        "Bedřich Smetana",
+        "František Škroup",
+        "Leo Janáček"
+      ],
+      "answer": 0,
+      "explanation": "Antonín Dvořák je jedním z nejslavnějších českých skladatelů, jeho hudba je hrána po celém světě."
+    },
+    {
+      "type": "abcd",
+      "question": "Do kolika let věku se po zavedení povinné školní docházky v 19. století musely děti vzdělávat?",
+      "options": [
+        "Od 6 do 10 let",
+        "Od 6 do 14 let",
+        "Od 8 do 12 let",
+        "Od 7 do 15 let"
+      ],
+      "answer": 1,
+      "explanation": "Díky této reformě téměř všichni v českých zemích uměli číst a psát, a to včetně dívek."
+    },
+    {
+      "type": "abcd",
+      "question": "Co to byla tzv. Minerva, založená v Praze roku 1890?",
+      "options": [
+        "První továrna na šicí stroje",
+        "První dívčí gymnázium",
+        "Nová odrůda pšenice",
+        "Obchodní společnost"
+      ],
+      "answer": 1,
+      "explanation": "Šlo o první gymnázium pro dívky, díky kterému mohly ženy později začít studovat i na univerzitě."
+    },
+    {
+      "type": "boolean",
+      "question": "Před první světovou válkou vznikl organizovaný spolek pro mládež s názvem Skaut (Junák).",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Skauting se k nám dostal před první světovou válkou a učil děti lásce k přírodě, morálce a samostatnosti."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývaly domy se společným sociálním zařízením na chodbě, ve kterých bydlely dělnické rodiny?",
+      "options": [
+        "Zámky",
+        "Vily",
+        "Pavlačové domy",
+        "Paneláky"
+      ],
+      "answer": 2,
+      "explanation": "V bytech o jedné místnosti na tzv. pavlačích (venkovních chodbách) se tísnily početné dělnické rodiny s minimálním komfortem."
+    },
+    {
+      "type": "abcd",
+      "question": "Která plodina se začala více pěstovat v souvislosti s rozvojem cukrovarnictví?",
+      "options": [
+        "Pšenice",
+        "Kukuřice",
+        "Řepa cukrovka",
+        "Brambory"
+      ],
+      "answer": 2,
+      "explanation": "Potravinářský průmysl v českých zemích obrovsky rostl a české cukrovary patřily k nejlepším na světě."
+    },
+    {
+      "type": "abcd",
+      "question": "Co znamenal termín 'cenzura', který zavedl režim před rokem 1848 (a znovu po něm)?",
+      "options": [
+        "Povinnost pěstovat brambory",
+        "Úřední kontrola a zákaz vydávání nepohodlných novin a knih",
+        "Povolení k výstavbě železnice",
+        "Odměna pro nejlepší učitele"
+      ],
+      "answer": 1,
+      "explanation": "Vláda nechtěla, aby se šířily myšlenky o rovnoprávnosti, proto policie kontrolovala tiskoviny."
+    },
+    {
+      "type": "boolean",
+      "question": "Práce dětí mladších 9 let (později 12 let) byla v továrnách od roku 1842 zakázána.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Předtím musely v továrnách pracovat i malé děti, a to za pouhou poloviční mzdu. Až tento zákon zavedl aspoň základní ochranu."
+    }
+  ]
+}

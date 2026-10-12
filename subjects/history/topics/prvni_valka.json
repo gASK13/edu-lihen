@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "history",
+  "id": "prvni_valka",
+  "title": "1. světová válka",
+  "description": "Období velkého konfliktu a zrodu československých legií.",
+  "mascotName": "Bojovníček",
+  "mascotType": "prvni_valka",
+  "theme": {
+    "primaryColor": "#64748b",
+    "accentColor": "#f1f5f9",
+    "gradientStart": "#94a3b8",
+    "gradientEnd": "#475569"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Proč před válkou narůstalo napětí mezi nejvýznamnějšími evropskými státy?",
+      "options": [
+        "Kvůli náboženským rozdílům",
+        "Z důvodu boje o vlastnictví kolonií a nerovnoměrného vývoje",
+        "Kvůli vynálezu nových zbraní",
+        "Z důvodu snahy sjednotit Evropu"
+      ],
+      "answer": 1,
+      "explanation": "Příčinou byl nerovnoměrný hospodářský vývoj a snaha o získání výhod plynoucích z vlastnictví kolonií v Africe a Asii."
+    },
+    {
+      "type": "abcd",
+      "question": "Který panovnický rod vládl v době vypuknutí války v naší zemi?",
+      "options": [
+        "Přemyslovci",
+        "Lucemburkové",
+        "Habsburkové",
+        "Jagellonci"
+      ],
+      "answer": 2,
+      "explanation": "Naše území bylo součástí habsburské monarchie (Rakousko-Uherska)."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdy přesně vypukla první světová válka?",
+      "options": [
+        "Na jaře 1918",
+        "V zimě 1916",
+        "Na podzim 1915",
+        "V létě 1914"
+      ],
+      "answer": 3,
+      "explanation": "Válka vypukla v létě roku 1914."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se stalo záminkou k vyhlášení války?",
+      "options": [
+        "Atentát na následníka trůnu v Sarajevu",
+        "Potopení obchodní lodi",
+        "Napadení Francie Německem",
+        "Nedostatek potravin v Evropě"
+      ],
+      "answer": 0,
+      "explanation": "Záminkou byl úspěšný atentát na synovce císaře, Františka Ferdinanda d'Este, během jeho pobytu v Sarajevu."
+    },
+    {
+      "type": "boolean",
+      "question": "Během první světové války se bojovalo výhradně na území Evropy.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Válka zasáhla i Afriku a Asii, zapojily se do ní například i Japonsko a USA. Bojovalo se na souši, na moři i ve vzduchu."
+    },
+    {
+      "type": "abcd",
+      "question": "Které nové zbraně se v této válce poprvé ve velkém používaly?",
+      "options": [
+        "Oštěpy a luky",
+        "Meče a štíty",
+        "Tanky, kulomety a jedovaté plyny",
+        "Laserové pušky"
+      ],
+      "answer": 2,
+      "explanation": "Používaly se nové zbraně – kulomety, dalekonosná děla, tanky, plamenomety a jedovaté plyny."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se využívalo k ničení nepřátelských lodí na moři?",
+      "options": [
+        "Vzducholodě",
+        "Ponorky",
+        "Tanky",
+        "Letadla"
+      ],
+      "answer": 1,
+      "explanation": "K ničení lodí se využívaly ponorky."
+    },
+    {
+      "type": "abcd",
+      "question": "Které státy stály na straně takzvané Dohody?",
+      "options": [
+        "Rakousko-Uhersko a Německo",
+        "Velká Británie, Francie a Rusko",
+        "Itálie a Turecko",
+        "Španělsko a Švýcarsko"
+      ],
+      "answer": 1,
+      "explanation": "Státy tzv. Dohody byly Velká Británie, Francie a Rusko."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo byl hlavním spojencem Rakouska-Uherska v této válce?",
+      "options": [
+        "Rusko",
+        "Francie",
+        "Německo",
+        "USA"
+      ],
+      "answer": 2,
+      "explanation": "Proti sobě stály na jedné straně Rakousko-Uhersko a Německo."
+    },
+    {
+      "type": "boolean",
+      "question": "V roce 1917 byla v Rusku svržena carská vláda a byl zaveden komunistický režim.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Mapa i text učebnice uvádí, že v roce 1917 zde proběhla revoluce a carská vláda byla svržena."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo musel během války zastoupit muže v továrnách a na polích?",
+      "options": [
+        "Zahraniční dělníci",
+        "Ženy a větší děti",
+        "Váleční zajatci",
+        "Starostové měst"
+      ],
+      "answer": 1,
+      "explanation": "Většina mužů narukovala do armády. Ženy a větší děti je musely zastoupit v továrnách i na polích."
+    },
+    {
+      "type": "abcd",
+      "question": "Co byl přídělový systém zavedený během války?",
+      "options": [
+        "Systém přidělování zbraní vojákům",
+        "Určoval, kolik si lidé mohou koupit potravin či uhlí na lístky",
+        "Způsob rozdělování půdy rolníkům",
+        "Náborový systém do armády"
+      ],
+      "answer": 1,
+      "explanation": "Byl zaveden přídělový systém (lístky), který určoval, kolik si lidé smějí koupit mouky, chleba, cukru atd."
+    },
+    {
+      "type": "boolean",
+      "question": "Nedostatek a hlad za války způsobily, že se mezi vyčerpanými lidmi snadno šířily smrtelné epidemie.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Mezi hladovými a vyčerpanými lidmi se snadno šířily epidemie smrtelných nemocí."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývaly dobrovolnické vojenské jednotky Čechů a Slováků v zahraničí?",
+      "options": [
+        "Družiny",
+        "Legie",
+        "Prapory",
+        "Gardy"
+      ],
+      "answer": 1,
+      "explanation": "Češi společně se Slováky vytvářeli dobrovolnické vojenské jednotky, kterým se začalo říkat legie."
+    },
+    {
+      "type": "abcd",
+      "question": "Proti komu československé legie bojovaly?",
+      "options": [
+        "Proti Francii a Velké Británii",
+        "Proti Rusku",
+        "Proti Rakousku-Uhersku a Německu",
+        "Proti USA"
+      ],
+      "answer": 2,
+      "explanation": "V legiích bojovali Češi a Slováci proti Rakousku-Uhersku a Německu."
+    },
+    {
+      "type": "abcd",
+      "question": "Ve kterých státech československé legie především vznikaly?",
+      "options": [
+        "V Německu a Rakousku",
+        "V Rusku, ve Francii a v Itálii",
+        "Ve Španělsku a Portugalsku",
+        "V Japonsku a Číně"
+      ],
+      "answer": 1,
+      "explanation": "Legie se utvářely ze zajatců a přeběhlíků v Rusku, ve Francii a v Itálii."
+    },
+    {
+      "type": "boolean",
+      "question": "Legionáři sami sebe označovali jako „bratři“ nebo „dobrovolníci“.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Vojáci, které dnes označujeme jako legionáře, si sami říkali „dobrovolníci“ a „bratři“."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo byl nejvýznamnějším politikem, který odjel do zahraničí připravovat samostatnost československého státu?",
+      "options": [
+        "Karel I.",
+        "František Ferdinand d'Este",
+        "Tomáš Garrigue Masaryk",
+        "František Josef I."
+      ],
+      "answer": 2,
+      "explanation": "Tomáš Garrigue Masaryk se vydal do zahraničí a pustil se do akce na zřízení samostatného státu."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo nejvíce pomáhal T. G. Masarykovi u představitelů cizích států s myšlenkou samostatnosti?",
+      "options": [
+        "Rakouští důstojníci",
+        "Čeští a slovenští krajané v USA, Rusku a jinde",
+        "Němečtí obchodníci",
+        "Švýcarští bankéři"
+      ],
+      "answer": 1,
+      "explanation": "Získával pro ni podporu jednak u představitelů českých a slovenských krajanů v USA, Rusku, Anglii a Francii."
+    },
+    {
+      "type": "abcd",
+      "question": "Jací dva další významní muži byli nejbližšími spolupracovníky T. G. Masaryka?",
+      "options": [
+        "Karel I. a František Josef I.",
+        "Edvard Beneš a Milan Rastislav Štefánik",
+        "František Kupka a Jan Hus",
+        "Jan Amos Komenský a Karel IV."
+      ],
+      "answer": 1,
+      "explanation": "Důležitými Masarykovými spolupracovníky byli Edvard Beneš a Slovák Milan Rastislav Štefánik."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaké měl Milan Rastislav Štefánik původní povolání a pozici za války?",
+      "options": [
+        "Zemědělec a pěšák",
+        "Astronom a důstojník letectva Francie",
+        "Právník a diplomat",
+        "Továrník a dodavatel zbraní"
+      ],
+      "answer": 1,
+      "explanation": "M. R. Štefánik byl astronom a meteorolog, v době války důstojník letectva Francie."
+    },
+    {
+      "type": "abcd",
+      "question": "Kde se odehrála jedna z nejvýznamnějších bitev našich legionářů v Rusku?",
+      "options": [
+        "U Verdunu",
+        "U Zborova",
+        "U Lipska",
+        "U Waterloo"
+      ],
+      "answer": 1,
+      "explanation": "Nejvýznamnější bitvou, v níž čs. legionáři ukázali své nasazení, byla bitva u Zborova (na území dnešní Ukrajiny)."
+    },
+    {
+      "type": "boolean",
+      "question": "Legionářů bylo velmi málo, v celém Rusku jich bojovalo jen kolem jednoho tisíce.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. V roce 1918 dosáhly legie v Rusku počtu 60–70 tisíc mužů."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo se ujal vlády v Rakousku-Uhersku po smrti císaře Františka Josefa I. v roce 1916?",
+      "options": [
+        "Karel I.",
+        "Ferdinand I.",
+        "Masaryk",
+        "Štefánik"
+      ],
+      "answer": 0,
+      "explanation": "Během války (1916) zemřel František Josef I. a vlády se ujal jeho prasynovec Karel I."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdy byl přesně vyhlášen samostatný československý stát?",
+      "options": [
+        "1. ledna 1914",
+        "28. října 1918",
+        "11. listopadu 1918",
+        "8. května 1945"
+      ],
+      "answer": 1,
+      "explanation": "Dne 28. října vešlo ve známost, že Rakousko-Uhersko přijalo podmínky Dohody a na Václavském náměstí byla vyhlášena samostatnost."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdy oficiálně skončila první světová válka porážkou Německa a Rakouska-Uherska?",
+      "options": [
+        "V říjnu 1918",
+        "V listopadu 1918",
+        "V prosinci 1918",
+        "V lednu 1919"
+      ],
+      "answer": 1,
+      "explanation": "Válka skončila až v listopadu roku 1918 porážkou Rakouska-Uherska a Německa."
+    },
+    {
+      "type": "boolean",
+      "question": "Po skončení první světové války zůstalo Rakousko-Uhersko zachováno v původní podobě.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Rakousko-Uhersko se rozpadlo a vytvořily se z něj další samostatné státy."
+    },
+    {
+      "type": "abcd",
+      "question": "Přibližně kolik vojáků zahynulo v důsledku první světové války?",
+      "options": [
+        "Asi 1 milion",
+        "Asi 5 milionů",
+        "Asi 10 milionů",
+        "Asi 50 milionů"
+      ],
+      "answer": 2,
+      "explanation": "V textu se uvádí: „Zahynulo v ní asi 10 milionů lidí.“"
+    },
+    {
+      "type": "abcd",
+      "question": "Jaká nemoc postihla Evropu i české země na podzim 1918 a zabila další desítky milionů lidí?",
+      "options": [
+        "Černý kašel",
+        "Španělská chřipka",
+        "Cholera",
+        "Mor"
+      ],
+      "answer": 1,
+      "explanation": "Na podzim roku 1918 Evropu postihla pandemie tzv. španělské chřipky, která zasáhla i české země."
+    },
+    {
+      "type": "boolean",
+      "question": "Pojem „první světová válka“ se používal již od jejího začátku v roce 1914.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Zpočátku se jí říkalo „velká válka“ nebo jen „světová válka“. Jako první se začala označovat až poté, co vypukla druhá."
+    }
+  ]
+}

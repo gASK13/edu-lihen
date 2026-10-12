@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "biology",
+  "id": "digestive",
+  "title": "Trávicí soustava",
+  "description": "Zjisti, jak tělo zpracovává jídlo a získává z něj sílu!",
+  "mascotName": "Bříškoun",
+  "mascotType": "digestive",
+  "theme": {
+    "primaryColor": "#f97316",
+    "accentColor": "#ffedd5",
+    "gradientStart": "#ff8008",
+    "gradientEnd": "#ffc837"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Kde začíná trávicí soustava člověka?",
+      "options": [
+        "V žaludku",
+        "V ústní dutině",
+        "V tenkém střevě",
+        "V jícnu"
+      ],
+      "answer": 1,
+      "explanation": "Trávení začíná v ústní dutině, kde zuby potravu rozmělní a sliny ji začnou chemicky rozkládat."
+    },
+    {
+      "type": "abcd",
+      "question": "Který orgán je nejdelší částí trávicí soustavy a dochází v něm k hlavnímu vstřebávání živin?",
+      "options": [
+        "Žaludek",
+        "Tlusté střevo",
+        "Tenké střevo",
+        "Jícen"
+      ],
+      "answer": 2,
+      "explanation": "Tenké střevo dospělého člověka je dlouhé asi 5 až 6 metrů a vstřebává se v něm většina živin z potravy do krve."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaká je hlavní funkce tlustého střeva?",
+      "options": [
+        "Vstřebávání vody a zahušťování zbytků potravy",
+        "Mletí potravy pomocí kyseliny chlorovodíkové",
+        "Výroba žluči pro trávení tuků",
+        "Vdechování kyslíku"
+      ],
+      "answer": 0,
+      "explanation": "V tlustém střevě se ze zbytků potravy vstřebává voda a minerální látky, čímž se nestrávený obsah zahušťuje."
+    },
+    {
+      "type": "abcd",
+      "question": "Který velký orgán produkuje žluč, jež pomáhá tělu trávit tuky?",
+      "options": [
+        "Slinivka břišní",
+        "Ledviny",
+        "Játra",
+        "Srdce"
+      ],
+      "answer": 2,
+      "explanation": "Játra jsou největším vnitřním orgánem těla. Produkují žluč, která se ukládá ve žlučníku a pomáhá štěpit tuky."
+    },
+    {
+      "type": "boolean",
+      "question": "Žaludek produkuje silnou kyselinu chlorovodíkovou, která pomáhel rozkládat potravu a ničí choroboplodné zárodky.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Žaludeční šťávy obsahují kyselinu chlorovodíkovou a enzymy, které štěpí bílkoviny a pomáhají chránit tělo před infekcí z potravy."
+    },
+    {
+      "type": "abcd",
+      "question": "Která trubice spojuje ústní dutinu se žaludkem?",
+      "options": [
+        "Průdušnice",
+        "Jícen",
+        "Tenké střevo",
+        "Močovod"
+      ],
+      "answer": 1,
+      "explanation": "Jícen je svalová trubice, která posouvá sousta potravy z úst do žaludku pomocí vlnivých pohybů (peristaltiky)."
+    },
+    {
+      "type": "boolean",
+      "question": "Zuby slouží pouze k mluvení a nemají s trávicí soustavou nic společného.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež! Zuby jsou počátečním mechanickým článkem trávicí soustavy. Bez nich bychom nemohli potravu rozkousat na menší kousky."
+    }
+  ]
+}

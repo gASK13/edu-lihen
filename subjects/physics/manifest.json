@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "physics",
+  "gameTitle": "Fyzikální Líheň",
+  "gameSubtitle": "Objevuj síly, látky a tajemství částic správnými odpověďmi!",
+  "thresholds": {
+    "baby": 5,
+    "adult": 10
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ],
+  "topics": [
+    {
+      "id": "physics_basics",
+      "title": "Základy fyziky",
+      "description": "Poznej tělesa, látky, síly, gravitaci a pohyb částic.",
+      "mascotName": "Silák",
+      "mascotType": "physics",
+      "theme": {
+        "primaryColor": "#7c3aed",
+        "accentColor": "#ede9fe",
+        "gradientStart": "#8b5cf6",
+        "gradientEnd": "#4338ca"
+      },
+      "file": "subjects/physics/topics/physics_basics.json"
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "history",
+  "id": "komunismus",
+  "title": "Komunismus",
+  "description": "Život za železnou oponou, boj za svobodu a pád režimu roku 1989.",
+  "mascotName": "Svobodníček",
+  "mascotType": "komunismus",
+  "theme": {
+    "primaryColor": "#be123c",
+    "accentColor": "#ffe4e6",
+    "gradientStart": "#e11d48",
+    "gradientEnd": "#881337"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Které území bylo po skončení druhé světové války postoupeno Sovětskému svazu?",
+      "options": [
+        "Slovensko",
+        "Podkarpatská Rus",
+        "Sudety",
+        "Slezsko"
+      ],
+      "answer": 1,
+      "explanation": "Podkarpatská Rus, která před válkou patřila Československu, se po ní stala součástí Sovětského svazu."
+    },
+    {
+      "type": "abcd",
+      "question": "Kolik lidí německé národnosti bylo po válce vysídleno z Československa?",
+      "options": [
+        "Cca 300 tisíc",
+        "Cca 1 milion",
+        "Cca 3 miliony",
+        "Cca 5 milionů"
+      ],
+      "answer": 2,
+      "explanation": "Československá vláda rozhodla o vysídlení téměř všech sudetských Němců, což byly asi 3 miliony lidí."
+    },
+    {
+      "type": "abcd",
+      "question": "Která strana vyhrála parlamentní volby v Československu v roce 1946?",
+      "options": [
+        "Demokratická strana",
+        "Komunistická strana Československa (KSČ)",
+        "Sociální demokracie",
+        "Strana zelených"
+      ],
+      "answer": 1,
+      "explanation": "Ve volbách v roce 1946 získala nejvíce hlasů KSČ v čele s Klementem Gottwaldem."
+    },
+    {
+      "type": "abcd",
+      "question": "Který nekomunistický ministr zahraničí a syn prvního prezidenta zemřel za nevyjasněných okolností brzy po únorovém puči?",
+      "options": [
+        "Tomáš Garrigue Masaryk",
+        "Edvard Beneš",
+        "Jan Masaryk",
+        "Milan Rastislav Štefánik"
+      ],
+      "answer": 2,
+      "explanation": "Jan Masaryk byl nalezen mrtev pod okny svého bytu. Podle všeho šlo o vraždu, ačkoli komunisté tvrdili, že spáchal sebevraždu."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazýval americký program obnovy hospodářství, který Československo na nátlak Stalina odmítlo?",
+      "options": [
+        "Gottwaldův plán",
+        "Rooseveltův plán",
+        "Marshallův plán",
+        "Trumanova doktrína"
+      ],
+      "answer": 2,
+      "explanation": "Marshallův plán měl pomoci obnovit válkou zničenou Evropu, ale Stalin zakázal Československu pomoc přijmout."
+    },
+    {
+      "type": "boolean",
+      "question": "V únoru 1948 podali někteří demokratičtí ministři demisi, aby usnadnili komunistům převzetí moci.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Demisi podali na protest proti chování komunistů a v naději, že je prezident nepříjme a vyhlásí předčasné volby."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenovaly ilegální ozbrojené oddíly KSČ, které podporovaly komunistický puč v únoru 1948?",
+      "options": [
+        "Sbor národní bezpečnosti",
+        "Lidové milice",
+        "Pionýr",
+        "Rudá armáda"
+      ],
+      "answer": 1,
+      "explanation": "Lidové milice byly soukromou armádou komunistické strany, kterou použili k zastrašení politických oponentů."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo se stal prezidentem republiky bezprostředně po abdikaci Edvarda Beneše v roce 1948?",
+      "options": [
+        "Antonín Zápotocký",
+        "Alexander Dubček",
+        "Klement Gottwald",
+        "Ludvík Svoboda"
+      ],
+      "answer": 2,
+      "explanation": "Po komunistickém puči a odstoupení nemocného Edvarda Beneše se stal prezidentem Klement Gottwald."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se obrazně říkalo přísně hlídané hranici, která oddělovala demokratické státy Západu od komunistických států Východu?",
+      "options": [
+        "Železná opona",
+        "Berlínská zeď",
+        "Ocelová hranice",
+        "Rudá linie"
+      ],
+      "answer": 0,
+      "explanation": "Železná opona oddělovala svobodný svět od komunistického a byla hlídána ostnatým drátem a strážními věžemi."
+    },
+    {
+      "type": "abcd",
+      "question": "Co bylo symbolem komunismu, který měl reprezentovat spojení dělníků a rolníků?",
+      "options": [
+        "Kladivo a kovadlina",
+        "Srp a kladivo",
+        "Meč a pluh",
+        "Hvězda a měsíc"
+      ],
+      "answer": 1,
+      "explanation": "Společně s rudou pěticípou hvězdou byl srp a kladivo hlavním znakem komunistické ideologie."
+    },
+    {
+      "type": "abcd",
+      "question": "Která významná právnička a politička byla nespravedlivě odsouzena k smrti ve vykonstruovaném politickém procesu?",
+      "options": [
+        "Milada Horáková",
+        "Božena Němcová",
+        "Ema Destinnová",
+        "Alice Masaryková"
+      ],
+      "answer": 0,
+      "explanation": "Milada Horáková byla obětí politických procesů 50. let. Za její milost se přimlouval i Albert Einstein."
+    },
+    {
+      "type": "abcd",
+      "question": "Kde byli často nuceni pracovat političtí vězni za velmi tvrdých podmínek?",
+      "options": [
+        "V textilních továrnách",
+        "Při stavbě dálnic",
+        "V uranových dolech",
+        "V JZD"
+      ],
+      "answer": 2,
+      "explanation": "Uran, těžený politickými vězni za nebezpečných podmínek, se odvážel do Sovětského svazu k výrobě jaderných zbraní."
+    },
+    {
+      "type": "boolean",
+      "question": "Během znárodňování si mohli zemědělci ponechat svá pole, pokud odváděli státu daně.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Soukromí zemědělci byli donuceni odevzdat půdu, dobytek i stroje a vstoupit do Jednotných zemědělských družstev (JZD)."
+    },
+    {
+      "type": "abcd",
+      "question": "Co to byly tzv. „pětiletky“?",
+      "options": [
+        "Povinná vojenská služba na pět let",
+        "Tresty pro politické vězně",
+        "Centrální ekonomické plány na pět let dopředu",
+        "Pravidelné sjezdy KSČ"
+      ],
+      "answer": 2,
+      "explanation": "Stát řídil hospodářství pomocí pětiletek, které přesně určovaly, co a kolik se bude vyrábět."
+    },
+    {
+      "type": "abcd",
+      "question": "Na jaký průmysl se komunistické hospodářství zaměřovalo nejvíce na úkor spotřebního zboží?",
+      "options": [
+        "Textilní a potravinářský",
+        "Zbrojní a těžký",
+        "Služby a turismus",
+        "Informační technologie"
+      ],
+      "answer": 1,
+      "explanation": "Důraz byl kladen na těžbu, hutnictví, strojírenství a zbrojní průmysl podle potřeb Sovětského svazu."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se stalo při tzv. měnové reformě v roce 1953?",
+      "options": [
+        "Zavedlo se euro",
+        "Lidé přišli o většinu svých úspor",
+        "Všichni dostali státní příspěvek",
+        "Zrušily se papírové bankovky"
+      ],
+      "answer": 1,
+      "explanation": "Peníze byly měněny v nevýhodném kurzu (např. 50:1), čímž stát de facto zabavil lidem jejich úspory."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký nový oficiální název dostal stát po přijetí nové ústavy v roce 1960?",
+      "options": [
+        "Československá republika",
+        "Československá demokratická republika",
+        "Československá socialistická republika (ČSSR)",
+        "Česko-Slovenská republika"
+      ],
+      "answer": 2,
+      "explanation": "Nová ústava v roce 1960 zavedla název ČSSR a výslovně v ní byla zakotvena vedoucí úloha KSČ ve společnosti."
+    },
+    {
+      "type": "boolean",
+      "question": "Účast v parlamentních volbách za komunistického režimu byla dobrovolná a lidé mohli vybírat z mnoha různých stran.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Účast byla povinná a voliči vhazovali do urny pouze jeden lístek s jednotnou kandidátkou schválenou KSČ."
+    },
+    {
+      "type": "abcd",
+      "question": "Co znamenal pojem „podpultové zboží“?",
+      "options": [
+        "Zboží, které se prodávalo pouze na trzích",
+        "Zboží, které se válelo po zemi",
+        "Nedostatkové zboží, které prodavači schovávali pod pultem pro známé",
+        "Zboží podřadné kvality"
+      ],
+      "answer": 2,
+      "explanation": "Kvůli nedostatku základních věcí (např. ovoce nebo lepší maso) se oblíbené zboží dalo sehnat jen přes známosti."
+    },
+    {
+      "type": "abcd",
+      "question": "Který cizí jazyk se musely děti ve školách za komunismu povinně učit?",
+      "options": [
+        "Angličtinu",
+        "Němčinu",
+        "Ruštinu",
+        "Francouzštinu"
+      ],
+      "answer": 2,
+      "explanation": "Ruština byla povinná jako projev podřízenosti a přátelství k Sovětskému svazu."
+    },
+    {
+      "type": "abcd",
+      "question": "Které tradiční a populární organizace byly komunisty zakázány?",
+      "options": [
+        "Pionýr a ČSM",
+        "Junák (Skaut) a Sokol",
+        "KSČ a JZD",
+        "StB a SNB"
+      ],
+      "answer": 1,
+      "explanation": "Skaut a Sokol byly zakázány, protože reprezentovaly demokratické hodnoty. Místo nich musely děti do Pionýra."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenovala organizace, která nahradila Skauta a vychovávala děti v duchu komunismu?",
+      "options": [
+        "Orel",
+        "Sojka",
+        "Jiskra",
+        "Pionýr"
+      ],
+      "answer": 3,
+      "explanation": "Pionýr fungoval podle sovětského vzoru a děti zde byly vedeny k budování socialismu."
+    },
+    {
+      "type": "boolean",
+      "question": "Cenzura znamená, že lidé mají naprostou svobodu slova a tisk může psát o čemkoliv.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Cenzura je naopak státní kontrola informací. Noviny, rádio i televize musely hlásat jen to, co strana dovolila."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývala masová tělovýchovná vystoupení, která nahradila sokolské slety?",
+      "options": [
+        "Olympiády",
+        "Spartakiády",
+        "Sokolovny",
+        "Družby"
+      ],
+      "answer": 1,
+      "explanation": "Spartakiády se konaly každých pět let a sloužily komunistům k obrovské politické propagandě."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký postoj měl komunistický režim k náboženství a církvi?",
+      "options": [
+        "Plně je podporoval",
+        "Byl k nim neutrální",
+        "Potlačoval je a věřící i kněze pronásledoval",
+        "Udělal z křesťanství státní náboženství"
+      ],
+      "answer": 2,
+      "explanation": "Víra v Boha byla označována za přežitek. Kněží a řeholníci byli vězněni a šikanováni."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaká tajná policie sledovala lidi, sbírala na ně informace a zatýkala kritiky režimu?",
+      "options": [
+        "KGB",
+        "Gestapo",
+        "StB (Státní bezpečnost)",
+        "CIA"
+      ],
+      "answer": 2,
+      "explanation": "StB udržovala ve společnosti atmosféru strachu. Lidé se báli mluvit na veřejnosti, protože se navzájem udávali."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo stál v čele KSČ v roce 1968 a byl hlavní tváří tzv. „Pražského jara“?",
+      "options": [
+        "Gustáv Husák",
+        "Klement Gottwald",
+        "Alexander Dubček",
+        "Antonín Novotný"
+      ],
+      "answer": 2,
+      "explanation": "Alexander Dubček byl symbolem snahy o uvolnění komunistického režimu a zrušení cenzury."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký slavný dokument sepsal spisovatel Ludvík Vaculík na popud vědců během Pražského jara?",
+      "options": [
+        "Charta 77",
+        "Dva tisíce slov",
+        "Několik vět",
+        "Deklarace nezávislosti"
+      ],
+      "answer": 1,
+      "explanation": "Manifest Dva tisíce slov podepsalo mnoho lidí. Odsuzoval předchozí chyby komunistů a vyzýval k dalším změnám."
+    },
+    {
+      "type": "abcd",
+      "question": "K jaké události došlo v noci na 21. srpna 1968?",
+      "options": [
+        "K sametové revoluci",
+        "K vojenské okupaci Československa",
+        "K úmrtí Klementa Gottwalda",
+        "K vyhlášení nezávislosti"
+      ],
+      "answer": 1,
+      "explanation": "Vedení Sovětského svazu nesouhlasilo s demokratickými změnami a nařídilo armádám Varšavské smlouvy násilně obsadit naši zemi."
+    },
+    {
+      "type": "abcd",
+      "question": "Který vysokoškolský student se v lednu 1969 upálil na protest proti potlačování svobod a rezignaci společnosti?",
+      "options": [
+        "Jan Zajíc",
+        "Jan Patočka",
+        "Jan Masaryk",
+        "Jan Palach"
+      ],
+      "answer": 3,
+      "explanation": "Jan Palach obětoval svůj život jako „živá pochodeň“, aby probudil občany z letargie po srpnové okupaci."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývá období po roce 1969, kdy se k moci dostal Gustáv Husák a obnovil tvrdý režim?",
+      "options": [
+        "Normalizace",
+        "Pražské jaro",
+        "První republika",
+        "Protektorát"
+      ],
+      "answer": 0,
+      "explanation": "Proces „normalizace“ znamenal návrat k totalitě, obnovení cenzury, čistky ve společnosti a uzavření hranic."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak byli označováni lidé, kteří veřejně odmítali přistoupit na komunistickou přetvářku a nesouhlasili s režimem?",
+      "options": [
+        "Kolaboranti",
+        "Pionýři",
+        "Disidenti",
+        "Milicionáři"
+      ],
+      "answer": 2,
+      "explanation": "Disidenti (z angl. dissent = nesouhlas) pořádali tajné přednášky, vydávali knihy a byli režimem tvrdě pronásledováni."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenoval dokument z roku 1977, který upozorňoval na nedodržování lidských práv v Československu?",
+      "options": [
+        "Dva tisíce slov",
+        "Charta 77",
+        "Tříkrálová deklarace",
+        "Moskevský protokol"
+      ],
+      "answer": 1,
+      "explanation": "K autorům Charty 77 patřili Václav Havel a Jan Patočka. Signatáři tohoto dokumentu byli následně vyhazováni z práce i vězněni."
+    },
+    {
+      "type": "boolean",
+      "question": "Děti disidentů a lidí vyloučených z práce z politických důvodů mohly v době normalizace bez problémů studovat na vysokých školách.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Režim trestal i rodinné příslušníky. Děti nepřátel státu měly často zakázáno studovat a musely vykonávat nekvalifikovanou práci."
+    },
+    {
+      "type": "boolean",
+      "question": "Během normalizace (v 70. a 80. letech) mohla v Československu působit dočasně umístěná sovětská armáda.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Od vpádu vojsk v srpnu 1968 tu zůstaly sovětské jednotky „dočasně“ rozmístěné až do roku 1991, aby chránily socialistické zřízení."
+    }
+  ]
+}

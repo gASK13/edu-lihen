@@ -47,51 +47,8 @@
         <p>Vyber si verzi hry, procvičuj své znalosti a pomoz roztomilým příšerkám vyrůst z vajíčka až v dospělce s parádními doplňky.</p>
       </div>
 
-      <div class="landing-cards">
-        <!-- Karta Fyzika -->
-        <div class="landing-card physics-card" id="card-select-physics">
-          <div class="landing-card-header">Fyzikální verze</div>
-          <div class="landing-card-body">
-            <h3>Fyzikální líheň ⚛️</h3>
-            <p>Objevuj tělesa a látky, síly, gravitaci i tajemství částic. Pomoz své příšerce vyrůst správnými odpověďmi.</p>
-            <div class="mascot-row">
-              <span class="mascot-tag tag-physics">Silák</span>
-            </div>
-            <button class="btn-launch-version">Spustit fyziku</button>
-          </div>
-        </div>
-
-        <!-- Karta Dějepis -->
-        <div class="landing-card history-card" id="card-select-history">
-          <div class="landing-card-header">Dějepisná verze</div>
-          <div class="landing-card-body">
-            <h3>Dějepisná Líheň 🇨🇿</h3>
-            <p>Procvič si moderní historii České republiky pro 5. třídu ZŠ. Provázej příšerky pěti obdobími: od národního obrození, přes světové války a první republiku, až po komunismus.</p>
-            <div class="mascot-row">
-              <span class="mascot-tag tag-obrozeni">Buditeláček</span>
-              <span class="mascot-tag tag-valka">Bojovníček</span>
-              <span class="mascot-tag tag-republika">Sokolík</span>
-              <span class="mascot-tag tag-protektorat">Odbojáček</span>
-              <span class="mascot-tag tag-komunismus">Svobodníček</span>
-            </div>
-            <button class="btn-launch-version">Spustit Dějepis</button>
-          </div>
-        </div>
-
-        <!-- Karta Biologie -->
-        <div class="landing-card biology-card" id="card-select-biology">
-          <div class="landing-card-header">Přírodovědná verze</div>
-          <div class="landing-card-body">
-            <h3>Přírodovědná Líheň 🔬</h3>
-            <p>Odlaď si své znalosti o lidském těle. Krm tři příšerky správnými odpověďmi z témat: trávicí soustava, dýchací soustava a rozmnožování/buňky.</p>
-            <div class="mascot-row">
-              <span class="mascot-tag tag-digestive">Bříškoun</span>
-              <span class="mascot-tag tag-respiratory">Plícník</span>
-              <span class="mascot-tag tag-reproductive">Buněk</span>
-            </div>
-            <button class="btn-launch-version">Spustit Přírodovědu</button>
-          </div>
-        </div>
+      <div class="landing-cards" id="landing-cards" aria-live="polite">
+        <p class="landing-loading">Načítám předměty…</p>
       </div>
     </main>
 
@@ -187,7 +144,6 @@
   </div>
 
   <!-- Načtení herní logiky -->
-  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "history",
+  "id": "protektorat",
+  "title": "Protektorát a 2. sv. válka",
+  "description": "Temná léta okupace a hrdinný domácí i zahraniční odboj.",
+  "mascotName": "Odbojáček",
+  "mascotType": "protektorat",
+  "theme": {
+    "primaryColor": "#dc2626",
+    "accentColor": "#fee2e2",
+    "gradientStart": "#ef4444",
+    "gradientEnd": "#991b1b"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Kdy přesně Adolf Hitler přinutil prezidenta Emila Háchu k souhlasu s předáním českých zemí pod ochranu Říše?",
+      "options": [
+        "1. září 1939",
+        "15. března 1939",
+        "17. listopadu 1939",
+        "8. května 1945"
+      ],
+      "answer": 1,
+      "explanation": "Dne 15. března 1939 donutil Hitler Háchu k souhlasu, čímž byl následně vyhlášen Protektorát Čechy a Morava."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se stalo se Slovenskem těsně před vytvořením Protektorátu Čechy a Morava?",
+      "options": [
+        "Stalo se také protektorátem",
+        "Bylo připojeno k Maďarsku",
+        "Slováci vytvořili samostatný stát",
+        "Připojilo se k Sovětskému svazu"
+      ],
+      "answer": 2,
+      "explanation": "Slováci usilující o samostatnost s nacisty dojednali vytvoření samostatného slovenského státu."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký titul nesl Hitlerův zástupce, který měl skutečnou moc v Protektorátu Čechy a Morava?",
+      "options": [
+        "Prezident protektorátu",
+        "Říšský protektor",
+        "Německý král",
+        "Říšský kancléř"
+      ],
+      "answer": 1,
+      "explanation": "Úřad prezidenta sice zůstal, ale skutečnou moc nad českými zeměmi měl říšský protektor."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývala německá tajná státní policie, která tvrdě kontrolovala společnost a trestala nesouhlas?",
+      "options": [
+        "Wehrmacht",
+        "Luftwaffe",
+        "Gestapo",
+        "KGB"
+      ],
+      "answer": 2,
+      "explanation": "Společenský život kontrolovalo gestapo (Geheime Staatspolizei)."
+    },
+    {
+      "type": "abcd",
+      "question": "17. listopadu 1939 došlo v reakci na studentské protesty a pohřeb zastřeleného studenta k uzavření čeho?",
+      "options": [
+        "Všech obchodů a trhů",
+        "Českých vysokých škol",
+        "Divadel a kin",
+        "Hranic protektorátu"
+      ],
+      "answer": 1,
+      "explanation": "Němci tvrdě zasáhli, 9 studentů popravili a české vysoké školy byly na znamení trestu uzavřeny."
+    },
+    {
+      "type": "abcd",
+      "question": "Která událost z 1. září 1939 oficiálně zahájila druhou světovou válku?",
+      "options": [
+        "Útok Německa na Polsko",
+        "Útok Německa na Francii",
+        "Atentát na Hitlera",
+        "Svržení atomové bomby"
+      ],
+      "answer": 0,
+      "explanation": "1. září 1939 Německo vojensky napadlo Polsko, což rozpoutalo druhou světovou válku."
+    },
+    {
+      "type": "boolean",
+      "question": "Sovětský svaz bojoval od samého začátku války v roce 1939 po boku Velké Británie a Francie proti Německu.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. V roce 1939 Sovětský svaz dokonce napadl Polsko společně s Německem. Na stranu spojenců se přidal až poté, co ho Německo samo napadlo v roce 1941."
+    },
+    {
+      "type": "abcd",
+      "question": "Které tři silné státy stály v čele Spojenců bojujících proti nacistickému režimu?",
+      "options": [
+        "Německo, Itálie, Japonsko",
+        "USA, Velká Británie, Sovětský svaz",
+        "Francie, Polsko, Československo",
+        "Velká Británie, Čína, Austrálie"
+      ],
+      "answer": 1,
+      "explanation": "Země bojující proti nacistické rozpínavosti se nazývaly Spojenci a stály v čele s USA, Velkou Británií a Sovětským svazem."
+    },
+    {
+      "type": "abcd",
+      "question": "Kterého dne vstoupila v platnost kapitulace Německa a my jej slavíme jako Den vítězství?",
+      "options": [
+        "15. března",
+        "8. května",
+        "17. listopadu",
+        "28. října"
+      ],
+      "answer": 1,
+      "explanation": "Dne 8. května 1945 podepsali velitelé německých armád kapitulaci, čímž skončila válka v Evropě."
+    },
+    {
+      "type": "abcd",
+      "question": "Která dramatická událost donutila v srpnu 1945 Japonsko ke konečné kapitulaci?",
+      "options": [
+        "Svržení atomových bomb na města Hirošima a Nagasaki",
+        "Smrt japonského císaře",
+        "Vylodění Američanů v Tokiu",
+        "Pověstná japonská zima a nedostatek jídla"
+      ],
+      "answer": 0,
+      "explanation": "Japonský císař podepsal kapitulaci teprve po svržení dvou zničujících atomových bomb v srpnu 1945."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývali členové ozbrojených oddílů domácího odboje, kteří v lesích přepadali německé jednotky a ničili mosty?",
+      "options": [
+        "Výsadkáři",
+        "Partyzáni",
+        "Junáci",
+        "Sokolové"
+      ],
+      "answer": 1,
+      "explanation": "Šlo o partyzány. Skrývali se a prováděli záškodnickou činnost, za kterou hrozila okamžitá smrt."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo byl vůdčím představitelem našeho zahraničního odboje a vytvořil v Londýně prozatímní vládu?",
+      "options": [
+        "Emil Hácha",
+        "Tomáš Garrigue Masaryk",
+        "Edvard Beneš",
+        "Klement Gottwald"
+      ],
+      "answer": 2,
+      "explanation": "Zahraniční odboj vedl bývalý prezident Edvard Beneš a z Londýna spolupracoval se Spojenci."
+    },
+    {
+      "type": "abcd",
+      "question": "Ve kterých legendárních vojenských jednotkách se proslavili českoslovenští piloti (např. v bitvě o Anglii)?",
+      "options": [
+        "V americké pěchotě",
+        "V sovětských tankových praporech",
+        "V britském královském letectvu (RAF)",
+        "Ve francouzském námořnictvu"
+      ],
+      "answer": 2,
+      "explanation": "Čeští letci sloužili v britském královském letectvu (RAF) v bombardovacích i stíhacích perutích."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo byl Reinhard Heydrich?",
+      "options": [
+        "Nový zastupující říšský protektor, který omezil práva Čechů",
+        "Velitel československých letců v Británii",
+        "Prezident protektorátu",
+        "Vůdce samostatného slovenského státu"
+      ],
+      "answer": 0,
+      "explanation": "Heydrich přijel do Prahy jako zastupující říšský protektor a rozpoutal obrovskou vlnu zatýkání a poprav."
+    },
+    {
+      "type": "abcd",
+      "question": "Kteří dva výsadkáři z Londýna úspěšně provedli atentát na Reinharda Heydricha?",
+      "options": [
+        "Jan Žižka a Jan Hus",
+        "Edvard Beneš a Emil Hácha",
+        "Jan Kubiš a Jozef Gabčík",
+        "Alois Vašátko a František Peřina"
+      ],
+      "answer": 2,
+      "explanation": "Čech Jan Kubiš a Slovák Jozef Gabčík měli za úkol Heydricha zabít, což se jim v květnu 1942 podařilo."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaká krutá odveta potkala po atentátu na Heydricha obce Lidice a Ležáky?",
+      "options": [
+        "Byly opevněny a staly se vojenskými základnami",
+        "Němci je vypálili, muže zastřelili a ženy s dětmi odvezli",
+        "Obyvatelé dostali zákaz vycházení",
+        "Všechny domy byly zbourány kvůli stavbě dálnice"
+      ],
+      "answer": 1,
+      "explanation": "Nacistická msta byla strašná – Lidice a Ležáky byly pro výstrahu zcela vypáleny a zničeny, většina obyvatel zavražděna."
+    },
+    {
+      "type": "abcd",
+      "question": "Která armáda na konci války osvobodila převážnou většinu území Československa z východu?",
+      "options": [
+        "Americká armáda",
+        "Britská armáda",
+        "Francouzská armáda",
+        "Sovětská Rudá armáda"
+      ],
+      "answer": 3,
+      "explanation": "Největší část našeho území včetně Prahy osvobodila sovětská Rudá armáda (a bojoval v ní i československý sbor)."
+    },
+    {
+      "type": "abcd",
+      "question": "Které armádě připadlo podle dohod osvobození západních Čech, tedy i měst Plzeň nebo Karlovy Vary?",
+      "options": [
+        "Americké armádě",
+        "Sovětské armádě",
+        "Polské armádě",
+        "Rumunské armádě"
+      ],
+      "answer": 0,
+      "explanation": "Na pomyslné demarkační čáře (České Budějovice - Plzeň - Karlovy Vary) musely zastavit americké jednotky."
+    },
+    {
+      "type": "boolean",
+      "question": "Lidé v protektorátu mohli i přes zákaz bezpečně poslouchat zahraniční rozhlas, protože se to nedalo vystopovat a nehrozil za to žádný postih.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Rádia měla speciální cedulky varující, že poslech zahraničního rozhlasu se trestá káznicí i smrtí."
+    },
+    {
+      "type": "abcd",
+      "question": "Kterou zásadní a trvalou změnu v silniční dopravě zavedla německá okupace ze dne na den?",
+      "options": [
+        "Zákaz vlastnit auta pro civilisty",
+        "Zrušení světelných křižovatek",
+        "Jízdu po pravé straně (jízda vpravo)",
+        "Omezení rychlosti na 30 km/h"
+      ],
+      "answer": 2,
+      "explanation": "Za trvalou změnu spojenou s německou okupací bývá považována jízda vpravo."
+    },
+    {
+      "type": "abcd",
+      "question": "Co byl tzv. přídělový systém?",
+      "options": [
+        "Rozdělování školních pomůcek zdarma",
+        "Nákup potravin a oblečení pouze na speciální potravinové či oděvní lístky",
+        "Povinnost odevzdat státu úrodu z vlastních zahrádek",
+        "Zabírání volných pokojů v domech pro německé důstojníky"
+      ],
+      "answer": 1,
+      "explanation": "Aby měla německá armáda dostatek jídla, zavedl se přídělový systém. Běžní lidé mohli základní věci kupovat jen s přidělenými lístky."
+    },
+    {
+      "type": "abcd",
+      "question": "V jakém pořadí musely být nově psány úřední nápisy na všech obchodech a budovách v protektorátu?",
+      "options": [
+        "Česko-německé",
+        "Německo-české",
+        "Pouze německé",
+        "Slovensko-české"
+      ],
+      "answer": 1,
+      "explanation": "Úředním jazykem se stala němčina. Všechny nápisy byly povinně dvojjazyčné s němčinou na prvním místě."
+    },
+    {
+      "type": "abcd",
+      "question": "Výuka kterých školních předmětů byla proškrtána a záměrně omezena, aby se děti neučily o samostatném Československu?",
+      "options": [
+        "Matematika a fyzika",
+        "Tělocvik a hudební výchova",
+        "Dějepis a občanská výchova",
+        "Chemie a přírodopis"
+      ],
+      "answer": 2,
+      "explanation": "Byla snížena hodinová dotace dějepisu a občanské výchovy a z učebnic byly odstraňovány \"závadné\" texty."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se pro všechny Čechy stalo po okupaci povinnou povinností v oblasti pracovního nasazení?",
+      "options": [
+        "Mohli si svobodně vybírat práci po celé Evropě",
+        "Museli mít pracovní knížku a často byli odveleni na nucené práce pro válečnou výrobu (i do Německa)",
+        "Práce pro německé továrny byla pouze dobrovolná",
+        "Děti od 10 let musely pracovat na poli"
+      ],
+      "answer": 1,
+      "explanation": "Češi měli Němcům sloužit. Zavedla se pracovní knížka, lidé museli pracovat až 60 hodin týdně pro válečnou výrobu, a to i nuceně v Říši."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se stalo s lidmi židovského původu krátce po zřízení protektorátu podle nových zákonů?",
+      "options": [
+        "Získali nová volební privilegia",
+        "Museli se vystěhovat do USA",
+        "Ztratili svá občanská práva, nesměli do parků, divadel a byl jim zabaven majetek",
+        "Stali se vysoce postavenými úředníky státu"
+      ],
+      "answer": 2,
+      "explanation": "Podle říšských zákonů ztratili Židé občanská práva. Byli omezeni v pohybu, vzdělání a jejich majetek byl zabavován."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaké viditelné označení museli Židé starší šesti let nosit povinně na svém vrchním oblečení?",
+      "options": [
+        "Červený kříž",
+        "Bílou pásku na rukávu",
+        "Žlutou šesticípou Davidovu hvězdu s nápisem Jude",
+        "Zelený trojúhelník"
+      ],
+      "answer": 2,
+      "explanation": "Jako ponížení a znak rasové příslušnosti museli nosit žlutou šesticípou hvězdu (Davidovu hvězdu)."
+    },
+    {
+      "type": "abcd",
+      "question": "Které české pevnostní město nacisté vyklidili a přeměnili na sběrný koncentrační tábor pro Židy?",
+      "options": [
+        "Prahu",
+        "Terezín",
+        "Lidice",
+        "Plzeň"
+      ],
+      "answer": 1,
+      "explanation": "Židé byli soustřeďováni v Terezíně, odkud byli následně vlaky odváženi dále do vyhlazovacích táborů."
+    },
+    {
+      "type": "abcd",
+      "question": "Romové z protektorátu byli posíláni do tzv. cikánských koncentračních táborů. Kde se nacházely?",
+      "options": [
+        "V Terezíně a Lidicích",
+        "V Letech u Písku a v Hodoníně u Kunštátu",
+        "V Praze a Brně",
+        "V Mauthausenu a Dachau"
+      ],
+      "answer": 1,
+      "explanation": "Romové byli před odsunem do vyhlazovacích táborů vězněni právě v Letech u Písku a v Hodoníně u Kunštátu."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaké slovo označuje nacistické plánovité, hromadné vyvražďování židovského a romského obyvatelstva?",
+      "options": [
+        "Protektorát",
+        "Mobilizace",
+        "Holokaust (nebo také šoa)",
+        "Kapitulace"
+      ],
+      "answer": 2,
+      "explanation": "Nacistické masové vyvražďování 6 milionů Židů a statisíců Romů se souhrnně označuje pojmem holokaust."
+    },
+    {
+      "type": "boolean",
+      "question": "Památku konkrétních obětí holokaustu nám dnes v chodnících před jejich bývalými domy připomínají malé dlažební kostky s mosaznou destičkou, zvané \"kameny zmizelých\".",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Tyto kameny nesou jméno zavražděného člověka a nachází se obvykle u domu, kde před válkou naposledy žil."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se po 15. březnu 1939 stalo s Podkarpatskou Rusí, tehdejší nejvýchodnější částí naší republiky?",
+      "options": [
+        "Stala se součástí Polska",
+        "Zůstala samostatným státem",
+        "Zabralo ji Maďarsko",
+        "Stala se sovětskou republikou"
+      ],
+      "answer": 2,
+      "explanation": "Slováci vytvořili samostatný stát, Češi a Moravané spadli pod protektorát a zbytek Podkarpatské Rusi zabralo Maďarsko."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se odhaduje celkový počet všech obětí 2. světové války po celém světě?",
+      "options": [
+        "Kolem 5 milionů lidí",
+        "Kolem 20 milionů lidí",
+        "50 až 60 milionů lidí",
+        "Více než 100 milionů lidí"
+      ],
+      "answer": 2,
+      "explanation": "Zahynulo 50-60 milionů lidí, z toho naprostou většinu (asi 40 milionů) tvořili civilisté."
+    },
+    {
+      "type": "boolean",
+      "question": "Jelikož potravin na lístky byl stálý nedostatek a často šlo o nekvalitní náhražky, lidé jídlo potají sháněli na tzv. černém trhu.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Systém přídělů nestačil, děti trpěly podvýživou, a proto lidé s velkým rizikem trestu kupovali potraviny na nelegálním černém trhu."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký termín přesně označuje nenávist a nepřátelství výhradně vůči lidem židovského původu a náboženství?",
+      "options": [
+        "Šovinismus",
+        "Antisemitismus",
+        "Nacionalismus",
+        "Pacifismus"
+      ],
+      "answer": 1,
+      "explanation": "Jednou z konkrétních forem rasismu, zaměřenou na židovské obyvatelstvo, je antisemitismus."
+    },
+    {
+      "type": "abcd",
+      "question": "Kolik občanů tehdejšího Československa (vojáků i civilistů) podle odhadů za 2. světové války celkem padlo, bylo popraveno nebo zavražděno?",
+      "options": [
+        "Okolo 5 000",
+        "Zhruba 50 000",
+        "Asi 350 000",
+        "Více než milion"
+      ],
+      "answer": 2,
+      "explanation": "Za protektorátu a druhé světové války celkem padlo, bylo popraveno nebo zavražděno v táborech na 350 000 Čechoslováků."
+    }
+  ]
+}

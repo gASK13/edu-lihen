@@ -25,8 +25,51 @@
     .lab-stage.variant-tall .mascot-sprite-wrapper { transform: scale(1.35, 1.75); }
     .lab-stage.variant-tiny .mascot-sprite-wrapper { transform: scale(1.15); }
     .lab-caption { position: absolute; bottom: 16px; left: 16px; right: 16px; text-align: center; font-weight: 800; color: #4338ca; }
+    .lab-status { min-height: 48px; margin-top: 12px; padding: 10px 12px; border-radius: 12px; font-size: .9rem; font-weight: 800; line-height: 1.35; }
+    .lab-status.ok { color: #047857; background: #ecfdf5; }
+    .lab-status.warning { color: #9a3412; background: #fff7ed; }
     .lab-guide code { color: #5b21b6; font-weight: 800; }
     .lab-guide pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; background: #f8fafc; border-radius: 12px; margin-top: 12px; }
+
+    /* Výhradně návrhové varianty laboratoře – do hry se dostanou až po schválení. */
+    .lab-stage.shape-fluffy .mascot-adult, .lab-stage.shape-fluffy .mascot-baby { width: 120px; height: 118px; border-radius: 48% 52% 45% 55%; box-shadow: 0 10px 22px rgba(0,0,0,.14); }
+    .lab-fur { position: absolute; inset: -21px -25px -17px; z-index: 0; pointer-events: none; }
+    .lab-fur i { position: absolute; width: 48px; height: 48px; border-radius: 50%; background: var(--primary-color); filter: brightness(1.06); box-shadow: inset 8px 8px 12px rgba(255,255,255,.22), 0 4px 6px rgba(0,0,0,.1); }
+    .lab-fur i:nth-child(1) { top: 0; left: 28px; } .lab-fur i:nth-child(2) { top: 12px; left: 2px; } .lab-fur i:nth-child(3) { top: 9px; right: 0; }
+    .lab-fur i:nth-child(4) { top: 47px; left: -4px; } .lab-fur i:nth-child(5) { top: 51px; right: -5px; } .lab-fur i:nth-child(6) { bottom: -2px; left: 20px; } .lab-fur i:nth-child(7) { bottom: -3px; right: 18px; }
+    .lab-stage.shape-robot .mascot-adult, .lab-stage.shape-robot .mascot-baby { border-radius: 26px; background: linear-gradient(135deg, #fff 0 12%, var(--accent-color) 13% 22%, var(--primary-color) 23% 70%, color-mix(in srgb, var(--primary-color), #111 20%) 71%); border: 4px solid color-mix(in srgb, var(--primary-color), #172554 45%); }
+    .lab-stage.shape-robot .mascot-adult::after, .lab-stage.shape-robot .mascot-baby::after { content: ""; position: absolute; width: 30px; height: 8px; border-radius: 4px; background: #94a3b8; top: -12px; left: 50%; transform: translateX(-50%); box-shadow: 0 -8px 0 -2px #facc15; }
+    .lab-stage.shape-robot .arm { width: 24px; height: 28px; border-radius: 5px; background: linear-gradient(90deg, #64748b 0 24%, #cbd5e1 25% 75%, #64748b 76%); border: 2px solid #334155; }
+    .lab-stage.shape-robot .arm::after { content: ""; position: absolute; width: 18px; height: 13px; bottom: -9px; left: 1px; border: 3px solid #334155; border-top: 0; border-radius: 0 0 8px 8px; }
+    .lab-stage.shape-peanut .mascot-adult, .lab-stage.shape-peanut .mascot-baby { width: 116px; height: 156px; border-radius: 47% 47% 44% 44% / 38% 38% 43% 43%; background: radial-gradient(ellipse at 50% 28%, #fff 0%, var(--primary-color) 52%, transparent 53%), radial-gradient(ellipse at 50% 73%, var(--primary-color) 0%, color-mix(in srgb, var(--primary-color), #111 15%) 70%); box-shadow: 0 10px 22px rgba(0,0,0,.14), inset 0 0 0 5px rgba(255,255,255,.08); }
+    .lab-stage.shape-peanut .mascot-face { top: 37%; }
+    .lab-stage.shape-noodle .mascot-adult, .lab-stage.shape-noodle .mascot-baby { width: 68px; height: 154px; border-radius: 42px; background: repeating-linear-gradient(165deg, color-mix(in srgb, var(--primary-color), #fff 18%) 0 11px, var(--primary-color) 12px 24px); }
+    .lab-noodle-bends { position: absolute; width: 132px; height: 154px; left: 4px; top: -4px; z-index: 0; pointer-events: none; }
+    .lab-noodle-bends::before, .lab-noodle-bends::after { content: ""; position: absolute; width: 62px; height: 62px; border: 20px solid var(--primary-color); border-radius: 50%; }
+    .lab-noodle-bends::before { left: 4px; top: 3px; border-left-color: transparent; border-bottom-color: transparent; transform: rotate(12deg); } .lab-noodle-bends::after { right: 4px; bottom: 1px; border-right-color: transparent; border-top-color: transparent; transform: rotate(12deg); }
+    .lab-stage.shape-noodle .mascot-face { top: 29%; } .lab-stage.shape-noodle .mascot-feet { width: 145%; left: -22%; }
+    .lab-stage.shape-bird .mascot-adult, .lab-stage.shape-bird .mascot-baby { width: 104px; height: 137px; border-radius: 52% 52% 46% 46% / 38% 38% 62% 62%; }
+    .lab-stage.shape-bird .mascot-adult::before, .lab-stage.shape-bird .mascot-baby::before { content: ""; position: absolute; width: 0; height: 0; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 30px solid #fbbf24; right: -25px; top: 48px; filter: drop-shadow(0 2px 1px rgba(0,0,0,.14)); }
+    .lab-bird-wing { position: absolute; width: 58px; height: 76px; background: var(--accent-color); opacity: .9; border: 3px solid color-mix(in srgb, var(--primary-color), #111 18%); border-radius: 70% 18% 70% 25%; left: 2px; top: 55px; transform: rotate(-18deg); z-index: 0; }
+    .lab-bird-tail { position: absolute; width: 50px; height: 46px; background: var(--accent-color); left: -34px; bottom: 15px; clip-path: polygon(100% 5%, 18% 0, 44% 35%, 0 48%, 44% 68%, 18% 100%, 100% 88%); z-index: 0; }
+    .lab-stage.render-outline .mascot-adult, .lab-stage.render-outline .mascot-baby, .lab-stage.render-outline .mascot-egg { border: 4px solid #312e81; box-shadow: 5px 6px 0 #312e81; background: var(--primary-color); }
+    .lab-stage.render-outline .eye { animation: none; }
+    .lab-stage.render-neon { background: radial-gradient(circle at 50% 30%, #312e81, #0f172a); }
+    .lab-stage.render-neon .mascot-adult, .lab-stage.render-neon .mascot-baby, .lab-stage.render-neon .mascot-egg { box-shadow: 0 0 18px var(--primary-color), 0 0 38px color-mix(in srgb, var(--primary-color), transparent 30%); }
+    .lab-stage.render-neon .lab-caption { color: white; }
+
+    .lab-feature-wings { position: absolute; inset: 28px -30px auto; height: 70px; z-index: 0; }
+    .lab-feature-wings::before, .lab-feature-wings::after { content: ""; position: absolute; width: 50px; height: 62px; background: var(--accent-color); border: 3px solid var(--primary-color); border-radius: 80% 20% 80% 20%; top: 0; }
+    .lab-feature-wings::before { left: 0; transform: rotate(-25deg); } .lab-feature-wings::after { right: 0; transform: scaleX(-1) rotate(-25deg); }
+    .lab-feature-leaf { position: absolute; width: 48px; height: 50px; top: -38px; left: 48px; }
+    .lab-feature-leaf::before, .lab-feature-leaf::after { content: ""; position: absolute; width: 18px; height: 36px; background: #86efac; border: 2px solid #15803d; border-radius: 100% 0 100% 0; transform: rotate(-35deg); }
+    .lab-feature-leaf::after { left: 22px; transform: scaleX(-1) rotate(-35deg); }
+    .lab-feature-crystal { position: absolute; width: 66px; height: 35px; top: -28px; left: 37px; background: linear-gradient(90deg, #67e8f9, #c4b5fd, #67e8f9); clip-path: polygon(0 100%, 15% 30%, 30% 100%, 48% 0, 65% 100%, 82% 35%, 100% 100%); filter: drop-shadow(0 2px 2px rgba(0,0,0,.18)); }
+    .lab-accessory-badge::before { content: "★"; position: absolute; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #facc15; color: #92400e; border: 3px solid #fff; left: 54px; top: 84px; }
+    .lab-accessory-book::before { content: ""; position: absolute; width: 38px; height: 48px; background: linear-gradient(90deg, #facc15 47%, #fff7ed 48% 52%, #facc15 53%); border: 3px solid #b45309; border-radius: 3px 7px 7px 3px; right: -16px; top: 79px; transform: rotate(-13deg); box-shadow: 0 3px 5px rgba(0,0,0,.2); }
+    .lab-accessory-wand::before { content: "★"; position: absolute; color: #facc15; font-size: 31px; right: -18px; top: 34px; filter: drop-shadow(0 1px 1px #92400e); } .lab-accessory-wand::after { content: ""; position: absolute; width: 7px; height: 74px; background: #a16207; border-radius: 8px; right: 2px; top: 57px; transform: rotate(-27deg); }
+    .lab-accessory-pet::before { content: ""; position: absolute; width: 42px; height: 32px; background: #fbbf24; border: 3px solid #b45309; border-radius: 55% 45% 48% 52%; right: -30px; bottom: -8px; box-shadow: -8px -12px 0 -2px #fbbf24; } .lab-accessory-pet::after { content: "• •"; position: absolute; right: -22px; bottom: 1px; color: #1e293b; font-size: 11px; letter-spacing: 3px; }
+    .lab-accessory-orb::before { content: ""; position: absolute; width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #fff, #38bdf8 42%, #0369a1); left: -24px; top: 38px; box-shadow: 0 0 12px #38bdf8; }
     @media (max-width: 760px) { .lab-layout { grid-template-columns: 1fr; } .lab-stage { min-height: 300px; } }
   </style>
 </head>
@@ -43,13 +86,16 @@
           <select id="stage"><option value="egg">Vajíčko</option><option value="baby">Mládě</option><option value="adult" selected>Dospělec</option></select>
         </label>
         <label>Variace siluety
-          <select id="variant"><option value="standard">Kulatá</option><option value="tall">Vysoká</option><option value="tiny">Malá</option></select>
+          <select id="variant"><option value="standard">Kulatá</option><option value="fluffy">Chlupáček</option><option value="robot">Robot</option><option value="peanut">Peanut</option><option value="noodle">Vlnitá nudle</option><option value="bird">Ptáček</option></select>
+        </label>
+        <label>Styl vykreslení
+          <select id="render-style"><option value="soft" selected>Soft – měkký 3D</option><option value="outline">Komiksová linka</option><option value="neon">Noční neon</option></select>
         </label>
         <label>Tematický prvek
-          <select id="feature"><option value="none">Žádný</option><option value="atom" selected>Atom</option><option value="belly">Bříško</option><option value="lungs">Plíce</option><option value="satellites">Buňky</option><option value="pen">Pero</option><option value="helmet">Helma</option><option value="beret">Baret</option></select>
+          <select id="feature"><option value="none">Žádný</option><option value="atom" selected>Atom na hlavě</option><option value="belly">Velké bříško</option><option value="lungs">Plíce po stranách</option><option value="satellites">Obíhající buňky</option><option value="wings">Křídla</option><option value="leaf">Listové tykadlo</option><option value="crystal">Krystalová koruna</option><option value="pen">Pero</option><option value="helmet">Helma</option><option value="beret">Baret</option></select>
         </label>
         <label>Doplněk
-          <select id="accessory"><option value="none">Žádný</option><option value="acc-glasses" selected>Chytré brýle</option><option value="acc-hat">Cylindr</option><option value="acc-bowtie">Motýlek</option><option value="acc-crown">Korunka</option></select>
+          <select id="accessory"><option value="none">Žádný</option><option value="acc-bowtie" selected>Motýlek</option><option value="acc-crown">Korunka</option><option value="badge">Hvězdný odznak</option><option value="book">Knížka do ruky</option><option value="wand">Hůlka s hvězdou</option><option value="pet">Mazlíček u nohou</option><option value="orb">Plovoucí světýlko</option></select>
         </label>
         <div class="color-pair">
           <label>Hlavní barva <input id="primary" type="color" value="#7c3aed"></label>
@@ -62,47 +108,73 @@
           <div id="mascot-preview"></div>
           <p class="lab-caption" id="caption"></p>
         </div>
+        <p class="lab-status ok" id="compatibility" role="status"></p>
       </section>
     </div>
 
     <section class="lab-guide">
       <h2>Jak vytvořit nový předmět</h2>
       <ol>
-        <li>V laboratoři vyber barvy a kombinaci, která má zřetelnou siluetu a nepřekrývá oči ani tematický rys.</li>
+        <li>V laboratoři vyber barvy a kombinaci, která má zřetelnou siluetu. Zelený štítek znamená bezpečnou kombinaci; oranžový upozorňuje na souboj vrstev.</li>
         <li>Do budoucího souboru v <code>subjects/</code> vlož metadata předmětu a témata s otázkami podle schváleného JSON schématu.</li>
         <li>Než bude přidávání automatizované, pošli LLM tento návrh spolu s názvem tématu, otázkami a zvolenými hodnotami z laboratoře.</li>
       </ol>
       <pre>Vytvoř nový předmět pro Edukativní líheň.
 Dodrž JSON schéma projektu. Název: [NÁZEV].
 Barvy: primary [BARVA], accent [BARVA].
-Maskot: variace [VARIACE], tematický prvek [PRVEK], doplněk [DOPLNĚK].
+Maskot: variace [VARIACE], styl [STYL], tematický prvek [PRVEK], doplněk [DOPLNĚK].
 Zkontroluj, že doplněk nepřekrývá oči ani tematický prvek.
 Vytvoř témata a validní otázky typu abcd/boolean.</pre>
     </section>
   </main>
 
   <script>
-    const controls = ["stage", "variant", "feature", "accessory", "primary", "accent"].map(id => document.getElementById(id));
+    const controls = ["stage", "variant", "render-style", "feature", "accessory", "primary", "accent"].map(id => document.getElementById(id));
     const featureHtml = {
       none: "", atom: '<div class="feature-atom"><span></span><span></span><span></span><i></i></div>',
       belly: '<div class="feature-belly"></div>', lungs: '<div class="feature-lungs"><div class="lung-flap left"></div><div class="lung-flap right"></div></div>',
       satellites: '<div class="feature-satellites"><div class="satellite-cell"></div><div class="satellite-cell"></div></div>',
+      wings: '<div class="lab-feature-wings"></div>', leaf: '<div class="lab-feature-leaf"></div>', crystal: '<div class="lab-feature-crystal"></div>',
       pen: '<div class="feature-pen"></div>', helmet: '<div class="feature-helmet"></div>', beret: '<div class="feature-beret"></div>'
     };
+    const accessoryHtml = {
+      none: "", "acc-bowtie": '<div class="accessory-overlay acc-bowtie"></div>', "acc-crown": '<div class="accessory-overlay acc-crown"></div>',
+      badge: '<div class="accessory-overlay lab-accessory-badge"></div>', book: '<div class="accessory-overlay lab-accessory-book"></div>',
+      wand: '<div class="accessory-overlay lab-accessory-wand"></div>', pet: '<div class="accessory-overlay lab-accessory-pet"></div>', orb: '<div class="accessory-overlay lab-accessory-orb"></div>'
+    };
+    const headFeatures = new Set(["atom", "leaf", "crystal", "pen", "helmet", "beret"]);
+    const headAccessories = new Set(["acc-crown"]);
+    const torsoFeatures = new Set(["belly"]);
+    const torsoAccessories = new Set(["acc-bowtie", "badge"]);
     const face = '<div class="mascot-face"><div class="mascot-eyes"><div class="eye left"></div><div class="eye right"></div></div><div class="mascot-cheeks"><div class="cheek left"></div><div class="cheek right"></div></div><div class="mascot-mouth"></div></div>';
+    const silhouetteHtml = {
+      fluffy: '<div class="lab-fur"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>',
+      noodle: '<div class="lab-noodle-bends"></div>',
+      bird: '<div class="lab-bird-tail"></div><div class="lab-bird-wing"></div>'
+    };
 
     function render() {
-      const [stage, variant, feature, accessory, primary, accent] = controls.map(control => control.value);
+      const [stage, variant, renderStyle, feature, accessory, primary, accent] = controls.map(control => control.value);
       const preview = document.getElementById("preview");
-      preview.className = `lab-stage variant-${variant}`;
+      preview.className = `lab-stage variant-${variant} shape-${variant} render-${renderStyle}`;
       preview.style.setProperty("--primary-color", primary);
       preview.style.setProperty("--accent-color", accent);
       let mascot = '';
       if (stage === "egg") mascot = '<div class="mascot-egg"><div class="egg-spots"></div></div><div class="mascot-shadow"></div>';
       if (stage === "baby") mascot = `<div class="mascot-baby"><div class="baby-spots"></div>${face}<div class="mascot-feet"><div class="foot left"></div><div class="foot right"></div></div></div><div class="mascot-shadow"></div>`;
-      if (stage === "adult") mascot = `<div class="mascot-adult">${featureHtml[feature]}<div class="mascot-arms"><div class="arm left"></div><div class="arm right"></div></div>${face}<div class="mascot-feet"><div class="foot left"></div><div class="foot right"></div></div>${accessory === "none" ? "" : `<div class="accessory-overlay ${accessory}"></div>`}</div><div class="mascot-shadow"></div>`;
+      if (stage === "adult") {
+        mascot = `<div class="mascot-adult">${silhouetteHtml[variant] || ""}${featureHtml[feature]}<div class="mascot-arms"><div class="arm left"></div><div class="arm right"></div></div>${face}<div class="mascot-feet"><div class="foot left"></div><div class="foot right"></div></div>${accessoryHtml[accessory]}</div><div class="mascot-shadow"></div>`;
+      }
       document.getElementById("mascot-preview").innerHTML = `<div class="mascot-sprite-wrapper">${mascot}</div>`;
-      document.getElementById("caption").textContent = `${stage} · ${variant} · ${feature} · ${accessory}`;
+      document.getElementById("caption").textContent = `${stage} · ${variant} · ${renderStyle} · ${feature} · ${accessory}`;
+
+      const status = document.getElementById("compatibility");
+      let warning = "";
+      if (headFeatures.has(feature) && headAccessories.has(accessory)) warning = "⚠️ Souboj na hlavě: tematický prvek a doplněk zabírají stejné místo. Zvol jiný doplněk nebo prvek.";
+      if (torsoFeatures.has(feature) && torsoAccessories.has(accessory)) warning = "⚠️ Souboj na těle: velké bříško a tento doplněk se budou překrývat.";
+      if (stage !== "adult" && (feature !== "none" || accessory !== "none")) warning = "ℹ️ Rysy a doplňky se zobrazují až u dospělce; vajíčko a mládě testují pouze siluetu a barvy.";
+      status.className = `lab-status ${warning ? "warning" : "ok"}`;
+      status.textContent = warning || "✓ Bez kolize vrstev: rys zůstává čitelný a doplněk nezakrývá obličej.";
     }
     controls.forEach(control => control.addEventListener("input", render));
     render();

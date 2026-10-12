@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "biology",
+  "gameTitle": "Přírodovědná Líheň",
+  "gameSubtitle": "Vychovej si své pomocníky z biologie správnými odpověďmi!",
+  "thresholds": {
+    "baby": 5,
+    "adult": 10
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ],
+  "topics": [
+    {
+      "id": "digestive",
+      "title": "Trávicí soustava",
+      "description": "Zjisti, jak tělo zpracovává jídlo a získává z něj sílu!",
+      "mascotName": "Bříškoun",
+      "mascotType": "digestive",
+      "theme": {
+        "primaryColor": "#f97316",
+        "accentColor": "#ffedd5",
+        "gradientStart": "#ff8008",
+        "gradientEnd": "#ffc837"
+      },
+      "file": "subjects/biology/topics/digestive.json"
+    },
+    {
+      "id": "reproductive",
+      "title": "Rozmnožovací soustava",
+      "description": "Poznej základy buňky, dědičnosti a jak začíná nový lidský život!",
+      "mascotName": "Buněk",
+      "mascotType": "reproductive",
+      "theme": {
+        "primaryColor": "#ec4899",
+        "accentColor": "#fce7f3",
+        "gradientStart": "#f857a6",
+        "gradientEnd": "#ff5858"
+      },
+      "file": "subjects/biology/topics/reproductive.json"
+    },
+    {
+      "id": "respiratory",
+      "title": "Dýchací soustava",
+      "description": "Prozkoumej, jak tělo získává kyslík ze vzduchu a jak vydechuje odpadní látky!",
+      "mascotName": "Plícník",
+      "mascotType": "respiratory",
+      "theme": {
+        "primaryColor": "#0ea5e9",
+        "accentColor": "#e0f2fe",
+        "gradientStart": "#00c6ff",
+        "gradientEnd": "#0072ff"
+      },
+      "file": "subjects/biology/topics/respiratory.json"
+    }
+  ]
+}

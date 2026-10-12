@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "history",
+  "gameTitle": "Dějepisná Líheň",
+  "gameSubtitle": "Provázej příšerky moderní historií ČR od národního obrození po komunismus!",
+  "thresholds": {
+    "baby": 10,
+    "adult": 30
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ],
+  "topics": [
+    {
+      "id": "komunismus",
+      "title": "Komunismus",
+      "description": "Život za železnou oponou, boj za svobodu a pád režimu roku 1989.",
+      "mascotName": "Svobodníček",
+      "mascotType": "komunismus",
+      "theme": {
+        "primaryColor": "#be123c",
+        "accentColor": "#ffe4e6",
+        "gradientStart": "#e11d48",
+        "gradientEnd": "#881337"
+      },
+      "file": "subjects/history/topics/komunismus.json"
+    },
+    {
+      "id": "obrozeni",
+      "title": "Národní obrození",
+      "description": "Jak čeština chytila druhý dech a zrodil se moderní český národ!",
+      "mascotName": "Buditeláček",
+      "mascotType": "obrozeni",
+      "theme": {
+        "primaryColor": "#d97706",
+        "accentColor": "#fef3c7",
+        "gradientStart": "#f59e0b",
+        "gradientEnd": "#d97706"
+      },
+      "file": "subjects/history/topics/obrozeni.json"
+    },
+    {
+      "id": "protektorat",
+      "title": "Protektorát a 2. sv. válka",
+      "description": "Temná léta okupace a hrdinný domácí i zahraniční odboj.",
+      "mascotName": "Odbojáček",
+      "mascotType": "protektorat",
+      "theme": {
+        "primaryColor": "#dc2626",
+        "accentColor": "#fee2e2",
+        "gradientStart": "#ef4444",
+        "gradientEnd": "#991b1b"
+      },
+      "file": "subjects/history/topics/protektorat.json"
+    },
+    {
+      "id": "prvni_republika",
+      "title": "První republika",
+      "description": "Zlatá éra svobodného Československa s T. G. Masarykem.",
+      "mascotName": "Sokolík",
+      "mascotType": "prvni_republika",
+      "theme": {
+        "primaryColor": "#059669",
+        "accentColor": "#ecfdf5",
+        "gradientStart": "#10b981",
+        "gradientEnd": "#047857"
+      },
+      "file": "subjects/history/topics/prvni_republika.json"
+    },
+    {
+      "id": "prvni_valka",
+      "title": "1. světová válka",
+      "description": "Období velkého konfliktu a zrodu československých legií.",
+      "mascotName": "Bojovníček",
+      "mascotType": "prvni_valka",
+      "theme": {
+        "primaryColor": "#64748b",
+        "accentColor": "#f1f5f9",
+        "gradientStart": "#94a3b8",
+        "gradientEnd": "#475569"
+      },
+      "file": "subjects/history/topics/prvni_valka.json"
+    }
+  ]
+}

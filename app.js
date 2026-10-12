@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   let CONFIG = null;
   let currentVersion = null; // "history", "biology" nebo "physics"
+  let subjectManifest = [];
+  const subjectCache = new Map();
+  const topicCache = new Map();
   let mascotCollapseTimer = null;
 
   // ============================================================
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const elLobbyScreen     = document.getElementById("lobby-screen");
   const elQuizScreen      = document.getElementById("quiz-screen");
   const elTopicsGrid      = document.getElementById("topics-grid");
+  const elLandingCards    = document.getElementById("landing-cards");
 
   const elBtnResetAll     = document.getElementById("btn-reset-all");
   const elBtnGoHome       = document.getElementById("btn-go-home");
@@ -111,8 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   // INIT a ROUTING
   // ============================================================
-  function init() {
+  async function init() {
     setupEventListeners();
+    try {
+      const response = await fetch("subjects/manifest.json");
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const manifest = await response.json();
+      subjectManifest = manifest.subjects || [];
+      renderLandingCards();
+    } catch (error) {
+      elLandingCards.innerHTML = `<p class="landing-loading">Předměty se nepodařilo načíst. Zkus stránku obnovit.</p>`;
+      console.error("Chyba při načítání manifestu", error);
+      return;
+    }
 
     // Při návratu prohlížečem obnovíme konkrétní obrazovku hry.
     if (history.state?.app === "edu-lihen") {
@@ -136,20 +151,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Aktivuje verzi hry (history / biology / physics)
-  function launchVersion(version, { historyMode = "push" } = {}) {
-    activateVersion(version);
+  async function launchVersion(version, { historyMode = "push" } = {}) {
+    await activateVersion(version);
     renderLobby();
     showScreen(elLobbyScreen);
     updateHistory(historyMode, { screen: "lobby", version }, version);
   }
 
-  function activateVersion(version) {
+  async function activateVersion(version) {
+    const subject = subjectManifest.find(item => item.id === version);
+    if (!subject) throw new Error(`Neznámý předmět: ${version}`);
+    let config = subjectCache.get(version);
+    if (!config) {
+      const response = await fetch(subject.file);
+      if (!response.ok) throw new Error(`Nelze načíst ${subject.file}`);
+      config = await response.json();
+      subjectCache.set(version, config);
+    }
     currentVersion = version;
-    CONFIG = version === "history"
-      ? CONFIG_HISTORY
-      : version === "physics"
-        ? CONFIG_PHYSICS
-        : CONFIG_BIOLOGY;
+    CONFIG = config;
 
     // Nastav titulky
     elMainTitle.textContent = CONFIG.gameTitle;
@@ -195,17 +215,17 @@ document.addEventListener("DOMContentLoaded", () => {
     history[method]({ app: "edu-lihen", ...state }, "", url);
   }
 
-  function restoreHistoryState(state) {
+  async function restoreHistoryState(state) {
     if (!state || state.screen === "landing") {
       showLanding({ historyMode: "none" });
       return;
     }
 
-    activateVersion(state.version);
+    await activateVersion(state.version);
     renderLobby();
 
     if (state.screen === "quiz" && state.topicId) {
-      startQuiz(state.topicId, { historyMode: "none" });
+      await startQuiz(state.topicId, { historyMode: "none" });
       return;
     }
 
@@ -369,18 +389,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   // LOBBY
   // ============================================================
+  function renderLandingCards() {
+    elLandingCards.innerHTML = subjectManifest.map(subject => `
+      <div class="landing-card subject-card" style="--subject-start: ${subject.colors.start}; --subject-end: ${subject.colors.end}">
+        <div class="landing-card-header">${subject.label}</div>
+        <div class="landing-card-body">
+          <h3>${subject.title}</h3>
+          <p>${subject.description}</p>
+          <div class="mascot-row">${subject.tags.map(tag => `<span class="mascot-tag" style="color:${tag.color}; background:${tag.background}">${tag.label}</span>`).join("")}</div>
+          <button class="btn-launch-version" data-subject-id="${subject.id}">${subject.buttonLabel}</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
   function renderLobby() {
     elTopicsGrid.innerHTML = "";
 
     // Nastav popis lobbys z konfigurace
     const lobbyIntro = elLobbyScreen.querySelector(".lobby-intro");
     if (lobbyIntro) {
-      const lobbyTitles = {
-        history: "Vyber historické období a pomoz příšerkám vyrůst! 🇨🇿",
-        biology: "Vyber část lidského těla a pomoz příšerkám vyrůst! 🔬",
-        physics: "Objevuj fyziku a pomoz příšerce vyrůst! ⚛️"
-      };
-      lobbyIntro.querySelector("h2").textContent = lobbyTitles[currentVersion];
+      lobbyIntro.querySelector("h2").textContent = "Vyber si téma a pomoz příšerce vyrůst!";
     }
 
     CONFIG.topics.forEach(topic => {
@@ -450,9 +479,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   // KVÍZ — SPUŠTĚNÍ
   // ============================================================
-  function startQuiz(topicId, { historyMode = "push" } = {}) {
-    const topic = CONFIG.topics.find(t => t.id === topicId);
-    if (!topic) return;
+  async function startQuiz(topicId, { historyMode = "push" } = {}) {
+    const topicMetadata = CONFIG.topics.find(t => t.id === topicId);
+    if (!topicMetadata) return;
+    const cacheKey = `${currentVersion}/${topicId}`;
+    let topic = topicCache.get(cacheKey);
+    if (!topic) {
+      const response = await fetch(topicMetadata.file);
+      if (!response.ok) throw new Error(`Nelze načíst ${topicMetadata.file}`);
+      topic = { ...topicMetadata, ...await response.json() };
+      topicCache.set(cacheKey, topic);
+    }
 
     gameState.currentTopic = topic;
     applyTopicTheme(topic);
@@ -772,25 +809,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function setupEventListeners() {
 
     // --- Výběr verze na rozcestníku ---
-    const cardHistory  = document.getElementById("card-select-history");
-    const cardBiology  = document.getElementById("card-select-biology");
-    const cardPhysics  = document.getElementById("card-select-physics");
-
-    if (cardHistory) {
-      cardHistory.querySelector(".btn-launch-version").addEventListener("click", () => {
-        launchVersion("history");
-      });
-    }
-    if (cardBiology) {
-      cardBiology.querySelector(".btn-launch-version").addEventListener("click", () => {
-        launchVersion("biology");
-      });
-    }
-    if (cardPhysics) {
-      cardPhysics.querySelector(".btn-launch-version").addEventListener("click", () => {
-        launchVersion("physics");
-      });
-    }
+    elLandingCards.addEventListener("click", event => {
+      const button = event.target.closest("[data-subject-id]");
+      if (button) launchVersion(button.dataset.subjectId);
+    });
 
     // --- Tlačítko Domů ---
     elBtnGoHome.addEventListener("click", () => {

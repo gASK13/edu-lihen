@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "subjects": [
+    {
+      "id": "physics",
+      "file": "subjects/physics/manifest.json",
+      "order": 1,
+      "label": "Fyzikální verze",
+      "title": "Fyzikální líheň ⚛️",
+      "description": "Objevuj tělesa a látky, síly, gravitaci i tajemství částic. Pomoz své příšerce vyrůst správnými odpověďmi.",
+      "tags": [
+        {
+          "label": "Silák",
+          "color": "#5b21b6",
+          "background": "#ede9fe"
+        }
+      ],
+      "buttonLabel": "Spustit fyziku",
+      "colors": {
+        "start": "#7c3aed",
+        "end": "#4338ca"
+      }
+    },
+    {
+      "id": "history",
+      "file": "subjects/history/manifest.json",
+      "order": 2,
+      "label": "Dějepisná verze",
+      "title": "Dějepisná líheň 🇨🇿",
+      "description": "Procvič si moderní historii České republiky pro 5. třídu ZŠ. Provázej příšerky pěti obdobími od národního obrození až po komunismus.",
+      "tags": [
+        {
+          "label": "Buditeláček",
+          "color": "#92400e",
+          "background": "#fef3c7"
+        },
+        {
+          "label": "Bojovníček",
+          "color": "#334155",
+          "background": "#f1f5f9"
+        },
+        {
+          "label": "Sokolík",
+          "color": "#065f46",
+          "background": "#d1fae5"
+        },
+        {
+          "label": "Odbojáček",
+          "color": "#991b1b",
+          "background": "#fee2e2"
+        },
+        {
+          "label": "Svobodníček",
+          "color": "#881337",
+          "background": "#ffe4e6"
+        }
+      ],
+      "buttonLabel": "Spustit dějepis",
+      "colors": {
+        "start": "#b45309",
+        "end": "#92400e"
+      }
+    },
+    {
+      "id": "biology",
+      "file": "subjects/biology/manifest.json",
+      "order": 3,
+      "label": "Přírodovědná verze",
+      "title": "Přírodovědná líheň 🔬",
+      "description": "Odlaď si své znalosti o lidském těle. Krm tři příšerky správnými odpověmi z témat: trávicí soustava, dýchací soustava a rozmnožování/buňky.",
+      "tags": [
+        {
+          "label": "Bříškoun",
+          "color": "#9a3412",
+          "background": "#ffedd5"
+        },
+        {
+          "label": "Plícník",
+          "color": "#0c4a6e",
+          "background": "#e0f2fe"
+        },
+        {
+          "label": "Buněk",
+          "color": "#831843",
+          "background": "#fce7f3"
+        }
+      ],
+      "buttonLabel": "Spustit přírodovědu",
+      "colors": {
+        "start": "#0ea5e9",
+        "end": "#0369a1"
+      }
+    }
+  ]
+}

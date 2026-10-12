@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "biology",
+  "id": "reproductive",
+  "title": "Rozmnožovací soustava",
+  "description": "Poznej základy buňky, dědičnosti a jak začíná nový lidský život!",
+  "mascotName": "Buněk",
+  "mascotType": "reproductive",
+  "theme": {
+    "primaryColor": "#ec4899",
+    "accentColor": "#fce7f3",
+    "gradientStart": "#f857a6",
+    "gradientEnd": "#ff5858"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Jak se nazývá základní stavební jednotka všech živých organismů, ze které se skládá i lidské tělo?",
+      "options": [
+        "Orgán",
+        "Tkáň",
+        "Buňka",
+        "Kost"
+      ],
+      "answer": 2,
+      "explanation": "Buňka je základní jednotkou života. Naše tělo je složeno z bilionů různých buněk (svalových, kostních, nervových atd.)."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývá splynutí mužské pohlavní buňky (spermie) a ženské pohlavní buňky (vajíčka)?",
+      "options": [
+        "Dělení",
+        "Oplodnění",
+        "Růst",
+        "Dýchání"
+      ],
+      "answer": 1,
+      "explanation": "Oplodnění je okamžik, kdy se spojí informace ze spermie a vajíčka, čímž vznikne první buňka nového človíčka."
+    },
+    {
+      "type": "abcd",
+      "question": "Kde v těle maminky roste a vyvíjí se miminko před svým narozením?",
+      "options": [
+        "V žaludku",
+        "V děloze",
+        "Ve vaječníku",
+        "V močovém měchýři"
+      ],
+      "answer": 1,
+      "explanation": "Miminko roste v děloze. Je to pružný svalový orgán, který se dokáže zvětšit a chrání plod po dobu 9 měsíců těhotenství."
+    },
+    {
+      "type": "abcd",
+      "question": "Která část buňky nese dědičné informace a geny, které určují například barvu očí nebo vlasů?",
+      "options": [
+        "Krev",
+        "Jádro buňky s DNA",
+        "Buněčná stěna",
+        "Svalové vlákno"
+      ],
+      "answer": 1,
+      "explanation": "V jádru každé buňky je uložena DNA ve formě chromozomů. Zde jsou zapsány geny určující naše dědičné vlastnosti."
+    },
+    {
+      "type": "boolean",
+      "question": "Pohlavní buňky (spermie a vajíčka) linemen přesně poloviční počet chromozomů než ostatní běžné buňky v těle.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda! Běžná buňka má 46 chromozomů. Spermie a vajíčka mají 23 chromozomů, aby po jejich spojení mělo miminko opět správný počet 46."
+    },
+    {
+      "type": "boolean",
+      "question": "Všechny vlastnosti dítěte jsou určeny pouze a jen matkou; otec nepředává žádné dědičné informace.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež! Dítě dědí přesně polovinu genetických informací od matky a druhou polovinu od otce."
+    }
+  ]
+}

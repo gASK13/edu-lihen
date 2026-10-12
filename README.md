@@ -1,89 +1,49 @@
-# 🐣 Edukativní Líheň — Vychovej si příšerku
+# Edukativní Líheň
 
-> Edukativní kvízová hra pro žáky základní školy. Odpovídej správně, krm příšerky a sleduj, jak z vajíčka vyroste roztomilé mládě a pak velký dospělec s parádním doplňkem!
+Webová kvízová hra pro děti: správné odpovědi krmí příšerku, která roste z vajíčka přes mládě až do dospělce.
 
----
+## Jak hra funguje
 
-## 🎮 Jak hrát
+1. Rozcestník se automaticky vykreslí z dostupných předmětů.
+2. Po výběru předmětu se načte jeho seznam kapitol.
+3. Otázky se stáhnou až při otevření konkrétní kapitoly.
+4. Správná odpověď přidá bod danému maskotovi; postup se ukládá do `localStorage` zvlášť pro každý předmět.
 
-1. Na **rozcestníku** vyber verzi hry — **Dějepis** nebo **Přírodověda**.
-2. Vyber si **téma** (např. Komunismus, Trávicí soustava…).
-3. Odpovídej na **kvízové otázky** (výběr A–D nebo Pravda/Lež).
-4. Každá správná odpověď = **+1 bod → krmení příšerky** 🍎
-5. Po **10 bodech** se příšerka vyklube z vajíčka → **Mládě** 🐣  
-   Po **30 bodech** vyroste na **Dospělce** s náhodným doplňkem ⭐  
-6. Pokud dojdou otázky, točí se dokola — sbírej body dál!
+## Obsah a přidávání předmětů
 
----
+Obsah není v JavaScriptu natvrdo. Je uložený v `subjects/`:
 
-## 🗺️ Přímé odkazy na verze
-
-Hru je možné si zahrát na [https://gask13.github.io/edu-lihen/](https://gask13.github.io/edu-lihen/).
-
----
-
-## 📚 Obsah témat
-
-### 🇨🇿 Dějepisná verze (Moderní dějiny ČR)
-
-| Maskot | Téma | Popis |
-|---|---|---|
-| 🖋️ Buditeláček | Národní obrození | Od obrody češtiny po průmyslovou revoluci a secesi |
-| 🪖 Bojovníček | 1. světová válka | Příčiny války, legie a vznik Československa |
-| 🦅 Sokolík | První republika | Masaryk, demokracie, hospodářský vzestup |
-| 🪖 Odbojáček | Protektorát a 2. sv. válka | Nacistická okupace, odboj a osvobození |
-| 🔴 Svobodníček | Komunismus | Únor 1948, normalizace, sametová revoluce |
-
-### 🔬 Přírodovědná verze (Lidské tělo — demo)
-
-| Maskot | Téma |
-|---|---|
-| 🟠 Bříškoun | Trávicí soustava |
-| 🔵 Plícník | Dýchací soustava |
-| 🩷 Buněk | Rozmnožovací soustava a buňka |
-
----
-
-## 🛠️ Technologie
-
-- **Čistý HTML5 / CSS3 / ES6 JavaScript** — žádné závislosti, žádný build krok
-- Příšerky jsou vykresleny **čistě v CSS** (elipsy, gradients, clip-path, animace)
-- **LocalStorage** — ukládání pokroku (odděleně pro každou verzi)
-- **[canvas-confetti](https://github.com/catdad/canvas-confetti)** — oslavné konfety při vylíhnutí přes CDN
-- **Google Fonts** — Fredoka + Outfit
-
----
-
-## ⚙️ Modifikovatelnost (Modding)
-
-Všechna herní data jsou oddělena od kódu v souboru **`config.js`**. Díky tomu lze:
-
-- ✏️ **Přidávat/měnit otázky** bez dotýkání se logiky — stačí editovat pole `questions` v příslušném tématu
-- 🎨 **Měnit barevné schema** každého tématu (`theme.primaryColor`, `gradientStart`, `gradientEnd`)
-- 🐉 **Přidávat nová témata** — přidej objekt do pole `topics` se svými otázkami, barvami a jménem maskota
-- 🎩 **Přidávat doplňky** — přidej objekt do pole `accessories` a odpovídající CSS třídu do `style.css`
-- 📈 **Měnit prahy** — hodnoty `thresholds.baby` (výchozí: 10) a `thresholds.adult` (výchozí: 30)
-
-### Formát otázky
-
-```js
-{
-  type: "abcd",          // nebo "boolean"
-  question: "Text otázky?",
-  options: ["A", "B", "C", "D"],
-  answer: 0,             // Index správné odpovědi (0-based)
-  explanation: "Vysvětlení, které se zobrazí po odpovědi."
-}
+```text
+subjects/
+  manifest.json                 # generovaný – neupravovat ručně
+  physics/
+    subject.json                # metadata a karta předmětu
+    manifest.json               # generovaný – seznam kapitol
+    topics/
+      physics_basics.json       # kapitola včetně otázek
 ```
 
----
+Podrobný formát, pravidla validace, příklady pro `subject.json` a `topic.json` i prompt pro LLM jsou v [subjects/FORMAT.md](subjects/FORMAT.md).
 
-## 🙏 Inspirace a poděkování
+```powershell
+node scripts/validate-subjects.mjs
+node scripts/build-manifest.mjs
+```
 
-Tato hra byla inspirována projektem **[Informatická líheň](https://informaticka-lihen.lovable.app/)** — skvělou edukativní hrou pro procvičování informatiky, kde hráč krmí příšerky správnými odpověďmi. Děti ji chtěly hned adaptovat na jiná témata a tak vznikla EDU Líheň. Velké díky autorům za inspiraci! 🎉
+Na Windows, kde PowerShell blokuje `npm.ps1`, používej uvedené příkazy s `node` přímo. GitHub Actions stejné kontroly spouští automaticky při push a pull requestu do `main`.
 
----
+## Technologie
 
-## 📄 Licence
+- čisté HTML, CSS a JavaScript bez běhových závislostí,
+- JSON manifesty a lazy-loading obsahu,
+- CSS příšerky; návrhová laboratoř je v `mascot-lab.html`,
+- Nunito s podporou české diakritiky,
+- `canvas-confetti` a Google Fonts z CDN.
 
-Žádná. Kopírujte, půjčujte si, hrajte - volné použití pro vzdělávací účely.
+## Lokální spuštění
+
+Použij libovolný statický HTTP server v kořeni projektu. Otevírání přes `file://` nebude fungovat, protože hra načítá JSON přes `fetch`.
+
+## Nasazení
+
+Hra je publikovaná na [gask13.github.io/edu-lihen](https://gask13.github.io/edu-lihen/). Workflow `.github/workflows/subjects.yml` ověřuje JSON a kontroluje, zda jsou manifesty aktuální; samotné nastavení GitHub Pages nemění.

@@ -1,0 +1,18 @@
+name: Validate subjects
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run check:subjects
+      - run: npm run build:manifest
+      - run: git diff --exit-code -- subjects/

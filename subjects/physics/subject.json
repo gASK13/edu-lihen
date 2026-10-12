@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "physics",
+  "card": {
+    "order": 1,
+    "label": "Fyzikální verze",
+    "title": "Fyzikální líheň ⚛️",
+    "description": "Objevuj tělesa a látky, síly, gravitaci i tajemství částic. Pomoz své příšerce vyrůst správnými odpověďmi.",
+    "tags": [
+      {
+        "label": "Silák",
+        "color": "#5b21b6",
+        "background": "#ede9fe"
+      }
+    ],
+    "buttonLabel": "Spustit fyziku",
+    "colors": {
+      "start": "#7c3aed",
+      "end": "#4338ca"
+    }
+  },
+  "gameTitle": "Fyzikální Líheň",
+  "gameSubtitle": "Objevuj síly, látky a tajemství částic správnými odpověďmi!",
+  "thresholds": {
+    "baby": 5,
+    "adult": 10
+  },
+  "accessories": [
+    {
+      "id": "glasses",
+      "name": "Chytré brýle",
+      "cssClass": "acc-glasses"
+    },
+    {
+      "id": "hat",
+      "name": "Elegantní cylindr",
+      "cssClass": "acc-hat"
+    },
+    {
+      "id": "bowtie",
+      "name": "Červený motýlek",
+      "cssClass": "acc-bowtie"
+    },
+    {
+      "id": "crown",
+      "name": "Zlatá korunka",
+      "cssClass": "acc-crown"
+    }
+  ]
+}

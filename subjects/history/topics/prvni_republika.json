@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "history",
+  "id": "prvni_republika",
+  "title": "První republika",
+  "description": "Zlatá éra svobodného Československa s T. G. Masarykem.",
+  "mascotName": "Sokolík",
+  "mascotType": "prvni_republika",
+  "theme": {
+    "primaryColor": "#059669",
+    "accentColor": "#ecfdf5",
+    "gradientStart": "#10b981",
+    "gradientEnd": "#047857"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Kdo se stal prvním prezidentem nového československého státu?",
+      "options": [
+        "Edvard Beneš",
+        "Tomáš Garrigue Masaryk",
+        "Milan Rastislav Štefánik",
+        "Emil Hácha"
+      ],
+      "answer": 1,
+      "explanation": "Tomáš Garrigue Masaryk byl nejrespektovanější osobností nového státu a do funkce byl zvolen hned několikrát za sebou."
+    },
+    {
+      "type": "abcd",
+      "question": "Které z následujících území NEPATŘILO do Československé republiky?",
+      "options": [
+        "Čechy",
+        "Slovensko",
+        "Podkarpatská Rus",
+        "Halič"
+      ],
+      "answer": 3,
+      "explanation": "Československo tvořily Čechy, Morava, Slezsko, Slovensko a Podkarpatská Rus. Halič součástí nebyla."
+    },
+    {
+      "type": "abcd",
+      "question": "Proč se nová republika nazývala „československá“?",
+      "options": [
+        "Byl to překlad z němčiny",
+        "Češi a Slováci byli oficiálně vydáváni za jeden národ",
+        "Žili zde pouze Češi a Slováci",
+        "Byl to Masarykův pseudonym"
+      ],
+      "answer": 1,
+      "explanation": "Název odrážel tehdejší politiku, podle které Češi a Slováci tvořili společně jeden takzvaný československý národ."
+    },
+    {
+      "type": "abcd",
+      "question": "Která národnostní menšina tvořila v ČSR asi čtvrtinu obyvatel (více než bylo Slováků)?",
+      "options": [
+        "Poláci",
+        "Maďaři",
+        "Němci",
+        "Rusíni"
+      ],
+      "answer": 2,
+      "explanation": "V ČSR žilo obrovské množství Němců, tvořili zhruba čtvrtinu všech obyvatel státu."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývaly pohraniční oblasti v českých zemích, kde převažovalo německé obyvatelstvo?",
+      "options": [
+        "Slezsko",
+        "Sudety",
+        "Bavorsko",
+        "Těšínsko"
+      ],
+      "answer": 1,
+      "explanation": "Tato území se nazývala Sudety. Místní Němci později požadovali připojení těchto oblastí k Německu."
+    },
+    {
+      "type": "abcd",
+      "question": "Které dvě písně spojila nová československá státní hymna?",
+      "options": [
+        "Kde domov můj a Nad Tatrou sa blýska",
+        "Kde domov můj a Hej Slované",
+        "Čechy krásné a Nad Tatrou sa blýska",
+        "Moravo, Moravo a Hej Slované"
+      ],
+      "answer": 0,
+      "explanation": "Státní hymnou se stala první sloka české písně Kde domov můj, na kterou navazovala první sloka slovenské Nad Tatrou sa blýska."
+    },
+    {
+      "type": "abcd",
+      "question": "Který významný malíř a grafik připravoval první československé bankovky (státovky) a poštovní známky?",
+      "options": [
+        "Josef Lada",
+        "Max Švabinský",
+        "Alfons Mucha",
+        "Václav Špála"
+      ],
+      "answer": 2,
+      "explanation": "Alfons Mucha byl světoznámý secesní umělec, který státu pomáhal s grafickou podobou nových platidel a známek."
+    },
+    {
+      "type": "abcd",
+      "question": "Který z těchto názvů NEBYL navrhován jako jméno pro novou československou měnu místo koruny?",
+      "options": [
+        "Sokol",
+        "Řepa",
+        "Káně",
+        "Orel"
+      ],
+      "answer": 3,
+      "explanation": "O jménu peněz se diskutovalo, navrhovaly se názvy jako řepa, sokol, lev nebo káně. Orel mezi nimi nebyl. Nakonec ale zůstala koruna."
+    },
+    {
+      "type": "abcd",
+      "question": "Která důležitá změna v právech nastala v první republice pro ženy?",
+      "options": [
+        "Musely povinně pracovat v továrnách",
+        "Získaly volební právo",
+        "Nesmely studovat na univerzitách",
+        "Musely odevzdat majetek státu"
+      ],
+      "answer": 1,
+      "explanation": "Československo bylo demokratickým státem, který zaručoval stejná práva všem, a ženy tak získaly možnost volit."
+    },
+    {
+      "type": "abcd",
+      "question": "Na kolik hodin denně byla zákonem omezena maximální pracovní doba dělníků?",
+      "options": [
+        "Na 6 hodin",
+        "Na 8 hodin",
+        "Na 10 hodin",
+        "Na 12 hodin"
+      ],
+      "answer": 1,
+      "explanation": "Uzákonění osmihodinové pracovní doby patřilo k velkým změnám, které výrazně zlepšily podmínky dělníků."
+    },
+    {
+      "type": "abcd",
+      "question": "Co se stalo se šlechtickými tituly za první republiky?",
+      "options": [
+        "Mohly se kupovat za peníze",
+        "Dědily se pouze po mužské linii",
+        "Byly zrušeny",
+        "Získávali je zasloužilí politici"
+      ],
+      "answer": 2,
+      "explanation": "Stát zrušil veškeré šlechtické výsady i tituly a začal přerozdělovat půdu velkostatkářů."
+    },
+    {
+      "type": "abcd",
+      "question": "Která část státu byla hlavním tahounem hospodářství a průmyslu?",
+      "options": [
+        "Slovensko",
+        "České země",
+        "Podkarpatská Rus",
+        "Těšínsko"
+      ],
+      "answer": 1,
+      "explanation": "Zatímco na Slovensku nebo Podkarpatské Rusi převažovalo zemědělství, české země měly nejvyspělejší průmysl a továrny."
+    },
+    {
+      "type": "abcd",
+      "question": "Která firma z první republiky se celosvětově proslavila výrobou obuvi ve Zlíně?",
+      "options": [
+        "Škoda",
+        "Tatra",
+        "Baťa",
+        "ČKD"
+      ],
+      "answer": 2,
+      "explanation": "Baťovy obuvnické závody založili sourozenci Baťovi. Firma dodávala kvalitní a levné boty nejen u nás, ale i do zahraničí."
+    },
+    {
+      "type": "abcd",
+      "question": "Která světová událost tvrdě zasáhla československé hospodářství ve 30. letech?",
+      "options": [
+        "První světová válka",
+        "Světová hospodářská krize",
+        "Španělská chřipka",
+        "Ropná krize"
+      ],
+      "answer": 1,
+      "explanation": "Světová hospodářská krize vypukla v roce 1929 v USA a v následujících letech přinesla i k nám pokles výroby a nezaměstnanost."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo byl druhým prezidentem Československa (po odstoupení T. G. Masaryka)?",
+      "options": [
+        "Milan Hodža",
+        "Edvard Beneš",
+        "Konrad Henlein",
+        "Emil Hácha"
+      ],
+      "answer": 1,
+      "explanation": "Edvard Beneš byl Masarykův nejbližší spolupracovník. Prezidentem se stal v roce 1935, v době blížící se hrozby nacistického Německa."
+    },
+    {
+      "type": "abcd",
+      "question": "Jakou obranu budovalo Československo v pohraničí proti hrozbě nacistického Německa?",
+      "options": [
+        "Dlouhý vodní příkop",
+        "Vysokou kamennou zeď",
+        "Soustavu vojenských pevností",
+        "Mínová pole"
+      ],
+      "answer": 2,
+      "explanation": "Armáda spoléhala na důmyslný systém vojenských betonových pevností vybudovaných na hranicích."
+    },
+    {
+      "type": "abcd",
+      "question": "Ve kterém roce byla podepsána Mnichovská dohoda?",
+      "options": [
+        "1918",
+        "1929",
+        "1935",
+        "1938"
+      ],
+      "answer": 3,
+      "explanation": "Dne 29. září 1938 schválily v Mnichově čtyři mocnosti požadavek Hitlera na postoupení našeho pohraničí Německu."
+    },
+    {
+      "type": "abcd",
+      "question": "Které státy jednaly v Mnichově o postoupení československého pohraničí?",
+      "options": [
+        "Německo, Itálie, Francie, Velká Británie",
+        "Německo, Polsko, Maďarsko, Rakousko",
+        "Německo, SSSR, USA, Francie",
+        "Československo, Německo, Francie, Velká Británie"
+      ],
+      "answer": 0,
+      "explanation": "Dohodu ujednali zástupci těchto čtyř států. Zástupci Velké Británie a Francie doufali, že ústupkem Hitlerovi zabrání válce."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo zastupoval Československo při podpisu Mnichovské dohody?",
+      "options": [
+        "Edvard Beneš",
+        "Tomáš Garrigue Masaryk",
+        "Emil Hácha",
+        "Nikdo, nebyli jsme k jednání přizváni"
+      ],
+      "answer": 3,
+      "explanation": "Protože o našem území jednali zástupci jiných zemí bez naší účasti, vžilo se pro tuto událost rčení „o nás bez nás“."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se změnil název státu po ztrátě pohraničí (tzv. druhá republika)?",
+      "options": [
+        "Česká a Slovenská republika",
+        "Česko-Slovensko",
+        "Protektorát Čechy a Morava",
+        "Československé království"
+      ],
+      "answer": 1,
+      "explanation": "Stát byl přejmenován na Česko-Slovensko. Spojovník symbolizoval změněné poměry v oslabeném státě."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo nahradil odstoupivšího E. Beneše ve funkci prezidenta za tzv. druhé republiky?",
+      "options": [
+        "Konrad Henlein",
+        "Emil Hácha",
+        "Jan Syrový",
+        "Klement Gottwald"
+      ],
+      "answer": 1,
+      "explanation": "Emil Hácha nastoupil do velmi obtížné situace po odstoupení E. Beneše v roce 1938."
+    },
+    {
+      "type": "abcd",
+      "question": "Jaký architektonický styl uplatněný v první republice reprezentuje brněnská vila Tugendhat?",
+      "options": [
+        "Secese",
+        "Baroko",
+        "Funkcionalismus",
+        "Gotika"
+      ],
+      "answer": 2,
+      "explanation": "Funkcionalismus sázel na jednoduchost a účelnost. Vila Tugendhat patří mezi stavby zařazené na seznam památek UNESCO."
+    },
+    {
+      "type": "abcd",
+      "question": "Který moderní komunikační prostředek u nás začal pravidelně vysílat v roce 1923?",
+      "options": [
+        "Internet",
+        "Televize",
+        "Rozhlas",
+        "Barevný film"
+      ],
+      "answer": 2,
+      "explanation": "První rozhlasové vysílání začalo z pražského studia v roce 1923. Televizní vysílání se začalo zkoušet až mnohem později."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se jmenoval velmi oblíbený dětský zájmový spolek českých skautů?",
+      "options": [
+        "Sokol",
+        "Orel",
+        "Pionýr",
+        "Junák"
+      ],
+      "answer": 3,
+      "explanation": "Mládež ráda chodila do přírody a trampovala. Český skauting byl spojen s organizací jménem Junák."
+    },
+    {
+      "type": "abcd",
+      "question": "Který slavný komiks pro mládež od spisovatele Jaroslava Foglara začal vycházet v roce 1938?",
+      "options": [
+        "Ferda Mravenec",
+        "Rychlé šípy",
+        "Čtyřlístek",
+        "Spejbl a Hurvínek"
+      ],
+      "answer": 1,
+      "explanation": "Rychlé šípy vycházely v časopise Mladý hlasatel a inspirovaly děti k zakládání vlastních čtenářských klubů."
+    },
+    {
+      "type": "abcd",
+      "question": "Ve kterém městě byla v roce 1919 založena Masarykova univerzita?",
+      "options": [
+        "V Praze",
+        "V Brně",
+        "V Bratislavě",
+        "V Olomouci"
+      ],
+      "answer": 1,
+      "explanation": "Nové univerzity vznikly už v roce 1919 – Masarykova univerzita sídlila v Brně, Univerzita Komenského v Bratislavě."
+    },
+    {
+      "type": "abcd",
+      "question": "Kdo tvořil slavnou loutkovou dvojici z divadla Josefa Skupy v Plzni?",
+      "options": [
+        "Voskovec a Werich",
+        "Pat a Mat",
+        "Spejbl a Hurvínek",
+        "Křemílek a Vochomůrka"
+      ],
+      "answer": 2,
+      "explanation": "Legendární loutky Spejbla a Hurvínka představil ve 20. letech loutkář Josef Skupa."
+    },
+    {
+      "type": "abcd",
+      "question": "Kteří herci byli hlavními tvářemi pražského Osvobozeného divadla?",
+      "options": [
+        "Jiří Voskovec a Jan Werich",
+        "Josef Skupa a Eduard Bass",
+        "Karel a Josef Čapkovi",
+        "Ondřej Sekora a Josef Lada"
+      ],
+      "answer": 0,
+      "explanation": "Jiří Voskovec a Jan Werich patřili mezi nejoblíbenější herce, divadlo bylo známé svým humorem i pozdějším varováním před nacismem."
+    },
+    {
+      "type": "abcd",
+      "question": "Který spisovatel psal díla pro děti (např. Dášeňku), ale zároveň varoval před ohrožením demokracie Německem?",
+      "options": [
+        "Jaroslav Foglar",
+        "Karel Čapek",
+        "Ondřej Sekora",
+        "Franz Kafka"
+      ],
+      "answer": 1,
+      "explanation": "Karel Čapek byl jedním z našich nejvýznamnějších autorů. Jeho romány i divadelní hry často upozorňovaly na nebezpečí diktatur."
+    },
+    {
+      "type": "abcd",
+      "question": "Který světově proslulý spisovatel židovského původu žil v Praze a psal svá díla německy?",
+      "options": [
+        "Eduard Bass",
+        "Josef Lada",
+        "Franz Kafka",
+        "Leoš Janáček"
+      ],
+      "answer": 2,
+      "explanation": "Franz Kafka patří k celosvětově nejuznávanějším autorům pražské německé literatury."
+    },
+    {
+      "type": "abcd",
+      "question": "Který hudební skladatel získal v této době světové uznání (autor opery Příhody lišky Bystroušky)?",
+      "options": [
+        "Bedřich Smetana",
+        "Antonín Dvořák",
+        "Leoš Janáček",
+        "Jaroslav Heyrovský"
+      ],
+      "answer": 2,
+      "explanation": "Leoš Janáček patřil mezi nejvýznamnější skladatele doby a proslavil českou hudbu daleko za hranicemi."
+    },
+    {
+      "type": "boolean",
+      "question": "Tomáš Garrigue Masaryk vykonával funkci prezidenta nepřetržitě od vzniku státu až do své smrti v roce 1937.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. TGM se z důvodu pokročilého věku vzdal funkce už na konci roku 1935. Zemřel o dva roky později."
+    },
+    {
+      "type": "boolean",
+      "question": "Československo patřilo v období první republiky svými továrnami mezi nejvyspělejší státy světa.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Náš průmysl získal skvělou pověst a výrobky se hojně vyvážely do zahraničí."
+    },
+    {
+      "type": "boolean",
+      "question": "Podkarpatská Rus byla hlavním průmyslovým centrem státu, kde nebyla téměř žádná negramotnost.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež. Podkarpatská Rus naopak patřila k nejzaostalejším oblastem v Evropě a byla tam velmi vysoká míra negramotnosti."
+    },
+    {
+      "type": "boolean",
+      "question": "Dívky měly za první republiky stejné podmínky pro vzdělávání na středních a vysokých školách jako chlapci.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Pravda. Na vzdělání byl kladen velký důraz a dívky měly zajištěny rovné podmínky přístupu ke studiu."
+    }
+  ]
+}

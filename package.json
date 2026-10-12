@@ -1,0 +1,9 @@
+{
+  "name": "edu-lihen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:manifest": "node scripts/build-manifest.mjs",
+    "check:subjects": "node scripts/validate-subjects.mjs"
+  }
+}

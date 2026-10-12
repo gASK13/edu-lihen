@@ -1326,6 +1326,10 @@ button {
   color: white;
 }
 
+.subject-card .landing-card-header {
+  background: linear-gradient(135deg, var(--subject-start), var(--subject-end));
+}
+
 .history-card .landing-card-header {
   background: linear-gradient(135deg, #b45309, #92400e);
 }
@@ -1402,6 +1406,18 @@ button {
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.subject-card .btn-launch-version {
+  background: linear-gradient(135deg, var(--subject-start), var(--subject-end));
+}
+
+.landing-loading {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 700;
 }
 
 .history-card .btn-launch-version {

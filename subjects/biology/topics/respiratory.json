@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "biology",
+  "id": "respiratory",
+  "title": "Dýchací soustava",
+  "description": "Prozkoumej, jak tělo získává kyslík ze vzduchu a jak vydechuje odpadní látky!",
+  "mascotName": "Plícník",
+  "mascotType": "respiratory",
+  "theme": {
+    "primaryColor": "#0ea5e9",
+    "accentColor": "#e0f2fe",
+    "gradientStart": "#00c6ff",
+    "gradientEnd": "#0072ff"
+  },
+  "questions": [
+    {
+      "type": "abcd",
+      "question": "Který plyn vdechujeme ze vzduchu a je naprosto nezbytný pro život našich buněk?",
+      "options": [
+        "Oxid uhličitý",
+        "Dusík",
+        "Kyslík",
+        "Vodík"
+      ],
+      "answer": 2,
+      "explanation": "Při nadechnutí dostáváme do těla kyslík, který buňky využívají k tvorbě energie pro pohyb a růst."
+    },
+    {
+      "type": "abcd",
+      "question": "Který plyn vydechujeme jako odpadní produkt práce našeho těla?",
+      "options": [
+        "Kyslík",
+        "Oxid uhličitý",
+        "Helium",
+        "Vodní páru"
+      ],
+      "answer": 1,
+      "explanation": "Buňky při své práci produkují oxid uhličitý jako odpad. Ten putuje krví zpět do plic, odkud ho vydechujeme."
+    },
+    {
+      "type": "abcd",
+      "question": "Kde přesně v plicích dochází k výměně plynů mezi vzduchem a krví?",
+      "options": [
+        "V průduškách",
+        "V plicních sklípcích",
+        "V nosohltanu",
+        "V bránici"
+      ],
+      "answer": 1,
+      "explanation": "Výměna plynů probíhá v plicních sklípcích (alveolách). Jsou to mikroskopické bublinky obklopené tenoučkými cévami."
+    },
+    {
+      "type": "abcd",
+      "question": "Jak se nazývá plochý sval pod plícemi, který se při nádechu stahuje dolů a je hlavním dýchacím svalem?",
+      "options": [
+        "Bránice",
+        "Srdce",
+        "Břišní sval",
+        "Mezižeberní sval"
+      ],
+      "answer": 0,
+      "explanation": "Bránice je nejdůležitější dýchací sval. Její pohyb dolů nasává vzduch do plic, její uvolnění směrem nahoru vzduch vyfukuje."
+    },
+    {
+      "type": "boolean",
+      "question": "Prach a nečistoty ze vzduchu jsou v našich dýchacích cestách zachycovány drobnými řasinkami a hlenem.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 0,
+      "explanation": "Sliznice dýchacích cest obsahuje řasinky a hlen. Ty fungují jako přírodní filtr, který zachytí prach a mikroby a posouvá je ven."
+    },
+    {
+      "type": "abcd",
+      "question": "Co tvoří ochrannou klec kolem našich plic a srdce, aby se nezranily?",
+      "options": [
+        "Páteř",
+        "Žebra a hrudní kost",
+        "Žaludek",
+        "Kůže"
+      ],
+      "answer": 1,
+      "explanation": "Hrudní koš složený z žeber a hrudní kosti tvoří pevnou schránku chránící citlivé plíce a srdce před vnějšími nárazy."
+    },
+    {
+      "type": "boolean",
+      "question": "Plíce jsou jako dva velké prázdné nafukovací balónky bez jakékoliv vnitřní struktury.",
+      "options": [
+        "Pravda",
+        "Lež"
+      ],
+      "answer": 1,
+      "explanation": "Lež! Plíce mají houbovitou strukturu a větví se do milionů drobných průdušinek zakončených sklípky. Nejsou to prázdné vaky."
+    }
+  ]
+}
