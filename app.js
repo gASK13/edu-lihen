@@ -470,6 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateHistory(historyMode, { screen: "quiz", version: currentVersion, topicId }, currentVersion);
     updateMascotUI();
     renderQuestion();
+    requestAnimationFrame(alignQuizViewport);
 
     const points = gameState.scores[topic.id] || 0;
     sayRandomSpeech(getMascotStage(points).id);
@@ -580,6 +581,13 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", () => handleAnswerSelect(idx));
       elOptionsContainer.appendChild(btn);
     });
+  }
+
+  // Schová velkou hlavičku stránky a ponechá nahoře navigaci i postup příšerky.
+  // Díky tomu má otázka na mobilu vždy stejnou, předvídatelnou výchozí pozici.
+  function alignQuizViewport() {
+    const quizTop = elQuizScreen.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: Math.max(0, quizTop - 8), behavior: "auto" });
   }
 
   // ============================================================
@@ -797,6 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTopicTheme(gameState.currentTopic);
 
       renderQuestion();
+      requestAnimationFrame(alignQuizViewport);
 
       const points = gameState.scores[gameState.currentTopic.id] || 0;
       sayRandomSpeech(getMascotStage(points).id);

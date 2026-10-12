@@ -679,10 +679,7 @@ button {
 .question-actions {
   display: flex;
   justify-content: flex-end;
-  position: sticky;
-  bottom: 12px;
-  z-index: 2;
-  padding-top: 8px;
+  margin-top: 4px;
 }
 
 .question-actions[hidden] {
@@ -1542,7 +1539,6 @@ button {
   .question-actions {
     justify-content: stretch;
     padding: 10px 0 max(2px, env(safe-area-inset-bottom));
-    background: linear-gradient(to top, var(--white-solid) 75%, transparent);
   }
 
   .btn-next {
