@@ -658,7 +658,14 @@ document.addEventListener("DOMContentLoaded", () => {
     elBtnNextQuestion.closest(".question-actions").hidden = false;
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => window.scrollTo({ top: scrollBeforeAnswer, behavior: "auto" }));
+      requestAnimationFrame(() => {
+        if (isCorrect) {
+          window.scrollTo({ top: scrollBeforeAnswer, behavior: "auto" });
+        } else {
+          // Chybná odpověď má delší zpětnou vazbu; ukotvíme akci na spodní okraj.
+          elBtnNextQuestion.scrollIntoView({ behavior: "smooth", block: "end" });
+        }
+      });
     });
 
   }
