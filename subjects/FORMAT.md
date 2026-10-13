@@ -102,10 +102,11 @@ Povinné jsou `schemaVersion`, `id`, `card`, `gameTitle`, `gameSubtitle` a platn
 ## Postup a kontrola
 
 1. Vytvoř nebo uprav JSON.
-2. Spusť `node scripts/validate-subjects.mjs` v kořeni projektu.
-3. Spusť `node scripts/build-manifest.mjs` v kořeni projektu.
+2. Commitni a pushni změnu do `main`.
+3. GitHub Actions JSON zvaliduje, vygeneruje manifesty a nasadí Pages.
 4. Ověř rozcestník, nový předmět/kapitolu a alespoň jednu správnou i chybnou odpověď.
-5. Zahrň do commitu také změněné manifesty.
+
+Lokální validace je pouze volitelná: `node scripts/validate-subjects.mjs`.
 
 ## Prompt pro LLM/MCP
 

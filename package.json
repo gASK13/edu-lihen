@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:manifest": "node scripts/build-manifest.mjs",
-    "check:subjects": "node scripts/validate-subjects.mjs"
+    "check:subjects": "node scripts/validate-subjects.mjs",
+    "build:site": "node scripts/build-site.mjs"
   }
 }
