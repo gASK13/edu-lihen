@@ -34,15 +34,15 @@ subjects/
       physics_basics.json       # kapitola včetně otázek
 ```
 
-Podrobný formát, pravidla validace, příklady pro `subject.json` a `topic. Son` i prompt pro LLM jsou v [subjects/FORMAT.md](subjects/FORMAT.md).
+Podrobný formát, pravidla validace, příklady pro `subject.json` a `topic.json` i prompt pro LLM jsou v [subjects/FORMAT.md](subjects/FORMAT.md).
 
 Po pushi do `main` GitHub Actions obsah automaticky zvaliduje, vytvoří všechny manifesty a publikuje hru na GitHub Pages. Při přidání JSONu tedy není potřeba nic generovat ani commitovat ručně.
 
-(Pro nepovinnou lokální kontrolu použij `node scripts/validate-subjects.mjs` a `node scripts/build-site.mjs`. Na Windows, kde PowerShell blokuje `npm.ps1`, používej tyto příkazy s `node` přímo.)
+(Pro nepovinnou lokální kontrolu použij `node scripts/validate-subjects.mjs`, `node scripts/build-manifest.mjs` a `node scripts/build-site.mjs`, případně `npm run build`. Na Windows, kde PowerShell blokuje `npm.ps1`, používej tyto příkazy s `node` přímo.)
 
-## Současný Obsah ukázkových témat
+## Současný obsah ukázkových témat
 
-### Dějepisná verze (Moderní dějiny ČR)
+### 🇨🇿 Dějepisná verze (Moderní dějiny ČR)
 
 | Maskot | Téma | Popis |
 |---|---|---|
@@ -52,13 +52,19 @@ Po pushi do `main` GitHub Actions obsah automaticky zvaliduje, vytvoří všechn
 | 🪖 Odbojáček | Protektorát a 2. sv. válka | Nacistická okupace, odboj a osvobození |
 | 🔴 Svobodníček | Komunismus | Únor 1948, normalizace, sametová revoluce |
 
-### Přírodovědná verze (Lidské tělo — demo)
+### 🔬 Přírodovědná verze (Lidské tělo — demo)
 
-| Maskot | Téma |
-|---|---|
-| 🟠 Bříškoun | Trávicí soustava |
-| 🔵 Plícník | Dýchací soustava |
-| 🩷 Buněk | Rozmnožovací soustava a buňka |
+| Maskot | Téma | Popis |
+|---|---|---|
+| 🟠 Bříškoun | Trávicí soustava | Zjisti, jak tělo zpracovává jídlo a získává z něj sílu! |
+| 🔵 Plícník | Dýchací soustava | Prozkoumej, jak tělo získává kyslík ze vzduchu a jak vydechuje odpadní látky! |
+| 🩷 Buněk | Rozmnožovací soustava a buňka | Poznej, jak vzniká nový život a jak funguje buňka! |
+
+### ⚛️ Fyzikální verze (Základy fyziky — test)
+
+| Maskot | Téma | Popis |
+|---|---|---|
+| ⚛️ Silák | Základy fyziky | Tělesa, látky, síly, gravitace a pohyb částic |
 
 ## Technologie
 
@@ -70,7 +76,9 @@ Po pushi do `main` GitHub Actions obsah automaticky zvaliduje, vytvoří všechn
 
 ## Lokální spuštění
 
-Použij libovolný statický HTTP server v kořeni projektu. Otevírání přes `file://` nebude fungovat, protože hra načítá JSON přes `fetch`.
+Pro lokální běh je potřeba nejprve vygenerovat manifesty a sestavit web (např. přes `npm run build`, případně `node scripts/build-manifest.mjs` a `node scripts/build-site.mjs`).
+
+Následně použij libovolný statický HTTP server ve složce `dist/` (nebo v kořeni projektu, pokud byly vygenerovány manifesty). Otevírání přes `file://` nebude fungovat, protože hra načítá JSON přes `fetch`.
 
 ## Nasazení
 

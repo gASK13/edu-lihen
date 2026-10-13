@@ -1,3 +1,6 @@
 # Local planning notes – intentionally kept out of the repository
 TASK.md
 dist/
+# Generated manifest files
+subjects/manifest.json
+subjects/**/manifest.json
